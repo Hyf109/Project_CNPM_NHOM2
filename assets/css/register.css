@@ -33,14 +33,14 @@ section {
 
 .wrapper {
     position: absolute;
-    padding: 100px;
+    padding: 60px 100px;
     background: rgba(255, 255, 255, 0.2);
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 8);
+    box-shadow: 0 15px 35px rgba(10, 10, 10, 8);
 }
 
 .wrapper .form {
@@ -73,24 +73,15 @@ section {
 	padding: 10px;
 	padding-left: 24px;
 	font-weight: 700;
-	width: 75%;
+	width: 100%;
 	transition: .2s;
+    
 }
 
-.icon-user {
+.icon-user, .icon-lock, .icon-envelope, .icon-check {
     position: absolute;
-    color:black;
     font-size: 24px;
-    top: 50px;
-    left: 20px;
-}
-
-.icon-lock {
-    position: absolute;
-    color:black;
-    font-size: 24px;
-    top: 130px;
-    left: 20px;
+    margin-top: 18px;
 }
 
 .input-box:active,
@@ -98,6 +89,10 @@ section {
 .input-box:hover {
 	outline: none;
 	border-bottom-color: #6A679E;
+    
+    .icon-envelope, .icon-lock, .icon-user, .icon-check {
+        color: #6a679e;
+    }
 }
 
 .input-box input {
@@ -114,21 +109,17 @@ section {
     padding-left: 60px;
 }
 
-.remember-forgot label {
+.confirm-terms {
     font-size: 24px;
+    padding-top: 20px;
 }
 
-.remember-forgot a {
-    font-size: 24px;
-    margin-left: 50%;
-}
-
-.remember-forgot a:hover {
-    color: red;
-}
-
-.remember-forgot input:hover {
+.confirm-terms a {
     cursor: pointer;
+}
+
+.confirm-terms a:hover {
+    color: red;
 }
 
 .form button {
@@ -155,11 +146,11 @@ section {
     
 }
 
-.register-link p {
+.login-link p {
     font-size: 24px;
     margin-left: 28%;
 }
 
-.register-link a:hover {
+.login-link a:hover {
     color: red;
 }
