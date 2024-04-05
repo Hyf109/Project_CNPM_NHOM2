@@ -4,95 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
+    <link rel="stylesheet" href="./assets/css/user_profile.css">
 </head>
 <body>
     <div class="wrapper">
-        <div class="taskbar">
-            <a href="#">Home</a>
-            <a>/</a>
-            <a href="#">User</a>
-            <a>/</a>
-            <b>User Profile</b>
-        </div>
-        <div class="left-profile">
-            <div class="user-infomation">
-                <img src="./assets/images/cat.png">
-                <b>Username</b>
-                <i>Expert Software Engineering for over 10 years.</i>
-                <i>Started working at Google company from 2017.</i>
-                <i>etc.</i>
+        <nav class="menu" id="nav">
+            <span class="nav-item">
+                <span class="icon">
+                    <img src="./assets/images/logo.png" class="home"> <a href="#home"></a>
+                </span>
+            </span>
+
+            <div>
+                <span class="nav-item">    
+                    <span class="icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <a href="#">Search</a>
+                </span> 
+
+                <span class="nav-item">
+                    <span class="icon">
+                        <i class="fa-solid fa-calendar-minus"></i>
+                    </span>
+                    <a href="#">My Schedule</a>
+                </span>
+
+                <span class="nav-item">
+                    <span class="icon">
+                        <i class="fa-solid fa-square-plus"></i>
+                    </span>
+                    <a href="#">Host new Event</a>
+                </span>
+            </div>
+        </nav>
+
+        <div class="profile">
+            <div class="left-profile">
+                <div class="user-infomation">
+                    <div class="avatar">
+                        <img src="./assets/images/cat.png">
+                        <b>Username</b>
+                    </div>
+                    <div class="infomation">
+                        <li>Expert Software Engineering for over 10 years.</li>
+                        <li>Started working at Google company from 2017.</li>
+                        <li>etc.</li>
+                    </div>
+                </div>
+
+                <b><li>For More Infomation</li></b>
+
+                <div class="user-link">
+                    <a href="https://www.github.com/Raphael9143">
+                        <button class="fa-brands fa-github"><b>Github</b></button>
+                        <label>/Raphael9143</label>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        <button class="fa-brands fa-x-twitter"><b>Twitter</b></button>
+                        <label>Just Click!</label>
+                    </a>
+
+                    <a href="https://www.instagram.com/dxgdium">
+                        <button class="fa-brands fa-instagram"><b>Instagram</b></button>
+                        <label>/dxgdium</label>
+                    </a>
+
+                    <a href="https://www.facebook.com/iamdxgdium">
+                        <button class="fa-brands fa-facebook"><b>Facebook</b></button>
+                        <label>/iamdxgdium</label>
+                    </a>
+
+                    <a href="mailto:s3jack3s@gmail.com">
+                        <button class="fa-brands fa-at"><b>Email</b></button>
+                        <label>s3jack3s</label>
+                    </a>
+                </div>
             </div>
 
-            <div class="user-link">
-                <a href="https://www.github.com/Raphael9143">
-                    <button class="fa-brands fa-github"></button>
-                </a>
+            <div class="right-profile">
+                <div class="user-profile">         
+                    <div>
+                        <strong>Full Name</strong>
+                        <input type="text" placeholder="Nguyen Van A">
+                    </div>
 
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                    <button class="fa-brands fa-x-twitter"></button>
-                </a>
+                    <div>
+                        <strong>Email</strong>
+                        <input type="email" placeholder="example@abc.xyz">
+                    </div>
+                    
+                    <div>
+                        <strong>Phone</strong>
+                        <input type="number" placeholder="(+84) 123 456 789">
+                    </div>
 
-                <a href="https://www.instagram.com/dxgdium">
-                    <button class="fa-brands fa-instagram"></button>
-                </a>
+                    <div>
+                        <strong>Date Of Birth</strong>
+                        <input type="date" value="2018-07-22" min="1900-01-01" max="2024-12-31" placeholder="2000-01-01"/>
+                    </div>
 
-                <a href="https://www.facebook.com/iamdxgdium">
-                    <button class="fa-brands fa-facebook"></button>
-                </a>
+                    <div>
+                        <strong>Address</strong><input type="text" placeholder="A street - B city - C country">
+                        <i class="fa-solid fa-location-dot"><a>Pick from Google Map!</a></i>
+                    </div>
 
-                <a href="mailto:s3jack3s@gmail.com">
-                    <button class="fa-solid fa-at"></button>
-                </a>
-            </div>
-        </div>
-
-        <div class="right-profile">
-            <div class="user-profile">         
-                <div>
-                    <strong>Username</strong>
-                    <input type="text" placeholder="Nguyen Van A"></div>
-
-                <div>
-                    <strong>Full Name</strong>
-                    <input type="text" placeholder="Nguyen Van A">
+                    <button type="button" class="edit-btn">Edit</button>
                 </div>
 
-                <div>
-                    <strong>Email</strong>
-                    <input type="email" placeholder="example@abc.xyz">
-                </div>
-                
-                <div>
-                    <strong>Phone</strong>
-                    <input type="number" placeholder="(+84) 123 456 789">
+                <div class="events">
+                    <div class="manager">
+                        <b>Events management</b>
+                        <li>Event a</li>
+                        <li>Event b</li>
+                        <li>Event c</li>
+                        <li>Event d</li>
+                        <li>Event e</li>
+                    </div>
+
+                    <div class="participant">
+                        <b>Events participant</b>
+                        <li>Event a</li>
+                        <li>Event b</li>
+                        <li>Event c</li>
+                        <li>Event d</li>
+                        <li>Event e</li>
+                    </div>
                 </div>
 
-                <div>
-                    <strong>Date Of Birth</strong>
-                    <input type="date" class="datebirth" value="2018-07-22" min="1900-01-01" max="2024-12-31" />
+                <div class="achievement">
+                    <strong>Achievement</strong>
+                    <li>Achievement 1</li>
+                    <li>Achievement 2</li>
+                    <li>Achievement 3</li>
+                    <li>Achievement 4</li>
+                    <li>Achievement 5</li>
                 </div>
-
-                <div>
-                    <strong>Address</strong><input type="text" placeholder="A street - B city - C country">
-                </div>
-
-                <button type="button" class="edit-btn">Edit</button>
-            </div>
-            <div class="manager">
-                <b>Events management</b>
-                <li>Event a</li>
-                <li>Event b</li>
-                <li>Event c</li>
-                <li>Event d</li>
-                <li>Event e</li>
-            </div>
-            <div class="participant">
-                <b>Events participant</b>
-                <li>Event a</li>
-                <li>Event b</li>
-                <li>Event c</li>
-                <li>Event d</li>
-                <li>Event e</li>
             </div>
         </div>
     </div>
