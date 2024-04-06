@@ -36,6 +36,12 @@
                     </span>
                     <a href="#">Host new Event</a>
                 </span>
+
+                <span class="nav-item">
+                    <span class="user-avatar">
+                        <img src="assets/images/cat.png">
+                    </span>
+                </span>
             </div>
         </nav>
 
@@ -78,40 +84,52 @@
 
                     <a href="mailto:s3jack3s@gmail.com">
                         <button class="fa-brands fa-at"><b>Email</b></button>
-                        <label>s3jack3s</label>
+                        <label>s3jack3s@gmail.com</label>
                     </a>
                 </div>
             </div>
 
             <div class="right-profile">
                 <div class="user-profile">         
-                    <div>
+                    <div class="input-box">
                         <strong>Full Name</strong>
                         <input type="text" placeholder="Nguyen Van A">
                     </div>
 
-                    <div>
+                    <div class="input-box">
                         <strong>Email</strong>
                         <input type="email" placeholder="example@abc.xyz">
                     </div>
                     
-                    <div>
+                    <div class="input-box">
                         <strong>Phone</strong>
                         <input type="number" placeholder="(+84) 123 456 789">
                     </div>
 
-                    <div>
+                    <div class="input-box">
                         <strong>Date Of Birth</strong>
-                        <input type="date" value="2018-07-22" min="1900-01-01" max="2024-12-31" placeholder="2000-01-01"/>
+                        <input type="date" class="datebirth" value="2000-01-01" min="1900-01-01" max="2024-12-31"/>
                     </div>
 
-                    <div>
+                    <div class="input-box">
                         <strong>Address</strong><input type="text" placeholder="A street - B city - C country">
-                        <i class="fa-solid fa-location-dot"><a>Pick from Google Map!</a></i>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <b>Pick from Google Map!</b>
                     </div>
 
-                    <button type="button" class="edit-btn">Edit</button>
+                    <div class="submit-btn">
+                        <button type="button" class="btn">
+                            Edit
+                            <i class="fa-solid fa-user-pen"></i>
+                        </button>
+                        <button type="button" class="btn">
+                            Save
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+                    </div>
                 </div>
+
+                <b><li class="ev">Events</li></b>
 
                 <div class="events">
                     <div class="manager">
@@ -132,6 +150,8 @@
                         <li>Event e</li>
                     </div>
                 </div>
+
+                <b><li class="ev">Achievements</li></b>
 
                 <div class="achievement">
                     <strong>Achievement</strong>

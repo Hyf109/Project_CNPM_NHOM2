@@ -79,9 +79,22 @@ body {
         }
     }
 
+    .user-avatar {
+        padding: 10px;
+        border: 2px solid;
+        border-radius: 60px;
+        background-color: #f2f2f2;
+        margin-left: 500px;
+
+        & img {
+            width: 70px;
+        }
+    }
+
     .fa-solid {
         font-size: 50px;
         cursor: pointer;
+        padding-left: 15px;
 
         &:hover {
             transform: scale(1.2);
@@ -173,6 +186,76 @@ body {
         & a {
             font-size: 12px;
         }
+
+        & strong {
+            font-size: 20px;
+        }
+
+        .input-box {
+            padding: 20px 0;
+            border-bottom: 1px solid;
+
+            & input {
+                font-size: 18px;
+                border-radius: 5px;
+                background: none;
+                border: none;
+                margin-left: 30px;
+                height: 30px;
+                width: 240px;
+                padding-left: 10px;
+            }
+
+            & .fa-solid {
+                padding-left: 50px;
+                font-size: 20px;
+
+                &:hover {
+                    color: red;
+                    cursor: pointer;
+                    transform: scale(1.2);
+                }
+            }
+
+            & b {
+                padding-top: 5px;
+                float: inline-end;
+                font-size: 14px;
+            }
+
+            .datebirth {
+                width: auto;
+            }
+        }
+
+        .submit-btn {
+            display: flex;
+            box-sizing: border-box;
+            justify-content: center;
+            align-items: center;
+
+            .btn {
+                margin: 20px 20px 0;
+                padding: 5px 50px;
+                font-size: 24px;
+                border-radius: 10px;
+                font-weight: 600;
+
+                &:hover {
+                    background-color: rgba(212, 212, 212, 0.9);
+                    color: green
+                }
+
+                & .fa-solid {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    & .ev {
+        font-size: 30px;
+        padding-top: 30px;
     }
 
     .events {
@@ -181,7 +264,7 @@ body {
 
         .manager,
         .participant {
-            margin: 30px 0;
+            margin: 10px 0;
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
@@ -197,7 +280,7 @@ body {
     }
 
     .achievement {
-        margin: 30px 0;
+        margin: 10px 0;
         padding: 20px;
         background-color: #fff;
         border-radius: 10px;
