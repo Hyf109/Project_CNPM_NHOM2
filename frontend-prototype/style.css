@@ -12,7 +12,7 @@
     background-color: blue;
 }
 /*Navigation bar*/
-#nav-logo {
+.nav-logo {
     margin: 0px;
     height: 100%;
     cursor: pointer;
@@ -96,6 +96,10 @@
     min-width: 0;
 }
 
+.page-content {
+    margin-top: 70px;
+}
+
 /*Filter bar*/
 .filter-bar {
     width: 100%;
@@ -170,6 +174,36 @@
         justify-content: center;
     }
 }
+
+
+
+@media screen and (max-width: 600px) {
+    .nav-bar {
+        flex-direction: column;
+    }
+    
+    .page-content {
+        margin-top: 200px;
+    }
+    .nav-logo {
+        height: 60px;
+        margin: 0;
+    }
+
+    .nav-bar {
+        height: 150px;
+        align-items: center;
+    }
+
+    .account {
+        margin: 0px;
+        order: 1;
+    }
+
+    .nav-links {
+        order: 2;
+    }
+}   
 
 
 
