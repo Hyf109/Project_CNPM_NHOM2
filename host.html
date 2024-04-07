@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finder</title>
-    <link rel="stylesheet" href="assets\css\host.css">
+    <link rel="stylesheet" href="assets/css/host.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.5.2/css/all.css">
 </head>
 <body>
-    <div class="page">
+    <div class="menu">
         <header class="header">
             <div class="grid">
                 <nav class="header__navbar">
@@ -17,25 +18,22 @@
                                 <img class="menu_img" src="images/logo.png" alt="logo">
                             </a>
                         </li>
-                        <li class="header__navbar-item header__navbar-item--textlogo">
+                        <li class="header__navbar-item" id="header__navbar-item--textlogo">
                             <a href="" class="header__navbar-item-link">
                                 <img class="menu_img menu_img--textlogo" src="images/logo2.png" alt="text_logo">
                             </a>
                         </li>
-                    </ul>
-    
-                    <ul class="header__navbar-list">
-                        <li class="header__navbar-item">
+                        <li class="header__navbar-item header__navbar-item--option">
                             <a href="" class="header__navbar-item-link"> <!--add search link-->
                                 Search to join
                             </a>
                         </li>
-                        <li class="header__navbar-item">
+                        <li class="header__navbar-item header__navbar-item--option">
                             <a href="" class="header__navbar-item-link"> <!--add my schedule link-->
                                 My Schedule
                             </a>
                         </li>
-                        <li class="header__navbar-item">
+                        <li class="header__navbar-item header__navbar-item--option">
                             <a href="" class="header__navbar-item-link"> <!--add host new event link-->
                                 Host New Event
                             </a>
@@ -43,26 +41,24 @@
                     </ul>
     
                     <ul class="header__navbar-list">
-                        <li class="header__navbar-item">
-                            <a href="" class="header__navbar-item-link">Help</a> <!--add help link-->
-                        </li>
-                        <li class="header__navbar-item">
-                            <a href="" class="header__navbar-item-link">Notification</a> <!--add notification link-->
-                        </li>
-                    </ul>
-    
-                    <ul class="header__navbar-list">
-                        <li class="header__navbar-item">
+                        <li class="header__navbar-item header__navbar-item--option">
                             <a href="" class="header__navbar-item-link">
-                                Username
-                            </a>
+                                <i class="fa-solid fa-question"></i>
+                                Help
+                            </a> <!--add help link-->
+                        </li>
+                        <li class="header__navbar-item header__navbar-item--option">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="fa-solid fa-bell"></i>
+                                Notification
+                            </a> <!--add notification link-->
                         </li>
                         <li class="header__navbar-item">
                             <a href="" class="header__navbar-item-link">
                                 <img class="menu_img" src="https://www.brainzima.com/assets/img/client/user.png" alt="avatar">
                             </a>
                         </li>
-                    </ul> 
+                    </ul>
                 </nav>
             </div>
         </header>

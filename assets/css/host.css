@@ -10,8 +10,10 @@
 
 .header__navbar-list {
     list-style: none;
-    margin: 10px;
+    margin: 0px;
     padding: 0px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .header__navbar-item {
@@ -31,6 +33,19 @@
     color: blue;
 }
 
-.header__navbar-item--textlogo {
-    margin-left: -10px;
+.header__navbar-item {
+    margin-top: 3px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#header__navbar-item--textlogo {
+    margin-left: -30px;
+    margin-bottom: -18px;
+}
+
+.header__navbar-item--option {
+    display: inline-block;
+    margin-bottom: -24px;
+    font-size: 17px;
 }
