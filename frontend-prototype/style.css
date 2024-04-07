@@ -19,6 +19,23 @@
     margin-left: 30px;
 }
 
+.account-photo {
+    margin-right: 10px;
+    border-style: solid;
+    border-color: aliceblue;
+    border-width: 2px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.flex-item {
+    display: flex;
+    align-content: center;
+    height: 100%;
+    flex: 1;
+}
+
 .nav-bar {
     top: 0;
     position: fixed;
@@ -60,7 +77,14 @@
 }
 
 .account {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
     margin-right: 30px;
+}
+
+.account:hover {
+    cursor: pointer ;
 }
 
 /*Body layout*/
@@ -201,7 +225,14 @@
     }
 
     .nav-links {
+        width: 100%;
         order: 2;
+        justify-content:space-evenly;
+    }
+
+    .nav-links li {
+        min-width: 100px;
+        flex-grow: 1;
     }
 }   
 
