@@ -99,11 +99,15 @@
     right: 0;
     min-width: 0;
     overflow-y: scroll;
-    height: 600px;
+    height: 100vh;
 }
 
 .aside {
     flex-grow: 1;
+}
+
+.right-aside {
+
 }
 
 .page-content {
@@ -235,6 +239,18 @@
         flex-grow: 1;
     }
 }   
+
+@media screen and (max-width: 450px) {
+    .event-card-photo {
+        display: none;
+    }
+
+    .event-card-info {
+        padding-top: 20px;
+        margin: 30px;
+    }
+}   
+
 
 
 
