@@ -3,3 +3,5 @@
 + SRS:https://docs.google.com/document/d/1K_fslHodBJEh6EdDaJOwdnTVjvkPt0co/edit
 + Plan DOC: https://docs.google.com/document/d/1L-D1t6Brj2ISDDpZOMkrCuDbq_y-wzs38P23Pwxk1qQ/edit?usp=sharing
 + Project Documentations: https://drive.google.com/drive/folders/1uDR4OFLQc_elc1pek4lTIsNZbi_sARt6?usp=sharing
++ Tài liệu về Use case diagram và Sequence Diagram: https://docs.google.com/document/d/1TQMs8CsGhFQIPOVG8460sjmepNwBhWBp/edit#heading=h.2s8eyo1
++ Tài liệu về Vision Document: https://www.ibm.com/docs/en/engineering-lifecycle-management-suite/lifecycle-management/7.0.1?topic=requirements-vision-document
