@@ -68,6 +68,10 @@ body {
             transform: scale(1.2);
         }
     }
+    
+    .to-user {
+        font-size: 5px;
+    }
 
     .user-avatar {
         padding: 10px;
