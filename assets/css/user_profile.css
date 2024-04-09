@@ -35,7 +35,6 @@ body {
         justify-content: space-between;
         align-items: center;
         display: flex;
-        float: right;
     }
 }
 
@@ -71,7 +70,7 @@ body {
     }
 
     .home {
-        width: 70px;
+        width: 123px;
         cursor: pointer;
 
         &:hover {
