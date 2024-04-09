@@ -13,8 +13,7 @@ body {
     justify-content: flex;
     align-items: center;
     min-height: 100vh;
-    background-color: #fff;
-    background-image: url('https://marjon-journalism.shorthandstories.com/tinder-how-they-keep-you-swiping/assets/SgbRM44jay/tinder-gradient-2560x1440.png');
+    background-color: #d9d9d9;
     background-size: cover;
     background-position: center;
 }
@@ -33,26 +32,47 @@ section {
 
 .wrapper {
     position: absolute;
-    padding: 100px;
+    width: 1000px;
     background: rgba(255, 255, 255, 0.2);
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 8);
+    box-shadow: 0 10px 90px rgba(0, 0, 0, 0.5);
 }
 
-.wrapper .form {
+.signin-form {
     align-items: center;
     justify-content: center;
-    width: 800px;
-    
+    width: 600px;
+    padding: 100px 50px;
+}
+
+.logo-field {
+    align-items: center;
+    justify-content: center;
+    padding: 100px 30px;
+}
+
+.vertical-line {
+    border-left: 6px solid gold;
+    height: 500px;
+    margin: 0;
+}
+
+.main-logo {
+    width: 300px;
+}
+
+.sec-logo {
+    margin-left: 50px;
+    width: 200px;
 }
 
 .wrapper h1 {
     border-radius: 10px;
-    color: #fff;
+    color: black;
     font-size: 36px;
     justify-content: center;
     align-items: center;
@@ -60,7 +80,7 @@ section {
     margin-bottom: 20px;
 }
 
-.login_field {
+.login-field {
 	padding: 20px 0px;	
 	position: relative;	
 }
@@ -114,7 +134,7 @@ section {
 
 .remember-forgot a {
     font-size: 24px;
-    margin-left: 50%;
+    margin-left: 45%;
 }
 
 .remember-forgot a:hover {
@@ -125,9 +145,9 @@ section {
     cursor: pointer;
 }
 
-.form button {
+.signin-form button {
     justify-content: center;
-    background: linear-gradient(to left, rgb(254, 60, 114), rgb(253, 85, 100));
+    background-color: #bfbfbf;
     border: none;
     outline: none;
     border-radius: 10px;
@@ -142,16 +162,16 @@ section {
     
 }
 
-.form button:hover {
+.signin-form button:hover {
     color: white;
     cursor: pointer;
-    background: linear-gradient(to left, rgb(254, 60, 114, 0.7), rgb(253, 85, 100, 0.7));
+    background-color: #999999;
     
 }
 
 .register-link p {
     font-size: 24px;
-    margin-left: 28%;
+    margin-left: 10%;
 }
 
 .register-link a:hover {
