@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: auto;
+}
+
+.terms-box {
+    max-width: 460px;
+    background-color: rgb(83, 83, 83, 0.1);
+    color: red;
+    height: 400px;
+    padding: 0 20px;
+    overflow-y: auto;
+}
