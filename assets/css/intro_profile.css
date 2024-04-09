@@ -40,6 +40,10 @@ body {
     cursor: pointer;
 }
 
+.taskbar a {
+    margin-left: 70%;
+}
+
 .exit-btn {
     color: white;
     background-color: black;
