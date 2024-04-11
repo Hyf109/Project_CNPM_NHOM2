@@ -6,4 +6,5 @@
 + Tài liệu về Class diagram và Sequence Diagram: https://docs.google.com/document/d/1TQMs8CsGhFQIPOVG8460sjmepNwBhWBp/edit#heading=h.2s8eyo1
 + Tài liệu về Vision Document: https://www.ibm.com/docs/en/engineering-lifecycle-management-suite/lifecycle-management/7.0.1?topic=requirements-vision-document
 + Tài liệu CSR và SSR: https://toidicodedao.com/2018/09/11/su-khac-biet-giua-server-side-rendering-va-client-side-rendering/
-+ 
++ Link làm Vision Document: https://docs.google.com/document/d/1x4ndZtsliYeb2uyIrRlS7BLTDG8Hu_YkPmrXztsI4zo/edit?usp=sharing
++ Link làm Tài liệu thiết kế ban đầu: https://docs.google.com/document/d/17cqkEg51suTpMAr2jdt-bxJpCOVXvN2EAn1czoaMdgA/edit?usp=sharing
