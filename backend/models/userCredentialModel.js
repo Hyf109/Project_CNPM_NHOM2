@@ -17,18 +17,14 @@ const userCredentialSchema = new Schema({
     password: {
         type: String,
         required: true
-    },
-    salt: {
-        type: String, 
-        required: true
     }
 }, {timestamps: true});
 
 userCredentialSchema.statics.login = async function(email, password) {
     const userCredential = await this.findOne({email});
-    const hash = await bcrypt.hash(password, userCredential.salt);
-
-    if (hash === userCredential.password) {
+    const match = await bcrypt.compare(password, userCredential.password);
+    
+    if (match) {
         return userCredential;
     } else {
         throw Error('Incorrect user credential');
