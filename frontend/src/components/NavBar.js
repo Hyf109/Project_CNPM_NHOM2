@@ -3,7 +3,7 @@ import '../css/NavBar.css'
 const NavBar = () => {
     return (
         <div className="NavBar">
-            <span>
+            <span className="logo">
                 <img alt="logo"/>
             </span>
             <span>
@@ -13,7 +13,7 @@ const NavBar = () => {
                     <li><a>My Events</a></li>
                 </ul>
             </span>
-            <span>
+            <span className="user">
                 <a>Sign up</a>
             </span>
             
