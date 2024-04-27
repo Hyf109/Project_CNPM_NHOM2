@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finder</title>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/host1.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+</head>
+
+<body>
+    <script src="https://kit.fontawesome.com/4a93d04fa1.js" crossorigin="anonymous"></script>
+    <nav>
+        <ul>
+            <li><a href="home1.html"><img src="./assets/images/logo.png" class="home"></a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">My Schedule</a></li>
+            <li><a href="host1.html">Host new event</a></li>
+            <li><a href="user-profile1.html">Avatar</a></li>
+        </ul>
+    </nav>
+
+    <div class="grid-container">
+        <div class="grid-item-1">
+            <h3 class="grid-column-title-1">Current schedule</h3>
+            <div class="scrollbar" id="style-1">
+                <p>fdjkf</p>
+                <div class="event-card-1">
+                    <ul class="event-card-name event-card-component">
+                        Demo Schedule
+                    </ul>
+                    <ul class="event-card-participants">
+                        <i class="fa-regular fa-user event-card-component"></i>
+                        <li class="event-card-paticipants-number event-card-component">
+                            0/5
+                        </li>
+                    </ul>
+                </div>
+                <div class="force-overflow"></div>
+            </div>
+
+        </div>
+
+        <div class="grid-item-2">
+            <div class="row-1 event-host">
+                <input type="image" class="event-img">
+                <input type="text" class="event-input-name event-input" placeholder="Activity name">
+                <input type="text" class="event-input-date event-input" placeholder="Date selection">
+                <input type="text" class="event-input-time event-input" placeholder="Time">
+            </div>
+            <div class="row-2 event-host">
+                <button class="event-pick_place event-button">
+                    Pick from map
+                </button>
+                <input type="text" class="event-input-place event-input" placeholder="Place">
+                <input type="text" class="event-input-max_participants event-input"
+                    placeholder="Number of participants">
+            </div>
+            <div class="row-3 event-host">
+                <input type="text" class="event-input-description event-input" placeholder="Description">
+            </div>
+            <div class="row-4 event-host">
+                <button class="event-add_tags event-button">
+                    Add tags
+                </button>
+                <input type="text" class="event-input-tags event-input" placeholder="Tags list">
+            </div>
+            <div class="row-5 event-host">
+                <button class="event-create_button event-button">
+                    Create event
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
