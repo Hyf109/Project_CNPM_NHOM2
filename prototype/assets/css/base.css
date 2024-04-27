@@ -23,7 +23,7 @@ nav ul {
 }
 nav li {
     height: 50px;
-
+    
 }
 nav a {
     height: 100%;
@@ -35,6 +35,7 @@ nav a {
 
     &:hover {
         background-color: aqua;
+        cursor: pointer;
     }
 }
 nav li:first-child {
