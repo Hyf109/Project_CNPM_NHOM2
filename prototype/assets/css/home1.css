@@ -9,7 +9,7 @@
 .taskbar {
     margin: 0 auto;
     display: flex;
-    background-color: aqua;
+    background-color: #a6a6a6;
     font-size: 40px;
     padding: 20px;
     align-items: center;
