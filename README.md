@@ -8,3 +8,4 @@
 + Tài liệu CSR và SSR: https://toidicodedao.com/2018/09/11/su-khac-biet-giua-server-side-rendering-va-client-side-rendering/
 + Link làm Vision Document: https://docs.google.com/document/d/1x4ndZtsliYeb2uyIrRlS7BLTDG8Hu_YkPmrXztsI4zo/edit?usp=sharing
 + Link làm Tài liệu thiết kế ban đầu: https://docs.google.com/document/d/17cqkEg51suTpMAr2jdt-bxJpCOVXvN2EAn1czoaMdgA/edit?usp=sharing
++ Link db: https://drive.google.com/file/d/12haWvGveRMbzhVJWWiNGb4wri6qpucZ1/view?fbclid=IwZXh0bgNhZW0CMTAAAR2FHYIHIrQnLgWQ5eXoffWUBRf8hJc1CXf-ZoLePZHKNvZ-tL9ilWPt8NA_aem_Aadd4iEYEnRbvdyiLjv1ZX1_UR9jE6v1qTKfy4yVOtgUNc2edjShlT76zAqmg1Km6pRxYWDmbisF2gytT2ZtBqic
