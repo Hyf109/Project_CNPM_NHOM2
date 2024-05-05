@@ -1,9 +1,16 @@
 import useFetch from "../hooks/useFetch";
 import '../css/EventList.css';
 
-const EventList = () => {
-    const {data, isPending, error} = useFetch('/event');
+const EventList = ({url}) => {
+    //Fetch data from backend server
+    const {data, isPending, error} = useFetch(url); 
+    
+    // //Fetch data from temporary json server
+    // const {data, isPending, error} = useFetch('http://localhost:8000/event');
+    // npx json-server --watch data/db.json --port 8000
 
+    console.log(data);
+    
     if (isPending) {
         return <div>Loading...</div>;
     }
@@ -14,7 +21,7 @@ const EventList = () => {
 
     return (
         <div className="event-list">
-            {data && data.event.map((event) => (
+                {data && data.event.map((event) => (
                     <div className="event-card" key={event.id}>
                         <img alt="event-image"/>
                         <div className="info">
@@ -30,10 +37,8 @@ const EventList = () => {
                                 <button>View More</button>
                             </div>
                         </div>
-
                     </div>
-                
-            ))}
+                ))}
         </div>
     );
 }
