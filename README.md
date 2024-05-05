@@ -9,3 +9,4 @@
 + Link làm Vision Document: https://docs.google.com/document/d/1x4ndZtsliYeb2uyIrRlS7BLTDG8Hu_YkPmrXztsI4zo/edit?usp=sharing
 + Link làm Tài liệu thiết kế ban đầu: [https://docs.google.com/document/d/17cqkEg51suTpMAr2jdt-bxJpCOVXvN2EAn1czoaMdgA/edit?usp=sharing](https://docs.google.com/document/d/1TlHHIkaf8bDjhJdbXT6yx7I1IaBxNGIh/edit?usp=sharing&ouid=117610764545905290752&rtpof=true&sd=true)
 + Link db: https://drive.google.com/file/d/12haWvGveRMbzhVJWWiNGb4wri6qpucZ1/view?fbclid=IwZXh0bgNhZW0CMTAAAR2FHYIHIrQnLgWQ5eXoffWUBRf8hJc1CXf-ZoLePZHKNvZ-tL9ilWPt8NA_aem_Aadd4iEYEnRbvdyiLjv1ZX1_UR9jE6v1qTKfy4yVOtgUNc2edjShlT76zAqmg1Km6pRxYWDmbisF2gytT2ZtBqic
++ Link SRS version 2.0: https://docs.google.com/document/d/1ZFF0l050QPoaxQed8CYejgOf2lArMuNr/edit?usp=sharing&ouid=117610764545905290752&rtpof=true&sd=true
