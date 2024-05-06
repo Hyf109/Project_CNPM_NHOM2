@@ -1,21 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import JoinEvent from './components/JoinEvent';
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HomePage } from './HomePage'
+import { Terms } from './components/Verification/Terms/Terms';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-              <NavBar />
-              <div className="content">
-                <Routes>
-                  <Route exact path="/join" element={<JoinEvent/>}/>
-                </Routes>
-              </div>
-          </div>
-    </Router>
+    <h1>Chua hieu tai sao</h1>
   );
 }
 
