@@ -8,24 +8,14 @@ const eventSchema = new Schema({
         required: true
     },
     startTime: {
-        type: String,
+        type: Date,
         required: true
     },
     endTime: {
-        type: String,
-        required: true
-    },
-    startDate: {
         type: Date,
-        required: true
-    },
-    endDate: {
-        type: Date,
-        required: true
     },
     status: {
         type: Boolean,
-        required: true
     },
     capacity: {
         type: Number,

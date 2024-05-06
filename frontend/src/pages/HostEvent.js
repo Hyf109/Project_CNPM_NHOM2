@@ -6,7 +6,7 @@ const HostEvent = () => {
     return (  
         <div className="host-event">
             <aside className="left-column">
-                <EventList url="/event"/>
+                <EventList url="/finder/api/event"/>
             </aside>
             
             <div className="main-content">

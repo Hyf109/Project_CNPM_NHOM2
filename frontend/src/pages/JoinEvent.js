@@ -10,7 +10,7 @@ const JoinEvent = () => {
             </aside>
 
             <div className="center-column">
-                <EventList url="/event"/>
+                <EventList url="/finder/api/event"/>
             </div>
             
             <aside className="right-column">

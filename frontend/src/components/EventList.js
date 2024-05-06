@@ -1,5 +1,14 @@
 import useFetch from "../hooks/useFetch";
 import '../css/EventList.css';
+import moment from 'moment';
+
+const formatDate = (datetime) => {
+    if (!datetime) return null;
+    let date = moment(datetime);
+    let formattedDate = date.format('D/M/yyyy - h:mm a');
+
+    return formattedDate;
+}
 
 const EventList = ({url}) => {
     //Fetch data from backend server
@@ -30,8 +39,8 @@ const EventList = ({url}) => {
                                 <h3>{event.capacity}</h3>
                             </div>
                             <p>Location: {event.location}</p>
-                            <p>From: {event.startDate + " " + event.startTime}</p>
-                            <p>To:   {event.endDate + " " +event.endTime}</p>
+                            {event.startTime && <p>From: {formatDate(event.startTime)}</p>}
+                            {event.endTime && <p>To: {formatDate(event.endTime)}</p>}
                             <div className="buttons">
                                 <button>Join Now</button>
                                 <button>View More</button>

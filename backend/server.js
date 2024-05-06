@@ -13,7 +13,7 @@ server.use((req, res, next) => {
     next();
 });
 
-server.use('/', defaultPath);
+server.use('/finder/api/', defaultPath);
 
 
 mongoose.connect(process.env.MONGO_URI).then(
