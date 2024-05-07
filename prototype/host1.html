@@ -5,21 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finder</title>
-    <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/host1.css">
     <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
 </head>
 
 <body>
     <script src="https://kit.fontawesome.com/4a93d04fa1.js" crossorigin="anonymous"></script>
-    <nav>
-        <ul>
-            <li><a href="home1.html"><img src="./assets/images/logo.png" class="home"></a></li>
-            <li><a href="#">Search</a></li>
-            <li><a href="#">My Schedule</a></li>
-            <li><a href="host1.html">Host new event</a></li>
-            <li><a href="user-profile1.html">Avatar</a></li>
-        </ul>
+    
+    <nav class="menu">
+        <div>
+            <span class="menu--item">
+                <span class="menu--icon">
+                    <a><img src={logoImg} alt=""></img></a>
+                </span>
+            </span>
+            <span class="menu--item">
+                <span class="menu--icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <a>Search</a>
+            </span>
+
+            <span class="menu--item">
+                <span class="menu--icon">
+                    <i class="fa-solid fa-calendar-minus"></i>
+                </span>
+                <a href="#">My Schedule</a>
+            </span>
+
+            <span class="menu--item">
+                <span class="menu--icon">
+                    <i class="fa-solid fa-square-plus"></i>
+                </span>
+                <a href="#">Host new Event</a>
+            </span>
+
+            <span class="menu--item">
+                <span class="user--avatar--bar">
+                    <img src={catAvt} />
+                </span>
+            </span>
+        </div>
     </nav>
 
     <div class="grid-container">

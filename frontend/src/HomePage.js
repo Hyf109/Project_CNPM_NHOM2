@@ -1,22 +1,14 @@
-import * as React from 'react'
-import './App.scss'
+import React from "react";
+import Appbar from "components/HomePage/Menu/Appbar";
+import './HomePage.scss'
 
-
-//components
-import Appbar from 'components/HomePage/Menu/Appbar'
-import Contents from 'components/HomePage/Contents/Contents'
-import Footer from 'components/HomePage/Footer/Footer'
-
-export const HomePage = () => {
-  return (
-    <>
-      <Appbar />
-
-      <Contents/>
-        
-      <Footer/>
-    </>
-  )
+function HomePage() {
+    return (
+        <div>
+            <Appbar />
+            <div className="home-page"></div>
+        </div>
+    )
 }
 
 export default HomePage
