@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const {requireAuth} = require('../middleware/authMiddleware');
 
 const { getEventByID, getEvents, createEvent, deleteEvent, updateEvent } = require('../controllers/eventController');
 
 router.get('/:id', getEventByID);
 
-router.get('/', getEvents);
+router.get('/', requireAuth, getEvents);
 
 router.post('/', createEvent);
 
