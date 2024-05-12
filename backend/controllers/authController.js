@@ -1,5 +1,7 @@
 const User = require('../models/userCredential')
 const jwt = require('jsonwebtoken');
+const managerSchema = require('../models/managerModel');
+const profileSchema = require('../models/profileModel');
 
 //Handle errors
 const handleErrors = (err) => {
@@ -47,15 +49,28 @@ const signUpGet = (req, res) => {
     
 }
 
+//Create account
 const signUpPost = async (req, res) => {
     const {email, username, password} = req.body;
 
     try {
         const user = await User.create(req.body);
         const token = createToken(user._id); //Place this in a cookie
+        
+        const userEventManager = await managerSchema.create({
+            user_id: user._id,
+            events: []
+        });
+
+        const userProfileManager = await profileSchema.create({
+            user_id: user._id,
+            contact_detail: '',
+            description: ''
+        });
+        
         res.cookie('jwt', token, {httpOnly: true, maxAge: maxAge * 1000});
 
-        res.status(201).json({user: user._id}); 
+        res.status(201).json({user: user._id, userEventManager, userProfileManager}); 
 
     } catch (err) {
         const errors = handleErrors(err);
@@ -97,3 +112,4 @@ module.exports = {
     loginPost,
     logoutGet
 }
+
