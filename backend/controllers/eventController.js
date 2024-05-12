@@ -7,14 +7,27 @@ const mongoose = require('mongoose');
 //Create event
 const createEvent = async(req, res) => {
     try {
-        req.body.host_id = res.locals.user._id;
+        let user_id = res.locals.user._id.toString();
+        req.body.host_id = user_id;
 
         const event = await eventSchema.create(req.body);
-        const manager = await managerSchema.find({user_id: res.locals.user._id});
+        const manager = await managerSchema.findOne({user_id: res.locals.user._id});
+        
+        manager.events.push({
+            event_id: event._id,
+            is_host: true
+        });
 
-        manager.events.push({})
+        event.member_list.push({
+            member_id: user_id
+        })
 
-        res.status(200).json({event});
+
+
+        manager.save();
+        event.save();
+
+        res.status(200).json({event, manager});
     } catch (error) {
         res.status(400).json({error: error.message});
     }
@@ -70,7 +83,6 @@ const deleteEvent = async(req, res) => {
 
     try {
         const event = await eventSchema.findOneAndDelete({_id: id});
-        
 
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(404).json('Cannot find event');
@@ -82,12 +94,51 @@ const deleteEvent = async(req, res) => {
     }
 }
 
+//Join event
+const joinEvent = async(req, res) => {
+    const event_id = req.params.id;
+    const member_id = res.locals.user._id;
+    
+    try {
+        //Add member_id to event's member list
+        const event = await eventSchema.findById(event_id);
+
+        //Check if user already in event
+        const flag = event.member_list.find(tmp => tmp.member_id === member_id.toString());
+
+        if (!flag) {
+            //Add event_id and is_host to user's event manager
+            const manager = await managerSchema.findOne({user_id: member_id});
+
+            manager.events.push({
+                event_id: event_id,
+                is_host: false
+            });
+    
+            event.member_list.push({
+                member_id: member_id
+            });
+    
+            await manager.save();
+            await event.save();
+    
+            res.status(200).json({mssg: 'User joined event'});
+        } else {
+            res.status(200).json({mssg: 'You already joined the event'});
+        }
+    } catch (error) {
+        res.status(400).json({error: error.message});
+    }
+}
+
+
 module.exports = {
     createEvent, 
     deleteEvent,
     getEventByID,
     getEvents,
-    updateEvent
+    updateEvent,
+    joinEvent
 }
 
 

@@ -51,8 +51,6 @@ const signUpGet = (req, res) => {
 
 //Create account
 const signUpPost = async (req, res) => {
-    const {email, username, password} = req.body;
-
     try {
         const user = await User.create(req.body);
         const token = createToken(user._id); //Place this in a cookie
@@ -99,6 +97,7 @@ const loginPost = async (req, res) => {
     }
 }
 
+//Log user out
 const logoutGet = (req, res) => {
     //We cant delete cookie from server so we replace it with an empty jwt cookie with short age
     res.cookie('jwt', '', {httpOnly: true, maxAge: 1});
