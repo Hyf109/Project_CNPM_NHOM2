@@ -1,3 +1,9 @@
+$gap: 10px;
+
+// body {
+//     background-color: #111418;
+// }
+
 .home-page {
     align-items: center;
     justify-content: center;
@@ -61,9 +67,10 @@
 
     .about-us {
         display: flex;
-        margin: 100px;
+        padding: 100px;
 
         & p {
+            padding-left: $gap;
             font-size: 16px;
         }
 
@@ -88,17 +95,40 @@
                     font-size: 18px;
                     text-align: center;
                 }
-
-                .fa-regular {
-                    font-size: 50px;
+                & div {
                     justify-content: center;
                     align-items: center;
+                    display: flex;
+                    & img {
+                        margin: 2*$gap;
+                        padding: 2*$gap;
+                    }
                 }
+                
             }
         }
 
-        img {
+        .about-us-pic {
             padding: 100px;
+
+            & img {
+                width: 180%;
+            }
+        }
+
+
+    }
+}
+
+.contact-us {
+    padding: 0 100px 50px 100px;
+    ul {
+        display: flex;
+
+        & li {
+            list-style-type: none;
+            font-size: 40px;
+            padding: 10px;
         }
     }
 }
