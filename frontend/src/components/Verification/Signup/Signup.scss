@@ -67,7 +67,7 @@ section {
 }
 
 
-.input-box {
+.input-box-signup {
     border: none;
 	border-bottom: 2px solid #D1D1D4;
 	background: none;
@@ -86,9 +86,9 @@ section {
 
 
 
-.input-box:active,
-.input-box:focus,
-.input-box:hover {
+.input-box-signup:active,
+.input-box-signup:focus,
+.input-box-signup:hover {
 	outline: none;
 	border-bottom-color: #6A679E;
     
@@ -97,7 +97,7 @@ section {
     }
 }
 
-.input-box input {
+.input-box-signup input {
     color: black;
     border-radius: 30px;
     position: relative;

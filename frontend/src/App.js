@@ -5,7 +5,7 @@ import { Terms } from './components/Verification/Terms/Terms';
 
 function App() {
   return (
-    <h1>Chua hieu tai sao</h1>
+    <h1>Chua dung</h1>
   );
 }
 
