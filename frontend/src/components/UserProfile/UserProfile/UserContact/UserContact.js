@@ -6,7 +6,7 @@ function UserContact() {
         <div class="user-link">
             <a href="https://www.github.com/Raphael9143">
                 <button class="fa-brands fa-github"><b>Github</b></button>
-                <label>/Raphael9143</label>
+                <label>Raphael9143</label>
             </a>
 
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
@@ -16,12 +16,12 @@ function UserContact() {
 
             <a href="https://www.instagram.com/dxgdium">
                 <button class="fa-brands fa-instagram"><b>Instagram</b></button>
-                <label>/dxgdium</label>
+                <label>dxgdium</label>
             </a>
 
             <a href="https://www.facebook.com/iamdxgdium">
                 <button class="fa-brands fa-facebook"><b>Facebook</b></button>
-                <label>/iamdxgdium</label>
+                <label>iamdxgdium</label>
             </a>
 
             <a href="mailto:s3jack3s@gmail.com">

@@ -1,18 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './Introduction.scss'
-import 'App.scss'
+import catAvt from 'components/assets/images/cat.png'
 
 function UserIntroduction() {
     return(
         <div class="wrapper--intro">
-            <div class="taskbar">
+            <div class="intro-taskbar">
                 <div>
-                    <img src="./assets/images/cat.png" class="user-avatar"></img>
+                    <Link to="/profile" ><img src={catAvt} class="user-avatar"></img></Link>
                 </div>
                 <div class="username">
                     <b>Username</b>
                 </div>
-                <a href="user-profile1.html"><button type="button" class="exit-btn">X</button></a>
+                <div className="exit-btn">
+                    <Link to="/profile" className="btn">X</Link>
+                </div>
             </div>
 
             <div>
