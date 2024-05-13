@@ -55,4 +55,38 @@ span > * {
     margin-left: 40px;
 }
 
+@media screen and (max-width: 600px) {
+    .NavBar {
+        flex-direction: column;
+        height: 150px;
+    }
+
+    .logo {
+        margin: 0;
+        order: 1;
+    }
+
+    .user {
+        margin: 0;
+        order: 1;
+    }
+
+    .nav-links {
+        order: 2;
+        width: 100%;
+    }
+
+    .nav-links ul {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .nav-links ul li {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+}
+
 

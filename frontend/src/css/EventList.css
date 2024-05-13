@@ -1,9 +1,11 @@
 .event-list {
     width: 100%;
     margin: 20px;
+    overflow-y: auto;
 }
 
 .event-card {
+    border-radius: 10px;
     display: flex;
     background-color: white;
     margin-bottom: 20px;
