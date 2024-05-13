@@ -24,13 +24,13 @@ function Signin() {
                     <h1>SIGN IN</h1>
                     <div class="login-field">
                         <div class="input-box">
-                            <span class="icon-user"></span>
+                            <span class="fa-solid fa-user"></span>
                             <input type="text" placeholder="Username" required ></input>
 
                         </div>
 
                         <div class="input-box">
-                            <span class="icon-lock"></span>
+                            <span class="fa-solid fa-lock"></span>
                             <input type="password" placeholder="Password" required></input>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ function Signin() {
 
 
                     <div class="register-link">
-                        <p>Don't have an account? <a href="register.html">Register</a></p>
+                        <p>Don't have an account? <Link to="/signup">Register</Link></p>
                     </div>
                 </div>
             </div>

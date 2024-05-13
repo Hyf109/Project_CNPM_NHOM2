@@ -24,17 +24,17 @@ section {
     box-shadow: 0 10px 90px rgba(0, 0, 0, 0.5);
 }
 
-.signup-form {
+.signin-form {
     align-items: center;
     justify-content: center;
-    width: 600px;    
-    padding: 40px 50px;
+    width: 600px;
+    padding: 100px 50px;
 }
 
 .logo-field {
     align-items: center;
     justify-content: center;
-    padding: 40px 30px;
+    padding: 100px 30px;
 }
 
 .vertical-line {
@@ -62,7 +62,7 @@ section {
     margin-bottom: 20px;
 }
 
-.signup-field {
+.login-field {
 	padding: 20px 0px;	
 	position: relative;	
 }
@@ -77,22 +77,23 @@ section {
 	font-weight: 700;
 	width: 100%;
 	transition: .2s;
-    
+
+    .fa-solid {
+        position: absolute;
+        font-size: 24px;
+        margin-top: 18px;
+    } 
 }
 
-.icon-user, .icon-lock, .icon-envelope, .icon-check {
-    position: absolute;
-    font-size: 18px;
-    margin-top: 14px;
-}
+
 
 .input-box:active,
 .input-box:focus,
 .input-box:hover {
 	outline: none;
 	border-bottom-color: #6A679E;
-    
-    .icon-envelope, .icon-lock, .icon-user, .icon-check {
+
+    .fa-solid {
         color: #6a679e;
     }
 }
@@ -101,32 +102,34 @@ section {
     color: black;
     border-radius: 30px;
     position: relative;
-    height: 45px;
+    height: 60px;
     width: 100%;
     border: none;
     background-color: transparent;
     outline: none;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 20px;
     padding-left: 60px;
 }
 
-.confirm-terms {
-    font-size: 18px;
-    padding-top: 20px;
+.remember-forgot label {
+    font-size: 24px;
 }
 
-.confirm-terms a {
-    cursor: pointer;
-    text-decoration-line: underline;
-    color: blue;
+.remember-forgot a {
+    font-size: 24px;
+    margin-left: 45%;
 }
 
-.confirm-terms a:hover {
+.remember-forgot a:hover {
     color: red;
 }
 
-.signup-form button {
+.remember-forgot input:hover {
+    cursor: pointer;
+}
+
+.signin-form button {
     justify-content: center;
     background-color: #bfbfbf;
     border: none;
@@ -143,24 +146,18 @@ section {
     
 }
 
-.signup-form button:hover {
+.signin-form button:hover {
     color: white;
     cursor: pointer;
     background-color: #999999;
     
 }
 
-.login-link p {
-    font-size: 18px;
-    margin-left: 22%;
+.register-link p {
+    font-size: 24px;
+    margin-left: 10%;
 }
 
-.login-link a:hover {
+.register-link a:hover {
     color: red;
-}
-
-
-.terms-popup {
-    display: none;
-
 }
