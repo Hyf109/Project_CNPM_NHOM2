@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finder</title>
+    <link rel="stylesheet" href="./assets/css/host1.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+</head>
+
+<body>
+    <script src="https://kit.fontawesome.com/4a93d04fa1.js" crossorigin="anonymous"></script>
+    
+    <nav class="menu">
+        <div>
+            <span class="menu--item">
+                <span class="menu--icon">
+                    <a><img src={logoImg} alt=""></img></a>
+                </span>
+            </span>
+            <span class="menu--item">
+                <span class="menu--icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <a>Search</a>
+            </span>
+
+            <span class="menu--item">
+                <span class="menu--icon">
+                    <i class="fa-solid fa-calendar-minus"></i>
+                </span>
+                <a href="#">My Schedule</a>
+            </span>
+
+            <span class="menu--item">
+                <span class="menu--icon">
+                    <i class="fa-solid fa-square-plus"></i>
+                </span>
+                <a href="#">Host new Event</a>
+            </span>
+
+            <span class="menu--item">
+                <span class="user--avatar--bar">
+                    <img src={catAvt} />
+                </span>
+            </span>
+        </div>
+    </nav>
+
+    <div class="grid-container">
+        <div class="grid-item-1">
+            <h3 class="grid-column-title-1">Current schedule</h3>
+            <div class="scrollbar" id="style-1">
+                <div class="event-card">
+                    <div class="event-card-1">
+                        <ul class="event-card-name event-card-component">
+                            Demo Schedule
+                        </ul>
+                        <ul class="event-card-participants">
+                            <i class="fa-regular fa-user event-card-component"></i>
+                            <li class="event-card-paticipants-number event-card-component">
+                                0/5
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="event-card-2">
+                        <ul class="event-card-schedule">
+                            <i class="fa-solid fa-calendar-days event-card-component"></i>
+                            <li class="evene-card-schedule-date event-card-component">1/1/2024</li>
+                        </ul>
+                    </div>
+                    <div class="event-card-3">
+                        <ul class="event-card-time">
+                            <i class="fa-regular fa-clock event-card-component"></i>
+                            <li class="event-card-time--event_time event-card-component">8h</li>
+                        </ul>
+                    </div>
+                    <div class="event-card-4">
+                        <ul class="event-card-place">
+                            <i class="fa-solid fa-location-crosshairs event-card-component"></i>
+                            <li class="event-card-place-event_place event-card-component">
+                                Online
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="force-overflow"></div>
+            </div>
+
+        </div>
+
+        <div class="grid-item-2">
+            <div class="row-1 event-host">
+                <input type="image" class="event-img">
+                <input type="text" class="event-input-name event-input" placeholder="Activity name">
+                <input type="text" class="event-input-date event-input" placeholder="Date selection">
+                <input type="text" class="event-input-time event-input" placeholder="Time">
+            </div>
+            <div class="row-2 event-host">
+                <button class="event-pick_place event-button">
+                    Pick from map
+                </button>
+                <input type="text" class="event-input-place event-input" placeholder="Place">
+                <input type="text" class="event-input-max_participants event-input"
+                    placeholder="Number of participants">
+            </div>
+            <div class="row-3 event-host">
+                <input type="text" class="event-input-description event-input" placeholder="Description">
+            </div>
+            <div class="row-4 event-host">
+                <button class="event-add_tags event-button">
+                    Add tags
+                </button>
+                <input type="text" class="event-input-tags event-input" placeholder="Tags list">
+            </div>
+            <div class="row-5 event-host">
+                <button class="event-create_button event-button">
+                    Create event
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

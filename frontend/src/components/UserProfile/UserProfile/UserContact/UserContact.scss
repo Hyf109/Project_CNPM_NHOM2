@@ -1,0 +1,36 @@
+.user-link {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+
+    .fa-brands {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 36px;
+        padding: 10px;
+        margin-bottom: 5px;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    & a {
+        align-items: center;
+        justify-content: center;
+
+        & label {
+            float: inline-end;
+            padding-top: 20px;
+            font-size: 20px;
+        }
+
+        & b {
+            padding-left: 15px;
+            font-size: 20px;
+        }
+    }
+}
