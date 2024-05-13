@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import './Signin.scss'
 import logoImg from 'components/assets/images/logo.png'
 import seclogoImg from 'components/assets/images/logo2.png'
@@ -34,7 +36,7 @@ function Signin() {
                     </div>
 
                     <a href="home.html">
-                        <button type="submit" class="btn">Login</button>
+                        <Link to="/search"><button type="submit" class="btn">Login</button></Link>
                     </a>
 
 

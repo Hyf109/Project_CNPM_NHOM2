@@ -13,8 +13,6 @@ export const Search = () => {
       <Appbar />
 
       <Contents/>
-        
-      <Footer/>
     </>
   )
 }

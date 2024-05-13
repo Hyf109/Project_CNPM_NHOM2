@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Appbar from "components/HomePage/Menu/Appbar";
 import Horizontal from "components/HomePage/Horizontal/Horizontal";
+import { Link } from "react-router-dom";
 
 // scss components
 import './HomePage.scss'
@@ -27,9 +28,11 @@ function HomePage() {
                         </h1>
                     </div>
                     <div className="get-start-button">
-                        <button>
-                            Create account
-                        </button>
+                        <Link to="/signin">
+                            <button>
+                                Create account
+                            </button>
+                        </Link>
                     </div>
                 </div>
 

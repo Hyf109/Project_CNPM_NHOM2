@@ -14,14 +14,14 @@ function Appbar() {
             <div>
                 <span class="menu--item">
                     <span class="menu--icon">
-                        <a><img src={logoImg} alt=""></img></a>
+                        <Link to="/"><img src={logoImg} alt=""></img></Link>
                     </span>
                 </span>
                 <span class="menu--item">
                     <span class="menu--icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
-                    <a>Search</a>
+                    <Link to="/search">Search</Link>
                 </span>
 
                 <span class="menu--item">
@@ -40,7 +40,7 @@ function Appbar() {
 
                 <span class="menu--item">
                     <span class="user--avatar--bar">
-                        <img src={catAvt} />
+                        <Link to='/profile'><img src={catAvt} /></Link>
                     </span>
                 </span>
             </div>
