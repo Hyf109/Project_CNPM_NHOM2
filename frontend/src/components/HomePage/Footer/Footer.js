@@ -6,7 +6,7 @@ function Footer() {
         <div>
             <footer>
                 <p>
-                    &copy; {new Date().getFullYear()} Finder
+                    &copy; {new Date().getFullYear()} Finder, UET SE - Project, Group 2, LLC, All Rights Reversed
                 </p>
             </footer>
         </div>

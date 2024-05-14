@@ -22,4 +22,9 @@ body {
     color: #23282c;
     text-align: left;
     background-color: $background-color-body; 
+    
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
 }

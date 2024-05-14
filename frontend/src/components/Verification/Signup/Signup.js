@@ -8,7 +8,7 @@ import seclogoImg from 'components/assets/images/logo2.png'
 export const Signup = () => {
     return (
         <>
-            <section><div className="wrapper">
+            <div className="wrapper">
                 <div class="signup-form">
                     <h1 className="sign--up--title">SIGN UP</h1>
                     <div class="signup-field">
@@ -57,7 +57,7 @@ export const Signup = () => {
                         <img src={seclogoImg} class="sec-logo"></img>
                     </div>
                 </div>
-            </div></section>
+            </div>
         </>
     )
 }
