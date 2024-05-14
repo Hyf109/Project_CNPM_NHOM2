@@ -22,8 +22,6 @@ const createEvent = async(req, res) => {
             member_id: user_id
         })
 
-
-
         manager.save();
         event.save();
 
@@ -82,13 +80,30 @@ const deleteEvent = async(req, res) => {
     const {id} = req.params;
 
     try {
-        const event = await eventSchema.findOneAndDelete({_id: id});
+        //Remove event from all user's event manager
+        const event = await eventSchema.findOne({_id: id});
 
-        if (!mongoose.Types.ObjectId.isValid(id)) {
-            return res.status(404).json('Cannot find event');
+        if (event.host_id === res.locals.user._id.toString()) {
+            await Promise.all(event.member_list.map(async (member) => {
+                await managerSchema.findOneAndUpdate(
+                    {user_id: member.member_id},
+                    {$pull: {events: {event_id: id}}},
+                    {new: true}
+                );
+            }));
+            
+            //Remove event
+            await eventSchema.findOneAndDelete({_id: id});
+    
+            if (!mongoose.Types.ObjectId.isValid(id)) {
+                return res.status(404).json('Cannot find event');
+            }
+
+            res.status(200).json({mssg: 'Deleted event'});
         }
 
-        res.status(200).json({event});
+        res.status(400).json({mssg: 'User have no permission to delete this event'});
+
     } catch (error) {
         res.status(400).json({error: error.message});
     }
@@ -131,6 +146,31 @@ const joinEvent = async(req, res) => {
     }
 }
 
+//Leave event
+const leaveEvent = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const user_id = res.locals.user._id;
+    
+        //Remove user from event
+        await eventSchema.findOneAndUpdate(
+            {_id: id},
+            {$pull: {member_list: {member_id: user_id}}}
+        );
+    
+        //Remove event from user's manager
+        await managerSchema.findOneAndUpdate(
+            {user_id: user_id},
+            {$pull: {events: {event_id: id}}},
+            {new: true}
+        );
+
+        res.status(200).json({mssg: 'Left event'});
+    } catch (error) {
+        res.status(400).json(error.message);
+    }
+}
+
 
 module.exports = {
     createEvent, 
@@ -138,7 +178,8 @@ module.exports = {
     getEventByID,
     getEvents,
     updateEvent,
-    joinEvent
+    joinEvent,
+    leaveEvent
 }
 
 
