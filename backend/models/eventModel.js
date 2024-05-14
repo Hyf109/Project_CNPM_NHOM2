@@ -39,4 +39,17 @@ const eventSchema = new Schema({
     ]
 });
 
+eventSchema.pre('save', function(next) {
+    const now = new Date();
+    if (now < this.startTime) {
+      this.status = 'upcoming';
+    } else if (now >= this.startTime && now <= this.endTime) {
+      this.status = 'occurring';
+    } else if (now > this.endTime) {
+      this.status = 'ended';
+    }
+    next();
+});
+  
+
 module.exports = mongoose.model('events', eventSchema);
