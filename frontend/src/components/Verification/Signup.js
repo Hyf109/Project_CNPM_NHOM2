@@ -51,10 +51,10 @@ export const Signup = () => {
 
                 <div class="logo-field">
                     <div>
-                        <img src={logoImg} class="main-logo"></img>
+                        <Link to="/"><img src={logoImg} class="main-logo"></img></Link>
                     </div>
                     <div>
-                        <img src={seclogoImg} class="sec-logo"></img>
+                        <Link to="/"><img src={seclogoImg} class="sec-logo"></img></Link>
                     </div>
                 </div>
             </div>

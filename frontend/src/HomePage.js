@@ -58,7 +58,6 @@ function HomePage() {
                             </h2>
                         </FadeInSection>
                         <Feature />
-
                         <Horizontal />
 
                     </div>
@@ -81,10 +80,6 @@ function HomePage() {
                 </Element>
                 <Donate />
             </Element>
-
-
-
-
             <Footer />
         </>
     )
