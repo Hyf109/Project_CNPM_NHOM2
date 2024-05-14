@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.section {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
 
 .wrapper {
     position: absolute;
@@ -11,7 +24,7 @@
     box-shadow: 0 10px 90px rgba(0, 0, 0, 0.5);
 }
 
-.signup-form {
+.form {
     align-items: center;
     justify-content: center;
     width: 600px;    
@@ -49,13 +62,13 @@
     margin-bottom: 20px;
 }
 
-.signup-field {
+.field {
 	padding: 20px 0px;	
 	position: relative;	
 }
 
 
-.input-box-signup {
+.input-box {
     border: none;
 	border-bottom: 2px solid #D1D1D4;
 	background: none;
@@ -74,29 +87,33 @@
 
 
 
-.input-box-signup:active,
-.input-box-signup:focus,
-.input-box-signup:hover {
+.input-box:active,
+.input-box:focus,
+.input-box:hover {
 	outline: none;
 	border-bottom-color: #6A679E;
     
-    .icon-envelope, .icon-lock, .icon-user, .icon-check {
+    .fa-solid {
         color: #6a679e;
     }
 }
 
-.input-box-signup input {
+.input-box input {
     color: black;
-    border-radius: 30px;
     position: relative;
     height: 45px;
-    width: 100%;
+    width: 400px;
     border: none;
     background-color: transparent;
     outline: none;
     font-weight: 500;
     font-size: 16px;
-    padding-left: 60px;
+    margin-left: 50px;
+    padding-left: 10px;
+}
+
+input:-webkit-autofill {
+    border: 1px solid blue;
 }
 
 .confirm-terms {
@@ -114,7 +131,7 @@
     color: red;
 }
 
-.signup-form button {
+.form button {
     justify-content: center;
     background-color: #bfbfbf;
     border: none;
@@ -131,7 +148,7 @@
     
 }
 
-.signup-form button:hover {
+.form button:hover {
     color: white;
     cursor: pointer;
     background-color: #999999;
@@ -150,5 +167,14 @@
 
 .terms-popup {
     display: none;
-
 }
+
+.register-link p {
+    font-size: 24px;
+    margin-left: 10%;
+}
+
+.register-link a:hover {
+    color: red;
+}
+

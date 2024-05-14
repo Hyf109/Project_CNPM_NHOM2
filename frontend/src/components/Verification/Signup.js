@@ -1,34 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Signup.scss'
+import 'components/Verification/Verification.scss'
 
 import logoImg from 'components/assets/images/logo.png'
 import seclogoImg from 'components/assets/images/logo2.png'
 
 export const Signup = () => {
     return (
-        <>
+        <div className="section">
             <div className="wrapper">
-                <div class="signup-form">
+                <div class="form">
                     <h1 className="sign--up--title">SIGN UP</h1>
-                    <div class="signup-field">
-                        <div class="input-box-signup">
+                    <div class="field">
+                        <div class="input-box">
                             <span class="fa-solid fa-envelope"></span>
                             <input type="email" placeholder="Email" required></input>
                         </div>
 
-                        <div class="input-box-signup">
+                        <div class="input-box">
                             <span class="fa-solid fa-user"></span>
                             <input type="text" placeholder="Username" required ></input>
 
                         </div>
 
-                        <div class="input-box-signup">
+                        <div class="input-box">
                             <span class="fa-solid fa-lock"></span>
                             <input type="password" placeholder="Password" required></input>
                         </div>
 
-                        <div class="input-box-signup">
+                        <div class="input-box">
                             <span class="fa-solid fa-check"></span>
                             <input type="password" placeholder="Confirm password" required></input>
                         </div>
@@ -58,7 +58,7 @@ export const Signup = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

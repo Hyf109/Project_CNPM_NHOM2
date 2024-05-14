@@ -45,7 +45,12 @@ function LoginBar() {
                         </span>
                         <span class="menu--item">
                             <span className="menu--button">
-                                <button onClick={() => scrollToElement('contactUs')}>Contact us</button>
+                                <button onClick={() => scrollToElement('contactUs')}>Contact</button>
+                            </span>
+                        </span>
+                        <span class="menu--item">
+                            <span className="menu--button">
+                                <button onClick={() => scrollToElement('donateUs')}>Donate</button>
                             </span>
                         </span>
                     </div>

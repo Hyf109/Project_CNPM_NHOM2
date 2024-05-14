@@ -13,6 +13,9 @@ import Footer from "components/HomePage/Footer/Footer";
 import aboutUs from 'components/assets/images/about-us.png'
 import Feature from "components/HomePage/Feature/Feature";
 import LoginBar from "components/Verification/Menu/LoginBar";
+import Donate from "components/HomePage/Donate/Donate";
+
+
 
 function HomePage() {
     return (
@@ -64,16 +67,21 @@ function HomePage() {
                     </div>
                 </Element>
                 <Element name="contactUs" className="contact-us">
+
                     <h1>
                         Follow & Contact Us
                     </h1>
+
                     <ul>
                         <li><i class="fa-brands fa-facebook"></i></li>
                         <li><i class="fa-solid fa-envelope"></i></li>
                         <li><i class="fa-brands fa-github"></i></li>
                     </ul>
+
                 </Element>
+                <Donate />
             </Element>
+
 
 
 

@@ -4,13 +4,14 @@ import Search from './Search'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Terms } from 'components/Verification/Terms/Terms'
-import { Signup } from './components/Verification/Signup/Signup' 
-import Signin from 'components/Verification/Signin/Signin'
+import { Signup } from './components/Verification/Signup' 
+import Signin from 'components/Verification/Signin'
 import UserIntroduction from 'components/UserProfile/UserIntroduction/UserIntroduction'
 import UserProfile from 'components/UserProfile/UserProfile/UserProfile'
 import UserSchedule from 'components/UserProfile/UserSchedule/UserSchedule'
 import HostEvent from 'HostEvent'
 import HomePage from 'HomePage'
+import TestMap from 'testmap'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -26,6 +27,7 @@ root.render(
         <Route path='introduction' element={<UserIntroduction />}/>
         <Route path='host-event' element={<HostEvent />} />
         <Route path='schedule' element={<UserSchedule />} />
+        <Route path='testmap' element={<TestMap />}/>
         <Route />
       </Routes>
     </BrowserRouter>

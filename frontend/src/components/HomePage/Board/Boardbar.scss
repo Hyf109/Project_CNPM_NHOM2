@@ -22,8 +22,7 @@ $hover-transform: scale(1,2);
     justify-content: center;
 
     .board--item {
-        padding: 5px;
-        margin: 0 15px;
+        padding: 15px;
 
         .fa-solid {
             font-size: 25px;
@@ -41,7 +40,6 @@ $hover-transform: scale(1,2);
             margin-left: 14px;
             padding: 0 5px;
             background-color: rgba(255, 255, 255, 0.6);
-            cursor: pointer;
         }
 
         a {
@@ -56,14 +54,15 @@ $hover-transform: scale(1,2);
         }
 
         .search-btn {
-            position: absolute;
+            position: relative;
+            justify-content: center;
+            align-items: center;
             font-size: 18px;
-            margin-top: 8px;
             margin-left: 18px;
         }
 
         .search {
-            padding: 5px 30px;
+            padding: 5px 10px;
             width: 360px;
             border-radius: 10px;
         }
