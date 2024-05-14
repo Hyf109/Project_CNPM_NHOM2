@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import './Signin.scss'
+import 'components/Verification/Verification.scss'
+import 'App.scss'
 import logoImg from 'components/assets/images/logo.png'
 import seclogoImg from 'components/assets/images/logo2.png'
 
 function Signin() {
     return (
-        <>
+        <div className="section">
             <div class="wrapper">
                 <div class="logo-field">
                     <div>
@@ -20,9 +21,9 @@ function Signin() {
 
                 <div class="vertical-line"></div>
 
-                <div class="signin-form">
+                <div class="form">
                     <h1>SIGN IN</h1>
-                    <div class="login-field">
+                    <div class="field">
                         <div class="input-box">
                             <span class="fa-solid fa-user"></span>
                             <input type="text" placeholder="Username" required ></input>
@@ -45,7 +46,7 @@ function Signin() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
