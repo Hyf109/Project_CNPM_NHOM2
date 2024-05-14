@@ -7,7 +7,7 @@ import seclogoImg from 'components/assets/images/logo2.png'
 
 function Signin() {
     return (
-        <section>
+        <>
             <div class="wrapper">
                 <div class="logo-field">
                     <div>
@@ -45,7 +45,7 @@ function Signin() {
                     </div>
                 </div>
             </div>
-        </section>
+        </>
     )
 }
 
