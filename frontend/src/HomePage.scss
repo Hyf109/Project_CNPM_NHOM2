@@ -1,21 +1,20 @@
 $gap: 10px;
-
-// body {
-//     background-color: #111418;
-// }
+$background-color-body: #111418;
+$background-color-nav: #a6a6a6;
+$hover-transform: scale(1,2);
 
 .home-page {
     align-items: center;
     justify-content: center;
     min-height: 792px;
-    background-color: #111418;
     color: white;
 
     .home-page-background {
+        z-index: -1;
         background-size: cover;
         background-position: 50%;
         pointer-events: none;
-        position: absolute;
+        position:fixed;
         bottom: 0;
         left: 0;
         right: 0;
@@ -24,6 +23,7 @@ $gap: 10px;
     }
 
     .get-start-items {
+        z-index: 500;
         height: 792px;
         padding-top: 130px;
         position: relative;
@@ -44,7 +44,7 @@ $gap: 10px;
         }
 
         .get-start-button {
-            background-color: #0000;
+            // background-color: #0000;
             margin-top: 20px;
 
             & button {
@@ -66,6 +66,7 @@ $gap: 10px;
     }
 
     .about-us {
+        z-index: 500;
         display: flex;
         padding: 100px;
 
@@ -91,6 +92,7 @@ $gap: 10px;
 }
 
 .contact-us {
+    z-index: 500;
     padding: 0 100px 50px 100px;
     ul {
         display: flex;
@@ -107,4 +109,5 @@ $gap: 10px;
 .contact-us {
     justify-content: center;
     align-items: center;
+    background-color: #111418;
 }
