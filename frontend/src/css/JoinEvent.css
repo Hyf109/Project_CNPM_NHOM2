@@ -1,4 +1,5 @@
-.three-column-layout {
+.join-event {
+    margin-top: 5px;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -26,6 +27,21 @@ aside {
 
 .right-column {
     
+}
+
+@media screen and (max-width: 600px) {
+    .join-event .left-column {
+        display: none;
+    }
+
+    .join-event .right-column {
+        display: none;
+    }
+
+    .center-column {
+        width: 100%;
+    }
+
 }
 
 

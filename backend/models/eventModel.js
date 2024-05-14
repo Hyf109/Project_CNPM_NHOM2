@@ -3,29 +3,23 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
+    host_id: {
+        type: String,
+        required: true
+    },
     title: {
         type: String, 
         required: true
     },
     startTime: {
-        type: String,
+        type: Date,
         required: true
     },
     endTime: {
-        type: String,
-        required: true
-    },
-    startDate: {
         type: Date,
-        required: true
-    },
-    endDate: {
-        type: Date,
-        required: true
     },
     status: {
-        type: Boolean,
-        required: true
+        type: String,
     },
     capacity: {
         type: Number,
@@ -37,7 +31,12 @@ const eventSchema = new Schema({
     },
     description: {
         type: String
-    }
+    },
+    member_list: [
+        {
+            member_id: String
+        }
+    ]
 });
 
 module.exports = mongoose.model('events', eventSchema);
