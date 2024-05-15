@@ -28,7 +28,7 @@ function Appbar() {
                     <span class="menu--icon">
                         <i class="fa-solid fa-calendar-minus"></i>
                     </span>
-                    <a href="#">My Schedule</a>
+                    <Link to="/schedule">My Schedule</Link>
                 </span>
 
                 <span class="menu--item">

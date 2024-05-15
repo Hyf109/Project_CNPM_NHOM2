@@ -8,9 +8,9 @@ import { Signup } from './components/Verification/Signup'
 import Signin from 'components/Verification/Signin'
 import UserIntroduction from 'components/UserProfile/UserIntroduction/UserIntroduction'
 import UserProfile from 'components/UserProfile/UserProfile/UserProfile'
-import UserSchedule from 'components/UserProfile/UserSchedule/UserSchedule'
 import HostEvent from 'HostEvent'
 import HomePage from 'HomePage'
+import TestScedule from 'TestSchedule'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -25,7 +25,7 @@ root.render(
         <Route path='profile' element={<UserProfile/>} />
         <Route path='introduction' element={<UserIntroduction />}/>
         <Route path='host-event' element={<HostEvent />} />
-        <Route path='schedule' element={<UserSchedule />} />
+        <Route path='schedule' element={<TestScedule />} />
         <Route />
       </Routes>
     </BrowserRouter>
