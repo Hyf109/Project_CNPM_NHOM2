@@ -72,9 +72,12 @@ function HomePage() {
                     </h1>
 
                     <ul>
-                        <li><i class="fa-brands fa-facebook"></i></li>
-                        <li><i class="fa-solid fa-envelope"></i></li>
-                        <li><i class="fa-brands fa-github"></i></li>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-brands fa-instagram"></i></a>
                     </ul>
 
                 </Element>
