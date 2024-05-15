@@ -11,7 +11,6 @@ import UserProfile from 'components/UserProfile/UserProfile/UserProfile'
 import UserSchedule from 'components/UserProfile/UserSchedule/UserSchedule'
 import HostEvent from 'HostEvent'
 import HomePage from 'HomePage'
-import TestMap from 'testmap'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -27,7 +26,6 @@ root.render(
         <Route path='introduction' element={<UserIntroduction />}/>
         <Route path='host-event' element={<HostEvent />} />
         <Route path='schedule' element={<UserSchedule />} />
-        <Route path='testmap' element={<TestMap />}/>
         <Route />
       </Routes>
     </BrowserRouter>
