@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Appbar from "components/HomePage/Menu/Appbar";
+import Appbar from "components/HeaderOnly/Appbar";
 import Horizontal from "components/HomePage/Horizontal/Horizontal";
 import { Link } from "react-router-dom";
 import { Element } from "react-scroll";
 import FadeInSection from "components/effects/fadeEffects";
 
 // scss components
-import './HomePage.scss'
+import './pagestyle/HomePage.scss'
 
 // components
 import Footer from "components/HomePage/Footer/Footer";
