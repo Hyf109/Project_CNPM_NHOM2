@@ -8,7 +8,7 @@ function Boardbar() {
                 <span class="board--item">
                     <span class="board--icon">
                         <i class="fa-solid fa-calendar"></i>
-                        <input type="date" class="datebirth" value="2000-01-01" min="1900-01-01" max="2024-12-31"/>
+                        <input type="date" class="datebirth" value="2024-01-01" min="2024-01-01" max="2069-12-31"/>
                     </span>
                 </span>
 
