@@ -1,0 +1,20 @@
+.events-participating-in {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .manager,
+    .participant {
+        margin: 10px 0;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+
+    .manager {
+        margin-right: 10px;
+    }
+
+    .participant {
+        margin-left: 10px;
+    }
+}

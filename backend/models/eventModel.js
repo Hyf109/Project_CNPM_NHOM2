@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
+    host_id: {
+        type: String,
+        required: true
+    },
     title: {
         type: String, 
         required: true
@@ -15,7 +19,7 @@ const eventSchema = new Schema({
         type: Date,
     },
     status: {
-        type: Boolean,
+        type: String,
     },
     capacity: {
         type: Number,
@@ -27,7 +31,25 @@ const eventSchema = new Schema({
     },
     description: {
         type: String
-    }
+    },
+    member_list: [
+        {
+            member_id: String
+        }
+    ]
 });
+
+eventSchema.pre('save', function(next) {
+    const now = new Date();
+    if (now < this.startTime) {
+      this.status = 'upcoming';
+    } else if (now >= this.startTime && now <= this.endTime) {
+      this.status = 'occurring';
+    } else if (now > this.endTime) {
+      this.status = 'ended';
+    }
+    next();
+});
+  
 
 module.exports = mongoose.model('events', eventSchema);
