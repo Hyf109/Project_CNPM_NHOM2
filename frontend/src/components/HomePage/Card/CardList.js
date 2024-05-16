@@ -1,16 +1,25 @@
 import React from "react"
 import './Card.scss'
-import Card from "./Card"
+import useFetch from "hooks/useFetch";
+import moment from 'moment';
 
-function CardList() {
-    return (
-        <div className="list-card">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-        </div>
-    )
+const formatDate = (datetime) => {
+    if (!datetime) return null;
+    let date = moment(datetime);
+    let formattedDate = date.format('D/M/yyyy - h:mm a');
+
+    return formattedDate;
 }
 
-export default CardList
+const CardList = () => {
+    //Fetch data from backend serve
+
+    <div className="testing">
+        <div>
+            
+        </div>
+    </div>
+    
+}
+ 
+export default CardList;

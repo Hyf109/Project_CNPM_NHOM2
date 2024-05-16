@@ -6,7 +6,7 @@ const { getEventByID, getEvents, createEvent, deleteEvent, updateEvent, joinEven
 
 router.get('/get/:id', requireAuth, getEventByID);
 
-router.get('/get', requireAuth, getEvents);
+router.get('/get', getEvents);
 
 router.post('/create', requireAuth, createEvent);
 

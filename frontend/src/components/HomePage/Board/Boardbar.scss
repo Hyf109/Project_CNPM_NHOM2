@@ -11,7 +11,8 @@ $hover-transform: scale(1,2);
 }
 
 .taskbar {
-    margin: 0 130px;
+    
+    margin: 20px 130px 0px 130px;
     & div {
         display: flex;
     }
