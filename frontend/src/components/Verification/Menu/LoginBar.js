@@ -31,9 +31,9 @@ function LoginBar() {
                 <nav class="login-menu">
                     <div className="menu-img-button">
                         <img src={logoImg} class="logo-image" alt="logo"
-                        onClick={() => handleLinkClick('/')}/>
+                            onClick={() => handleLinkClick('/')} />
                         <img src={seclogoImg} class="logo-image logo-text" alt="logo"
-                        onClick={() => handleLinkClick('/')}/>
+                            onClick={() => handleLinkClick('/')} />
                     </div>
                     <div className="menu-text-button">
                         <span class="menu--item">
@@ -56,7 +56,7 @@ function LoginBar() {
                         <span class="menu--item">
                             <span className="login--button">
                                 <button onClick={() => handleLinkClick('/signin')}
-                                className="signin-button">Sign in</button>
+                                    className="signin-button">Sign in</button>
                             </span>
                         </span>
                     </div>
