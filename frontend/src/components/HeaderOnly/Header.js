@@ -1,6 +1,6 @@
 import './Header.scss'
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logoImg from 'components/assets/images/logo.png'
 
 const NavBar = () => {
@@ -17,14 +17,14 @@ const NavBar = () => {
 
             <span className="nav-links">
                 <ul>
-                    <li onClick={() => handleLinkClick('/search')}>
-                        <a className="text">Search</a>
+                    <li>
+                        <NavLink to="/search" className="text" activeClassname="active">Find Event</NavLink>
                     </li>
-                    <li onClick={() => handleLinkClick('/host-event')}>
-                        <a className="text">Host Events</a>
+                    <li>
+                        <NavLink to="/host-event" className="text" activeClassname="active">Host Event</NavLink>
                     </li>
-                    <li onClick={() => handleLinkClick('/schedule')}>
-                        <a className="text">My Schedule</a>
+                    <li>
+                        <NavLink to="/schedule" className="text" activeClassname="active">My Schedule</NavLink>
                     </li>
                 </ul>
             </span>
