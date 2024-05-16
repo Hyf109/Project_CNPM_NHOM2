@@ -28,7 +28,7 @@ function LoginBar() {
     return (
         <>
             {isMenuVisible && (
-                <nav class="login-menu">
+                <nav className="login-menu">
                     <div className="menu-img-button">
                         <img src={logoImg} class="logo-image" alt="logo"
                             onClick={() => handleLinkClick('/')} />
@@ -36,24 +36,24 @@ function LoginBar() {
                             onClick={() => handleLinkClick('/')} />
                     </div>
                     <div className="menu-text-button">
-                        <span class="menu--item">
+                        <span className="menu--item">
                             <span className="menu--button">
                                 <button onClick={() => scrollToElement('aboutUs')}>About us</button>
                             </span>
                         </span>
-                        <span class="menu--item">
+                        <span className="menu--item">
                             <span className="menu--button">
                                 <button onClick={() => scrollToElement('contactUs')}>Contact</button>
                             </span>
                         </span>
-                        <span class="menu--item">
+                        <span className="menu--item">
                             <span className="menu--button">
                                 <button onClick={() => scrollToElement('donateUs')}>Donate</button>
                             </span>
                         </span>
                     </div>
                     <div className="menu-login-button">
-                        <span class="menu--item">
+                        <span className="menu--item">
                             <span className="login--button">
                                 <button onClick={() => handleLinkClick('/signin')}
                                     className="signin-button">Sign in</button>

@@ -6,11 +6,11 @@ import EventCard from 'components/EventCard/EventCard';
 function EventListContainer() {
     return(
         <>
-            <div class = "event-container">
-                <span class = "container-text header-text">
+            <div className = "event-container">
+                <span className = "container-text header-text">
                     Current Events    
                 </span> 
-                <div class = "event-list">
+                <div className = "event-list">
                     <EventCard/>
                     <EventCard/>    
                     <EventCard/> 
