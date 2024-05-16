@@ -1,0 +1,114 @@
+.body {
+    width: 1000px;
+    height: 650px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    .header-text {
+        display: flex;
+        font-size: 25px;
+        font-weight: bold;
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+.host-container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .host-form {
+        display: flex;
+        flex-direction: row; 
+        align-items: center;  
+    }   
+    .text-box {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 18px;
+        border-radius: 5px;
+        border-color: antiquewhite;
+    } 
+    .button {
+        border-radius: 10px;
+        border-color: antiquewhite;
+    }
+    .form-1, .form-2, .form-4, .form-5 {
+        height: 10%;
+    }
+    .form-3 {
+        height: 55%;
+    }
+    .form-1 {
+        display: flex;
+        justify-content: space-between;
+        .name-input {
+            margin-left: 5px;
+            width: 45%;
+            height: 70%;
+        }
+        .time-input {
+            margin-right: 5px;
+            width: 25%;
+            height: 70%;
+        }
+        .date-select {
+            width: 28%;
+            height: 70%;
+            display: flex;
+            align-content: center;
+            .date-input {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .form-2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .pick-button {
+            margin-left: 5px;
+            width: 15%;
+            height: 70%;
+        }
+        .PartNum-input {
+            margin-right: 5px;
+            width: 20%;
+            height: 70%;
+        }
+        .place-input {
+            width: 63%;
+            height: 70%;
+        }
+    }
+    .des-input {
+        width: 100%;
+        height: 100%;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .form-4 {
+        display: flex;
+        justify-content: space-between;
+        .tags-input {
+            margin-right: 5px;
+            width: 85%;
+            height: 70%;
+        }
+        .tags-button {
+            margin-right: 5px;
+            width: 15%;
+            height: 70%;
+        }
+    }
+    .form-5 {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .host-button {
+            width: 20%;
+            height: 70%;
+        }
+    }
+}
