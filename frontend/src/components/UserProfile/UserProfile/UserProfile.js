@@ -13,15 +13,15 @@ function UserProfile() {
         <div>
             <Appbar/>
 
-            <div class="profile">
-                <div class="left-profile">
+            <div className="profile">
+                <div className="left-profile">
                     <Description/>
                     <b className="user-title"><li>About me</li></b>
                     <UserIntroduction />
                     
                 </div>
 
-                <div class="right-profile">
+                <div className="right-profile">
                     <UserInfo />
                     <b className="user-title"><li>For More Infomation</li></b>
                     <UserContact />

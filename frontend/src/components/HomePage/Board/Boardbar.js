@@ -3,11 +3,11 @@ import './Boardbar.scss'
 
 function Boardbar() {
     return (
-        <nav class="taskbar">
+        <nav className="taskbar">
             <div>
-                <span class="board--item">
-                    <span class="board--icon">
-                        <i class="fa-solid fa-clock"></i>
+                <span className="board--item">
+                    <span className="board--icon">
+                        <i className="fa-solid fa-clock"></i>
                         <input
                             type="datetime-local"
                             id="meeting-time"
@@ -18,26 +18,26 @@ function Boardbar() {
                     </span>
                 </span>
 
-                <span class="board--item">
-                    <span class="board--icon">
-                        <i class="search-btn">
-                            <i class="fa-solid fa-location-dot"></i>
+                <span className="board--item">
+                    <span className="board--icon">
+                        <i className="search-btn">
+                            <i className="fa-solid fa-location-dot"></i>
                         </i>
-                        <input type="text" class="search" placeholder="Search by location" />
+                        <input type="text" className="search" placeholder="Search by location" />
                     </span>
                 </span>
 
-                <span class="board--item">
-                    <span class="board--icon">
-                        <i class="search-btn">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                <span className="board--item">
+                    <span className="board--icon">
+                        <i className="search-btn">
+                            <i className="fa-solid fa-magnifying-glass"></i>
                         </i>
-                        <input type="text" class="search" placeholder="Search by name" />
+                        <input type="text" className="search" placeholder="Search by name" />
                     </span>
                 </span>
 
-                <span class="board--item">
-                    <span class="board--icon">
+                <span className="board--item">
+                    <span className="board--icon">
                         <button>Confirm</button>
                     </span>
                 </span>

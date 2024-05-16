@@ -4,8 +4,8 @@ import userEvent from "@testing-library/user-event";
 
 function UserEvents() {
     return (
-        <div class="events-participating-in">
-            <div class="manager">
+        <div className="events-participating-in">
+            <div className="manager">
                 <b>Events management</b>
                 <li>Event a</li>
                 <li>Event b</li>
@@ -14,7 +14,7 @@ function UserEvents() {
                 <li>Event e</li>
             </div>
 
-            <div class="participant">
+            <div className="participant">
                 <b>Events participant</b>
                 <li>Event a</li>
                 <li>Event b</li>

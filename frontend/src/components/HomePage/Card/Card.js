@@ -5,18 +5,18 @@ import catAvt from 'components/assets/images/cat.png'
 
 function Card() {
     return (
-        <div class="event-card">
-            <img src={catAvt} alt="" class="event-card-photo"></img>
-            <div class="event-card-info">
-                <div class="event-title">
+        <div className="event-card">
+            <img src={catAvt} alt="" className="event-card-photo"></img>
+            <div className="event-card-info">
+                <div className="event-title">
                     <h2>Event name</h2>
-                    <h3 class="number-of-user">0/5</h3>
+                    <h3 className="number-of-user">0/5</h3>
                 </div>
-                <div class="location">location</div>
-                <div class="date">Date</div>
-                <div class="time">Time</div>
-                <div class="tag">Tags</div>
-                <div class="event-card-button">
+                <div className="location">location</div>
+                <div className="date">Date</div>
+                <div className="time">Time</div>
+                <div className="tag">Tags</div>
+                <div className="event-card-button">
                     <button>View more</button>
                     <button>Join now</button>
                 </div>

@@ -37,17 +37,17 @@ const Schedule = ({ events }) => {
     <>
       <div className='user-event-management'>
 
-        <h1><li class="ev">Events now</li></h1>
+        <h1><li className="ev">Events now</li></h1>
 
         <UserEvents />
 
-        <h1><li class="ev">Events then</li></h1>
+        <h1><li className="ev">Events then</li></h1>
 
         <UserEvents />
       </div>
 
       <div className='schedule-container'>
-        <h1><li class="schedule">User Schedule</li></h1>
+        <h1><li className="schedule">User Schedule</li></h1>
         <div>
           <h1 className='current-month'>{format(currentDate, 'MMMM yyyy')}</h1>
         </div>
