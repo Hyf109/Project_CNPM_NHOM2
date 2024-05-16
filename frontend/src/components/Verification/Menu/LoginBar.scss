@@ -18,6 +18,13 @@ $gap: 10px;
         width: 100%;
     }
 
+    .menu-img-button {
+        display: flex;
+        .logo-image {
+            height: 70px;
+        }
+    }
+
     .menu-text-button {
         justify-content: end;
 
@@ -32,7 +39,7 @@ $gap: 10px;
                 padding: 5px 20px;
 
                 &:hover {
-                    color: red;
+                    color: rgba(0, 250, 255, 0.8);
                     text-decoration-line: underline;
                 }
             }
@@ -61,29 +68,26 @@ $gap: 10px;
     .menu-login-button {
         justify-content: end;
         max-width: 300px;
-        .login--button {
+        .signin-button {
+            font-size: 24px;
+            font-weight: 700;
+            background-color: transparent;
             border: none;
+            cursor: pointer;
             margin-right: 5*$gap;
-            border-radius: 25px;
+            border-radius: 45px;
             background-color: white;
-            width: 140px;
+            width: 200px;
+            height: 80%;
             justify-content: center;
             display: flex;
             align-items: center;
             padding: 8px 0;
             cursor: pointer;
 
-            & button {
-                font-size: 24px;
-                font-weight: 700;
-                background-color: transparent;
-                border: none;
-                cursor: pointer;
-
-                &:hover {
-                    color: rgba(0, 0, 0, 0.8)
-                }
-            } 
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.7);
+            }
         }
     }
 }
