@@ -25,8 +25,8 @@ function Signin() {
                     <h1>SIGN IN</h1>
                     <div class="field">
                         <div class="input-box">
-                            <span class="fa-solid fa-user"></span>
-                            <input type="text" placeholder="Username" required ></input>
+                            <span class="fa-solid fa-envelope"></span>
+                            <input type="email" placeholder="example@abc.xyz" required ></input>
 
                         </div>
 

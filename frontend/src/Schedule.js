@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import { isToday } from 'date-fns'
 import { isSameDay } from 'date-fns'
 import { useMemo } from 'react'
+import UserEvents from 'components/UserProfile/UserProfile/Events/UserEvents'
 
 import Appbar from 'components/HomePage/Menu/Appbar'
 
@@ -38,7 +39,20 @@ const Schedule = ({ events }) => {
   return (
     <>
       <Appbar />
+
+      <div className='user-event-management'>
+
+        <h1><li class="ev">Events now</li></h1>
+
+        <UserEvents />
+
+        <h1><li class="ev">Events then</li></h1>
+
+        <UserEvents />
+      </div>
+
       <div className='schedule-container'>
+        <h1><li>User Schedule</li></h1>
         <div>
           <h1 className='current-month'>{format(currentDate, 'MMMM yyyy')}</h1>
         </div>

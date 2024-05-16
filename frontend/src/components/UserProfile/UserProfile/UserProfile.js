@@ -6,6 +6,7 @@ import Description from "./Description/Description";
 import UserContact from "./UserContact/UserContact";
 import UserInfo from "./UserInfo/UserInfo";
 import UserEvents from "./Events/UserEvents";
+import UserIntroduction from "../UserIntroduction/UserIntroduction";
 
 function UserProfile() {
     return (
@@ -15,22 +16,16 @@ function UserProfile() {
             <div class="profile">
                 <div class="left-profile">
                     <Description/>
-
-                    <b><li>For More Infomation</li></b>
-
-                    <UserContact />
+                    <b className="user-title"><li>About me</li></b>
+                    <UserIntroduction />
+                    
                 </div>
 
                 <div class="right-profile">
                     <UserInfo />
+                    <b className="user-title"><li>For More Infomation</li></b>
 
-                    <b><li class="ev">Events</li></b>
-
-                    <UserEvents />
-
-                    <b><li class="ev">Achievements</li></b>
-
-                    <UserEvents />
+                    <UserContact />
                 </div>
             </div>
         </div>
