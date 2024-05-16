@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Element, scroller } from 'react-scroll'
+import { scroller } from 'react-scroll'
 import { useState, useEffect, useRef } from "react";
-import { useScrollFadeOutEffect } from "components/effects/fadeEffects";
 
 import './LoginBar.scss'
 
 import logoImg from 'components/assets/images/logo.png'
 import seclogoImg from 'components/assets/images/logo2.png'
-import catAvt from 'components/assets/images/cat.png'
+
 
 function LoginBar() {
     const [isMenuVisible, setIsMenuVisible] = useState(true)

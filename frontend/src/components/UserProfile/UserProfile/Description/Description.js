@@ -10,8 +10,6 @@ function Description() {
                 <img src={catAvt}></img>
                 <b>Username</b>
                 <i class="fa-solid fa-user-pen"></i>
-                <Link to="/introduction"><button class="to-intro">Intro</button></Link>
-
             </span>
             <div class="infomation">
                 <li>Expert Software Engineering for over 10 years.</li>

@@ -24,6 +24,12 @@ $hover-transform: scale(1,2);
     .board--item {
         padding: 15px;
 
+        .board--icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .fa-solid {
             font-size: 25px;
             cursor: pointer;
@@ -63,7 +69,6 @@ $hover-transform: scale(1,2);
 
         .search {
             padding: 5px 10px;
-            width: 360px;
             border-radius: 10px;
         }
     }

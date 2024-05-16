@@ -12,10 +12,10 @@ function Signin() {
             <div class="wrapper">
                 <div class="logo-field">
                     <div>
-                        <img src={logoImg} class="main-logo"></img>
+                        <Link to="/"><img src={logoImg} class="main-logo"></img></Link>
                     </div>
                     <div>
-                        <img src={seclogoImg} class="sec-logo"></img>
+                        <Link to="/"><img src={seclogoImg} class="sec-logo"></img></Link>
                     </div>
                 </div>
 
@@ -25,8 +25,8 @@ function Signin() {
                     <h1>SIGN IN</h1>
                     <div class="field">
                         <div class="input-box">
-                            <span class="fa-solid fa-user"></span>
-                            <input type="text" placeholder="Username" required ></input>
+                            <span class="fa-solid fa-envelope"></span>
+                            <input type="email" placeholder="example@abc.xyz" required ></input>
 
                         </div>
 

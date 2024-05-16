@@ -15,7 +15,7 @@ function Donate() {
             <Element name="donateUs" className="donate-us">
 
                 <h1>
-                    Donate by Scanning QR Code
+                    Buy me a Coffee <i class="fa-solid fa-mug-hot"></i>
                 </h1>
 
                 <div className="qr-code-donate">
