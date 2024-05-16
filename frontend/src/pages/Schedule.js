@@ -3,11 +3,8 @@ import { eachDayOfInterval, endOfMonth, format, startOfMonth } from 'date-fns'
 import { getDay } from 'date-fns'
 import clsx from 'clsx'
 import { isToday } from 'date-fns'
-import { isSameDay } from 'date-fns'
 import { useMemo } from 'react'
 import UserEvents from 'components/UserProfile/UserProfile/Events/UserEvents'
-
-import Appbar from 'components/HeaderOnly/Header'
 
 import './pagestyle/Schedule.scss'
 
@@ -38,8 +35,6 @@ const Schedule = ({ events }) => {
 
   return (
     <>
-      <Appbar />
-
       <div className='user-event-management'>
 
         <h1><li class="ev">Events now</li></h1>

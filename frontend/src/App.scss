@@ -28,3 +28,14 @@ body {
         height: 0;
     }
 }
+
+.content {
+    margin-top: 90px;
+    padding-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        margin-top: 200px;
+    }
+}

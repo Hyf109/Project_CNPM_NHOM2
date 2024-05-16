@@ -3,16 +3,14 @@ import '../App.scss'
 
 
 //components
-import Appbar from 'components/HeaderOnly/Header'
-import Contents from 'components/HomePage/Contents/Contents'
-import Footer from 'components/HomePage/Footer/Footer'
+import Boardbar from 'components/HomePage/Board/Boardbar'
+import Events from 'components/HomePage/Events/Events'
 
 export const Search = () => {
   return (
     <>
-      <Appbar />
-
-      <Contents/>
+      <Boardbar />
+      <Events />
     </>
   )
 }
