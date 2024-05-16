@@ -1,0 +1,47 @@
+import Search from './pages/Search'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Terms } from 'components/Verification/Terms/Terms'
+import { Signup } from './components/Verification/Signup' 
+import Signin from 'components/Verification/Signin'
+import UserIntroduction from 'components/UserProfile/UserIntroduction/UserIntroduction'
+import UserProfile from 'components/UserProfile/UserProfile/UserProfile'
+import HostEvent from 'pages/HostPage'
+import HomePage from 'pages/HomePage'
+import NavBar from 'components/NavBar/NavBar'
+import ManageEvent from 'pages/ManageEvent'
+
+const standardLayout = (Component) => {
+    return (
+        <>
+            <NavBar/>
+            <div className="content">
+                <Component/>
+            </div>
+        </>
+    );
+};
+
+
+const App = () => {
+    
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path="/" element={<HomePage />} />
+                    <Route path="signup" element={<Signup />} />
+                    <Route path='signin' element={<Signin />} />
+                    <Route path="terms" element={<Terms />} />
+                    <Route path='introduction' element={<UserIntroduction />}/>
+                    
+                    <Route path="search" element={standardLayout(Search)} />
+                    <Route path='profile' element={standardLayout(UserProfile)} />
+                    <Route path='host-event' element={standardLayout(HostEvent)} />
+                    <Route path='manage' element={standardLayout(ManageEvent)} />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
+}
+ 
+export default App;

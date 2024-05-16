@@ -1,0 +1,33 @@
+.event-view-option-bar {
+    height: 40px;
+    background-color: aliceblue;
+}
+
+.event-view-button {
+    cursor: pointer;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    background-color: aliceblue;
+}
+
+.event-view-button:hover {
+    background-color: rgb(219, 219, 219);
+}
+
+.manage-event-view-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+}   
+
+.event-view {
+    flex: 1;
+    background-color: pink;
+}
+
+.calendar-view {
+    flex: 1;
+    background-color: bisque;
+}
