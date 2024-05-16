@@ -7,9 +7,9 @@ import { isSameDay } from 'date-fns'
 import { useMemo } from 'react'
 import UserEvents from 'components/UserProfile/UserProfile/Events/UserEvents'
 
-import Appbar from 'components/HomePage/Menu/Appbar'
+import Appbar from 'components/HeaderOnly/Header'
 
-import './Schedule.scss'
+import './pagestyle/Schedule.scss'
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 

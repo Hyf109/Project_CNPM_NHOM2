@@ -8,9 +8,9 @@ import { Signup } from './components/Verification/Signup'
 import Signin from 'components/Verification/Signin'
 import UserIntroduction from 'components/UserProfile/UserIntroduction/UserIntroduction'
 import UserProfile from 'components/UserProfile/UserProfile/UserProfile'
-import HostEvent from 'HostEvent'
-import HomePage from 'HomePage'
-import TestScedule from 'TestSchedule'
+import HostEvent from 'pages/HostPage'
+import HomePage from 'pages/HomePage'
+import TestScedule from 'pages/TestSchedule'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

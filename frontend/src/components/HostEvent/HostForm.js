@@ -22,7 +22,7 @@ function HostForm() {
                     <input type="text" class="text-box PartNum-input" placeholder="Participants Number"></input>
                 </div> 
                 <div class="host-form form-3">
-                    <input type="text" class="text-box des-input" placeholder="Description"></input>  
+                    <textarea type="text" class="text-box des-input" placeholder="Description"></textarea>  
                 </div>
                 <div class="host-form form-4">
                     <Button class="button tags-button">Add tags</Button>

@@ -1,7 +1,7 @@
 import React from "react";
 import './UserProfile.scss'
 import'App.scss'
-import Appbar from "components/HeaderOnly/Appbar";
+import Appbar from "components/HeaderOnly/Header";
 import Description from "./Description/Description";
 import UserContact from "./UserContact/UserContact";
 import UserInfo from "./UserInfo/UserInfo";
