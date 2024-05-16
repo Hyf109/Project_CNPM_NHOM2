@@ -24,7 +24,6 @@ function UserProfile() {
                 <div class="right-profile">
                     <UserInfo />
                     <b className="user-title"><li>For More Infomation</li></b>
-
                     <UserContact />
                 </div>
             </div>

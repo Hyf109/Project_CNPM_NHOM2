@@ -52,7 +52,7 @@ const Schedule = ({ events }) => {
       </div>
 
       <div className='schedule-container'>
-        <h1><li>User Schedule</li></h1>
+        <h1><li class="schedule">User Schedule</li></h1>
         <div>
           <h1 className='current-month'>{format(currentDate, 'MMMM yyyy')}</h1>
         </div>
