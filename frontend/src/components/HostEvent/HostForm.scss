@@ -1,11 +1,11 @@
 .host-form-body {
-    width: 100%;
+
     height: 90%;
     
     background-color: antiquewhite;
     border-radius: 10px;
     box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
-    width: 60%;
+    width: 100%;
     .header-text {
         display: flex;
         font-size: 25px;
@@ -36,18 +36,19 @@
         border-radius: 10px;
         border-color: antiquewhite;
     }
-    .form-1, .form-2, .form-5 {
+    .form-1, .form-2, .form-3, .form-5 {
         height: 10%;
     }
-    .form-3 {
+    .form-4 {
         height: 55%;
     }
     .form-1 {
         display: flex;
         justify-content: space-between;
         .name-input {
-            margin-left: 5px;
-            width: 45%;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100%;
             height: 70%;
         }
         .time-input {
@@ -68,6 +69,10 @@
     }
     .form-2 {
         display: flex;
+        flex-direction: row;
+    }
+    .form-3 {
+        display: flex;
         justify-content: space-between;
         align-items: center;
         .pick-button {
@@ -76,33 +81,27 @@
             height: 70%;
         }
         .PartNum-input {
-            margin-right: 5px;
+            margin-right: 10px;
+            margin-left: 5px;
             width: 20%;
             height: 70%;
         }
         .place-input {
-            width: 63%;
+            margin-left: 10px;
+            margin-right: 5px;
+            width: 80%;
             height: 70%;
         }
     }
-    .des-input {
-        width: 100%;
-        height: 100%;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+    
     .form-4 {
         display: flex;
         justify-content: space-between;
-        .tags-input {
-            margin-right: 5px;
-            width: 85%;
-            height: 70%;
-        }
-        .tags-button {
-            margin-right: 5px;
-            width: 15%;
-            height: 70%;
+        .des-input {
+            width: 100%;
+            height: 100%;
+            margin-left: 10px;
+            margin-right: 10px;
         }
     }
     .form-5 {
@@ -112,6 +111,8 @@
         .host-button {
             width: 20%;
             height: 70%;
+            font-size: 20px;
+            font-weight: bold;
         }
     }
 }

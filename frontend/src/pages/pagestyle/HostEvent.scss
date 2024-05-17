@@ -1,4 +1,4 @@
-#host-page-body {
+.host-page-wrapper {
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -6,13 +6,12 @@
 
 .event-list-container {
     height: 100%;
-    flex: 35;
-    background-color: pink;
+    flex: 30;
     padding: 20px;
 }
 
 .host-form-container {
+    height: 100%;
     flex: 60;
-    background-color: bisque;
     padding: 20px;
 }
