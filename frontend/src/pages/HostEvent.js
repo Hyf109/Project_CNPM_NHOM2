@@ -2,7 +2,9 @@ import * as React from 'react'
 import EventListContainer from "components/EventList/EventListContainer";
 import EventCard from 'components/EventCard/EventCard';
 import HostForm from 'components/HostEvent/HostForm';
-
+import './pagestyle/HostEvent.scss'
+import './pagestyle/HostEventForm'
+import HostEventForm from './pagestyle/HostEventForm';
 
 function HostEvent() {
     return (
@@ -11,6 +13,7 @@ function HostEvent() {
                 <div className="event-list-container">
                     <EventListContainer/>
                 </div>
+
                 <div className="host-form-container">
                     <HostForm/>
                 </div>

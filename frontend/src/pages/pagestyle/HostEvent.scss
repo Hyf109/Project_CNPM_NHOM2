@@ -1,12 +1,18 @@
 .host-page-wrapper {
     display: flex;
     flex-direction: row;
+    height: 100%;
 }
 
 .event-list-container {
-    width: 600px;
+    height: 100%;
+    flex: 35;
+    background-color: pink;
+    padding: 20px;
 }
 
 .host-form-container {
-    width: 300px;
+    flex: 60;
+    background-color: bisque;
+    padding: 20px;
 }
