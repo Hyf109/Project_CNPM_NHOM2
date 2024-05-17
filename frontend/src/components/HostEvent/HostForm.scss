@@ -1,8 +1,10 @@
 .body {
-    width: 1000px;
-    height: 650px;
+    margin: 10px;
+    width: auto;
+    height: 98%;
     background-color: antiquewhite;
     border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
     .header-text {
         display: flex;
         font-size: 25px;

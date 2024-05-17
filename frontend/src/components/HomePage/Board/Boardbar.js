@@ -37,9 +37,7 @@ function Boardbar() {
                 </span>
 
                 <span className="board--item">
-                    <span className="board--icon">
-                        <button>Confirm</button>
-                    </span>
+                    <button className="confirm-button">Confirm</button>
                 </span>
             </div>
         </nav>
