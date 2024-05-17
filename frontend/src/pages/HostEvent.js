@@ -3,8 +3,6 @@ import EventListContainer from "components/EventList/EventListContainer";
 import EventCard from 'components/EventCard/EventCard';
 import HostForm from 'components/HostEvent/HostForm';
 import './pagestyle/HostEvent.scss'
-import './pagestyle/HostEventForm'
-import HostEventForm from './pagestyle/HostEventForm';
 
 function HostEvent() {
     return (
