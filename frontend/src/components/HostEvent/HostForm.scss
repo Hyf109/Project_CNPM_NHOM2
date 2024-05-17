@@ -70,6 +70,21 @@
     .form-2 {
         display: flex;
         flex-direction: row;
+        margin-left: 10px;
+        margin-right: 10px;
+        .start-time, .end-time {
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            font-size: 10px;
+            justify-content: space-between;
+            .form-2-name-tag {
+                flex: 1;
+            }
+            .date-input {
+                flex: 3;
+            }
+        }
     }
     .form-3 {
         display: flex;

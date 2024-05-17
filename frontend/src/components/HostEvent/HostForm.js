@@ -12,8 +12,7 @@ function HostForm() {
                 <div className="host-form form-1"> 
                     <input type="text" className="text-box name-input" placeholder="Event name"></input>
                 </div>
-                <div className="host-form-2">
-                    <div className="date-select">
+                <div className="host-form form-2">
                         <div className="start-time">
                             <h1 className="form-2-name-tag">Start time</h1>
                             <input type="datetime-local" className="text-box date-input" placeholder="Start time"></input>
@@ -22,8 +21,6 @@ function HostForm() {
                             <h1 className="form-2-name-tag">End time</h1>
                             <input type="datetime-local" className="text-box date-input" placeholder="End time"></input>
                         </div>
-                        
-                    </div>
                 </div>
                 <div className="host-form form-3">   
                     <input type="text" className="text-box place-input" placeholder="Place"></input>
