@@ -11,11 +11,11 @@ const NavBar = () => {
 
     return (
         <div className="NavBar">
-            <span className="logo">
+            <span className="logo nav-bar-flex-item">
                 <img src={logoImg} className="logo-image" alt="logo"/>
             </span>
 
-            <span className="nav-links">
+            <span className="nav-links nav-bar-flex-item">
                 <ul>
                     <li>
                         <NavLink to="/search" className="text" activeClassname="active">Find Event</NavLink>
@@ -28,8 +28,10 @@ const NavBar = () => {
                     </li>
                 </ul>
             </span>
-            <span onClick={() => handleLinkClick('/profile')} className="user text">
-                Username
+            <span className="user text nav-bar-flex-item">
+                <button id="user-account-button" onClick={() => handleLinkClick('/profile')}>
+                    Username
+                </button>
             </span>
             
         </div>

@@ -5,10 +5,11 @@ import { Signup } from './components/Verification/Signup'
 import Signin from 'components/Verification/Signin'
 import UserIntroduction from 'components/UserProfile/UserIntroduction/UserIntroduction'
 import UserProfile from 'components/UserProfile/UserProfile/UserProfile'
-import HostEvent from 'pages/HostPage'
+import HostEvent from 'pages/HostEvent'
 import HomePage from 'pages/HomePage'
 import NavBar from 'components/NavBar/NavBar'
 import ManageEvent from 'pages/ManageEvent'
+
 
 const standardLayout = (Component) => {
     return (

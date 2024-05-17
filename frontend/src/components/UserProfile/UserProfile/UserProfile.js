@@ -10,9 +10,7 @@ import UserIntroduction from "../UserIntroduction/UserIntroduction";
 
 function UserProfile() {
     return (
-        <div>
-            <Appbar/>
-
+        <div className="user-profile-content">
             <div className="profile">
                 <div className="left-profile">
                     <Description/>

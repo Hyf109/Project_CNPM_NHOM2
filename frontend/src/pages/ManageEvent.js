@@ -1,4 +1,4 @@
-import CardList from 'components/HomePage/Card/CardList';
+
 import '../pages/pagestyle/manageEvent.scss'
 
 const ManageEvent = () => {
@@ -14,7 +14,7 @@ const ManageEvent = () => {
             
             <div className="manage-event-view-container">
                 <div className="event-view">
-                    <CardList/>
+                    
                 </div>
 
                 <div className="calendar-view">
