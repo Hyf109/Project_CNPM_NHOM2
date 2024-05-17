@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-$gap: 10px;
-$background-color-body: #d9d9d9;
-$background-color-nav: #a6a6a6;
-$hover-transform: scale(1,2);
+
 
 .board--item {
     display: flex;
@@ -11,23 +8,30 @@ $hover-transform: scale(1,2);
 }
 
 .taskbar {
-    height: 10%;
+    height: 8%;
+    width: 80%;
     margin-top: 10px;
-    margin-left: 120px;
-    margin-right: 120px;
-    & div {
+    margin-bottom: 10px;
+    .search-bar-container {
         display: flex;
         height: 100%;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
     }
 
-    background-color: $background-color-nav;
+    background-color: antiquewhite;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     justify-content: center;
 
     .board--item {
         height: 100%;
-
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .board--icon {
             display: flex;
             justify-content: center;
@@ -75,13 +79,18 @@ $hover-transform: scale(1,2);
             padding: 5px 10px;
             border-radius: 10px;
         }
+
         .confirm-button {
-            height: 50%;
+            height: 80%;
             width: 50%;
-            border-radius: 45px;
-            border-color: rgb(166, 166, 166);
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(253, 74, 105);
+            border-color: transparent;
+            background-color: rgb(180, 180, 180);
             &:hover {
-                background-color: rgba(255, 255, 255, 0.7);
+                background-color: rgba(180, 180, 180, 0.7);
             }
         }
     }

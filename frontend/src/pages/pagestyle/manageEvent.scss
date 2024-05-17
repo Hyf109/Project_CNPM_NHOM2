@@ -16,18 +16,29 @@
     background-color: rgb(219, 219, 219);
 }
 
-.manage-event-view-container {
+.manage-event-page-container {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     height: 100%;
-}   
+    width: 100%;
+    .manage-event-wrapper {
+        height: 90%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        .event-list-container-wrapper {
+            margin-top: 20px;
+            width: 30%;
+            height: 100%;
+        }
+        .event-info-wrapper {
+            margin-top: 20px;
+            width: 65%;
+            height: 100%;
+        }
+    }
+} 
 
-.event-view {
-    flex: 1;
-    background-color: pink;
-}
 
-.calendar-view {
-    flex: 1;
-    background-color: bisque;
-}
