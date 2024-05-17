@@ -4,7 +4,7 @@ import { Button } from "react-scroll";
 
 function HostForm() {
     return (
-        <div className="body">
+        <div className="host-form-body">
             <h1 className="header-text">
                     Host event
             </h1>
