@@ -10,9 +10,7 @@ import UserIntroduction from "../UserIntroduction/UserIntroduction";
 
 function UserProfile() {
     return (
-        <div>
-            <Appbar/>
-            <div class="profile-container"> 
+        <div className="user-profile-content">
             <div className="profile">
                 <div className="left-profile">
                     <Description/>
@@ -26,9 +24,7 @@ function UserProfile() {
                     <b className="user-title"><li>For More Infomation</li></b>
                     <UserContact />
                 </div>
-            </div>  
             </div>
-            
         </div>
     )
 }

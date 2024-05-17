@@ -9,7 +9,7 @@
     box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
 }
 
-span {
+.nav-bar-flex-item {
     height: 100%;
     flex: 1;
     display: flex;
@@ -17,7 +17,7 @@ span {
     align-items: center;
 }
 
-span > * {
+.nav-bar-flex-item > * {
     cursor: pointer;
 }
 
@@ -113,6 +113,17 @@ span > * {
     }
 
 
+}
+
+#user-account-button {
+    background-color: white;
+    border: none;
+    height: 100%;
+    font-size: 20px;
+}
+
+#user-account-button:hover {
+    color: rgb(60, 125, 255);
 }
 
 
