@@ -1,6 +1,6 @@
 .event-container {
-    width: 30%;
-    height: 100%;
+    width: 100%;
+    height: 90%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -18,6 +18,8 @@
         font-size: 25px;
     }
     .event-list {
+        
+        margin: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;

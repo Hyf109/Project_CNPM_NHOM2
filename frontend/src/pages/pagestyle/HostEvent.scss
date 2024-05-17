@@ -1,6 +1,18 @@
 #host-page-body {
     display: flex;
     flex-direction: row;
-    width: 100%;
     height: 100%;
+}
+
+.event-list-container {
+    height: 100%;
+    flex: 35;
+    background-color: pink;
+    padding: 20px;
+}
+
+.host-form-container {
+    flex: 60;
+    background-color: bisque;
+    padding: 20px;
 }
