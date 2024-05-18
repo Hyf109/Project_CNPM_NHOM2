@@ -1,116 +1,84 @@
-.host-form-body {
-    height: 90%;
+.host-event-form {
     width: 100%;
-    
-    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
-    .header-text {
+    min-width: none;
+    
+    .host-form-component-container {
         display: flex;
-        font-size: 25px;
-        font-weight: bold;
+        align-items: center;
+        margin-bottom: 20px;
+        min-width: none;
         width: 100%;
         justify-content: space-around;
+    }   
+
+    .host-form-component-container span {
+        width: 100%;
+    }
+
+
+
+    .form-event-description {
+        resize: none;
     }
 }
 
-.host-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.text-box {
+    border: none;
+    appearance: none;
+    outline: none;
+    padding: 12px;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    min-width: none;
     
-    .host-form {
-        display: flex;
-        flex-direction: row; 
-        align-items: center;  
-    }   
-    .text-box {
-        font-family: 'Quicksand', sans-serif;
-        font-size: 18px;
-        border-radius: 5px;
-        border-color: antiquewhite;
-    } 
-    .button {
-        border-radius: 10px;
-        border-color: antiquewhite;
+} 
+
+.text-box:focus {
+    background-color: aliceblue;
+}
+
+.form-event-description {
+    width: 100%;
+}
+
+.form-event-name {
+    width: 250px;
+}
+
+.form-event-location {
+
+}
+
+.form-event-capacity {
+    width: 120px;
+}
+
+.form-event-time {
+
+}
+
+@media screen and (max-width: 750px) {
+    // .event-list-container {
+    //     display: none;
+    // }
+
+    .host-page-wrapper {
+        flex-direction: column;
     }
-    .form-1, .form-2, .form-5 {
-        height: 10%;
+}
+
+@media screen and (max-width: 500px) {
+    .host-event-form {
+        flex-direction: column;
     }
-    .form-3 {
-        height: 55%;
-    }
-    .form-1 {
-        display: flex;
-        justify-content: space-between;
-        .name-input {
-            margin-left: 5px;
-            width: 45%;
-            height: 70%;
-        }
-        .time-input {
-            margin-right: 5px;
-            width: 25%;
-            height: 70%;
-        }
-        .date-select {
-            width: 28%;
-            height: 70%;
-            display: flex;
-            align-content: center;
-            .date-input {
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-    .form-2 {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .pick-button {
-            margin-left: 5px;
-            width: 15%;
-            height: 70%;
-        }
-        .PartNum-input {
-            margin-right: 5px;
-            width: 20%;
-            height: 70%;
-        }
-        .place-input {
-            width: 63%;
-            height: 70%;
-        }
-    }
-    .des-input {
-        width: 100%;
-        height: 100%;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    .form-4 {
-        display: flex;
-        justify-content: space-between;
-        .tags-input {
-            margin-right: 5px;
-            width: 85%;
-            height: 70%;
-        }
-        .tags-button {
-            margin-right: 5px;
-            width: 15%;
-            height: 70%;
-        }
-    }
-    .form-5 {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        .host-button {
-            width: 20%;
-            height: 70%;
-        }
+
+    .host-form-component-container {
+        flex-direction: column;
     }
 }

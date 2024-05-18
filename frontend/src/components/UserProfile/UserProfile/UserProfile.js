@@ -1,11 +1,9 @@
 import React from "react";
 import './UserProfile.scss'
 import'App.scss'
-import Appbar from "components/NavBar/NavBar";
 import Description from "./Description/Description";
 import UserContact from "./UserContact/UserContact";
 import UserInfo from "./UserInfo/UserInfo";
-import UserEvents from "./Events/UserEvents";
 import UserIntroduction from "../UserIntroduction/UserIntroduction";
 
 function UserProfile() {

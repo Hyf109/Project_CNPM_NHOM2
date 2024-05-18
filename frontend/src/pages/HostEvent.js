@@ -1,15 +1,15 @@
 import * as React from 'react'
-import EventListContainer from "components/EventList/EventListContainer";
-import EventCard from 'components/EventCard/EventCard';
+import EventListContainer from "components/EventList/EventList";
 import HostForm from 'components/HostEvent/HostForm';
-import './pagestyle/HostEvent.scss'
+import './pagestyle/hostEvent.scss'
+import EventList from 'components/EventList/EventList';
 
 function HostEvent() {
     return (
         <>
             <div className="host-page-wrapper">
                 <div className="event-list-container">
-                    <EventListContainer/>
+                    <EventList/>
                 </div>
 
                 <div className="host-form-container">

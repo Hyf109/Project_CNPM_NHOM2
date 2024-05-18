@@ -1,5 +1,6 @@
 
 import '../pages/pagestyle/manageEvent.scss'
+import EventList from 'components/EventList/EventList';
 
 const ManageEvent = () => {
     
@@ -14,7 +15,7 @@ const ManageEvent = () => {
             
             <div className="manage-event-view-container">
                 <div className="event-view">
-                    
+                    <EventList className="manage-event-list"/>
                 </div>
 
                 <div className="calendar-view">
