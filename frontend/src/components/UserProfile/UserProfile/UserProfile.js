@@ -4,7 +4,6 @@ import'App.scss'
 import Description from "./Description/Description";
 import UserContact from "./UserContact/UserContact";
 import UserInfo from "./UserInfo/UserInfo";
-import UserIntroduction from "../UserIntroduction/UserIntroduction";
 
 function UserProfile() {
     return (
@@ -13,7 +12,7 @@ function UserProfile() {
                 <div className="left-profile">
                     <Description/>
                     <b className="user-title"><li>About me</li></b>
-                    <UserIntroduction />
+
                     
                 </div>
 

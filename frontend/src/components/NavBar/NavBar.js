@@ -2,12 +2,16 @@ import './NavBar.scss'
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import logoImg from 'components/assets/images/logo.png'
+import { useAuth } from 'hooks/useAuth';
 
 const NavBar = () => {
     const navigate = useNavigate();
     const handleLinkClick = (url) => {
         navigate(url);
     }
+
+    const auth = useAuth();
+    let username = auth.username;
 
     return (
         <div className="NavBar">
@@ -30,7 +34,7 @@ const NavBar = () => {
             </span>
             <span className="user text nav-bar-flex-item">
                 <button id="user-account-button" onClick={() => handleLinkClick('/profile')}>
-                    Username
+                    {username}
                 </button>
             </span>
             
