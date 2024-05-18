@@ -27,7 +27,7 @@ const getProfileByID = async (req, res) => {
 const updateProfile = async (req, res) => {
     try {
         const user_id = res.locals.user._id;
-        const {name, age, description} = req.body;
+        const {name, location, age, description} = req.body;
 
         let updateOperation;
         let arrayFilters;
@@ -64,6 +64,7 @@ const updateProfile = async (req, res) => {
                 age: age,
                 name: name, 
                 description: description,
+                location: location,
                 ...updateOperation
             },
             {

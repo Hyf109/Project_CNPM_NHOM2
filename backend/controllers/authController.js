@@ -67,7 +67,7 @@ const signUpPost = async (req, res) => {
         
         res.cookie('jwt', token, {httpOnly: true, maxAge: maxAge * 1000});
 
-        res.status(201).json({user: user._id, username: user.username, userEventManager, userProfileManager}); 
+        res.status(201).json({user: user._id, token: token}); 
 
     } catch (err) {
         const errors = handleErrors(err);

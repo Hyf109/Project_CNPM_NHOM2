@@ -6,7 +6,9 @@
 
 .event-list-container {
     flex: 35;
+    height: 100%;
     padding: 20px 20px 0 20px;
+    overflow: hidden;
 }
 
 .host-form-container {

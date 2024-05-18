@@ -1,91 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-.profile-container {
-    display: flex;
-    overflow: scroll;
-    &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-    }
-}
-.profile {
-    box-sizing: border-box;
-    padding-top: 130px;
-    padding-left: 100px;
-    padding-right: 100px;
-    display: grid;
-    border: 0 1px solid #000;
-    grid-template-columns: 1fr 1fr;
-}
+// .profile-container {
+//     display: flex;
+//     overflow: scroll;
+//     &::-webkit-scrollbar {
+//         width: 0;
+//         height: 0;
+//     }
+// }
+// .profile {
+//     box-sizing: border-box;
+//     padding-top: 130px;
+//     padding-left: 100px;
+//     padding-right: 100px;
+//     display: grid;
+//     border: 0 1px solid #000;
+//     grid-template-columns: 1fr 1fr;
+// }
 
-.nav-item {
-    display: flex;
-}
+// .nav-item {
+//     display: flex;
+// }
 
-.nav-item {
-    padding-left: 20px;
-    align-items: center;
-    justify-content: space-between;
-    transition: all 80ms ease;
-    line-height: 1rem;
+// .nav-item {
+//     padding-left: 20px;
+//     align-items: center;
+//     justify-content: space-between;
+//     transition: all 80ms ease;
+//     line-height: 1rem;
 
-    a {
-        font-size: 24px;
-        padding: 1ch;
+//     a {
+//         font-size: 24px;
+//         padding: 1ch;
 
-        &:hover {
-            color: rgba(255, 255, 255, 0.87);
-        }
-    }
+//         &:hover {
+//             color: rgba(255, 255, 255, 0.87);
+//         }
+//     }
 
-    .home {
-        width: 123px;
-        cursor: pointer;
+//     .home {
+//         width: 123px;
+//         cursor: pointer;
 
-        &:hover {
-            transform: scale(1.2);
-        }
-    }
+//         &:hover {
+//             transform: scale(1.2);
+//         }
+//     }
 
-    .to-user {
-        font-size: 5px;
-    }
+//     .to-user {
+//         font-size: 5px;
+//     }
 
-    .fa-solid {
-        font-size: 50px;
-        cursor: pointer;
-        padding-left: 15px;
+//     .fa-solid {
+//         font-size: 50px;
+//         cursor: pointer;
+//         padding-left: 15px;
 
-        &:hover {
-            transform: scale(1.2);
-        }
-    }
-}
+//         &:hover {
+//             transform: scale(1.2);
+//         }
+//     }
+// }
 
-.left-profile {
-    margin-right: 30px;
-    float: left;
-}
+// .left-profile {
+//     margin-right: 30px;
+//     float: left;
+// }
 
-.right-profile {
-    float: right;
-    margin-left: 30px;
+// .right-profile {
+//     float: right;
+//     margin-left: 30px;
 
-    & .ev {
-        font-size: 30px;
-        padding-top: 30px;
-    }
-}
+//     & .ev {
+//         font-size: 30px;
+//         padding-top: 30px;
+//     }
+// }
 
-.user-title {
-    font-size: 24px;
-    font-weight: 700;
-    & li {
-        margin: 10px 0;
-    }
-}
+// .user-title {
+//     font-size: 24px;
+//     font-weight: 700;
+//     & li {
+//         margin: 10px 0;
+//     }
+// }
 
 .user-profile-content {
-    overflow-y: auto;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-container {
+    width: 60%;
     height: 100%;
-    
+    margin-top: 20px;
+}
+
+.detailed-information-container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-info-column {
+    padding-right: 20px;
+    flex: 70;
+}
+
+.right-info-column {
+    flex: 30;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;   
+}
+
+.profile-hosted-event-list-container {
+    overflow: hidden;
+    height: 100vh;
+    padding-bottom: 400px;
 }
