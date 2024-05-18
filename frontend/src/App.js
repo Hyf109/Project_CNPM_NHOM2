@@ -27,7 +27,7 @@ const App = () => {
     
     return (
         <div className="App">
-            <BrowserRouter>
+
                 <Routes>
                     <Route exact path="/" element={<HomePage />} />
                     <Route path="signup" element={<Signup />} />
@@ -40,7 +40,7 @@ const App = () => {
                     <Route path='host-event' element={standardLayout(HostEvent)} />
                     <Route path='manage' element={standardLayout(ManageEvent)} />
                 </Routes>
-            </BrowserRouter>
+
         </div>
     );
 }

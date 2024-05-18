@@ -18,7 +18,7 @@ const ManageEvent = () => {
                 <div className="event-view">
                     <EventList className="manage-event-list"/>
                 </div>
-                <div className="event-info-wrapper">
+                <div className="event-info-view">
                     <EventInfo />
                 </div>
             </div>

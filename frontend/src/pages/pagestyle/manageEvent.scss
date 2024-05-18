@@ -22,11 +22,17 @@
     height: 100%;
 }   
 
+.manage-event-view-container {
+    display: flex;
+}
+
 .event-view {
-    flex: 1;
+
+    flex: 30;
     padding: 20px 20px 0 20px;
 }
 
-.calendar-view {
-    flex: 1;
+.event-info-view {
+    flex: 60;
+    padding: 20px;
 }
