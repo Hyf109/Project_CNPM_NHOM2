@@ -8,6 +8,16 @@ import seclogoImg from 'components/assets/images/logo2.png'
 export const Signup = () => {
     return (
         <div className="section">
+            
+            <div className="logo-field">
+                <div>
+                    <Link to="/"><img src={logoImg} className="main-logo"></img></Link>
+                </div>
+                <div>
+                    <Link to="/"><img src={seclogoImg} className="sec-logo"></img></Link>
+                </div>
+            </div>
+
             <div className="wrapper">
                 <div className="form">
                     <h1 className="sign--up--title">SIGN UP</h1>
@@ -48,15 +58,6 @@ export const Signup = () => {
                 </div>
 
                 <div className="vertical-line"></div>
-
-                <div className="logo-field">
-                    <div>
-                        <Link to="/"><img src={logoImg} className="main-logo"></img></Link>
-                    </div>
-                    <div>
-                        <Link to="/"><img src={seclogoImg} className="sec-logo"></img></Link>
-                    </div>
-                </div>
             </div>
         </div>
     )

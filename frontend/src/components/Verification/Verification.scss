@@ -5,17 +5,16 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 2px;
     flex-wrap: wrap;
     overflow: hidden;
+    background-color: aliceblue;
 }
 
 .wrapper {
-    position: absolute;
-    width: 1000px;
-    background: rgba(255, 255, 255, 0.2);
+    background: white;
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -35,12 +34,6 @@
     align-items: center;
     justify-content: center;
     padding: 40px 30px;
-}
-
-.vertical-line {
-    border-left: 6px solid gold;
-    height: 500px;
-    margin: 0;
 }
 
 .main-logo {
