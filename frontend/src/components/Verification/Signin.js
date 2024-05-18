@@ -33,10 +33,7 @@ function Signin() {
                         </div>
                     </div>
 
-                    <a href="home.html">
-                        <Link to="/search"><button type="submit" className="btn">Login</button></Link>
-                    </a>
-
+                    <button type="submit" className="btn">Login</button>                    
 
                     <div className="register-link">
                         <p>Don't have an account? <Link to="/signup">Register</Link></p>

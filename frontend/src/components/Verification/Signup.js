@@ -4,11 +4,64 @@ import 'components/Verification/Verification.scss'
 
 import logoImg from 'components/assets/images/logo.png'
 import seclogoImg from 'components/assets/images/logo2.png'
+import { useState } from "react";
+import { useAuth } from "hooks/useAuth";
 
-export const Signup = () => {
+
+function Signup() {
+    const auth = useAuth();
+
+    const [state, setState] = useState({
+        email:'',
+        username:'',
+        password:'',
+        confirm:''
+    });
+
+    const handleOnChange = (e) => {
+        const {name, value} = e.target;
+
+        setState(prevState => ({
+            ...prevState, 
+            [name]:value
+        }))
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const { email, username, password } = state;
+        
+        try {
+            const response = await fetch('finder/api/signup', {
+                method: 'POST',
+                body: JSON.stringify({
+                    email: email,
+                    username: username,
+                    password: password,
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+    
+            if (response.ok) {
+                // User successfully signed up
+                const res = await response.json();
+                auth.login({ email, password });
+                console.log('Authenticated');
+            } else {
+                console.error('Signup failed');
+            }
+
+        } catch (err) {
+            console.log(err);
+        }
+    };
+    
+
     return (
         <div className="section">
-            
+
             <div className="logo-field">
                 <div>
                     <Link to="/"><img src={logoImg} className="main-logo"></img></Link>
@@ -24,33 +77,31 @@ export const Signup = () => {
                     <div className="field">
                         <div className="input-box">
                             <span className="fa-solid fa-envelope"></span>
-                            <input type="email" placeholder="Email" required></input>
+                            <input value={state.email} onChange={handleOnChange} name="email" type="email" placeholder="Email" required></input>
                         </div>
 
                         <div className="input-box">
                             <span className="fa-solid fa-user"></span>
-                            <input type="text" placeholder="Username" required ></input>
+                            <input value={state.username} onChange={handleOnChange} name="username" type="text" placeholder="Username" required ></input>
 
                         </div>
 
                         <div className="input-box">
                             <span className="fa-solid fa-lock"></span>
-                            <input type="password" placeholder="Password" required></input>
+                            <input value={state.password} onChange={handleOnChange} name="password" type="password" placeholder="Password" required></input>
                         </div>
 
                         <div className="input-box">
                             <span className="fa-solid fa-check"></span>
-                            <input type="password" placeholder="Confirm password" required></input>
+                            <input value={state.confirm} onChange={handleOnChange} name="confirm" type="password" placeholder="Confirm password" required></input>
                         </div>
-
-
                     </div>
                     <div className="confirm-terms">
                         {/* <label><input type="checkbox" className="terms-button" required>I do accept your </input><a href="terms.html">Terms and Conditions</a> of your site.</label> */}
 
                     </div>
 
-                    <button type="submit" className="btn">Register</button>
+                    <button onClick={handleSubmit} type="submit" className="btn">Register</button>
 
                     <div className="login-link">
                         <p>Already have an account? <Link to="/signin">Login</Link></p>

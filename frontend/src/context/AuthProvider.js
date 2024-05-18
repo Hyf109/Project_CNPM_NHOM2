@@ -1,7 +1,7 @@
 import {useContext, createContext, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
@@ -19,9 +19,10 @@ const AuthProvider = ({children}) => {
             });
 
             const res = await response.json();
+            console.log(res);
 
-            if (res.data) {
-                setUser(res.data.user);
+            if (response.ok) {
+                setUser(res.user);
                 setToken(res.token);
                 localStorage.setItem("jwt", res.token);
                 //Navigate to search
@@ -56,6 +57,3 @@ const AuthProvider = ({children}) => {
 
 export default AuthProvider;
 
-export const useAuth = () => {
-    return useContext(AuthContext);
-}

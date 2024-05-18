@@ -6,8 +6,11 @@ import './pagestyle/Search.scss'
 import Boardbar from 'components/HomePage/Board/Boardbar'
 import EventList from 'components/EventList/EventList'
 import EventInfo from 'components/EventInfo/EventInfo'
+import { useAuth } from 'hooks/useAuth'
 
 export const Search = () => {
+  
+
   return (
     <>
       
