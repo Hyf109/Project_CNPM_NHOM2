@@ -4,7 +4,7 @@ import './pagestyle/Search.scss'
 
 //components
 import Boardbar from 'components/HomePage/Board/Boardbar'
-import EventList from 'components/EventList/EventListContainer'
+import EventList from 'components/EventList/EventList'
 import EventInfo from 'components/EventInfo/EventInfo'
 
 export const Search = () => {

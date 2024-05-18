@@ -1,6 +1,7 @@
 
 import '../pages/pagestyle/manageEvent.scss'
 import EventList from 'components/EventList/EventList';
+import EventInfo from 'components/EventInfo/EventInfo';
 
 const ManageEvent = () => {
     
