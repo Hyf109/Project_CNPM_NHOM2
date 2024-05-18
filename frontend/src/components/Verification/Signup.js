@@ -33,7 +33,6 @@ function Signup() {
         const { email, username, password } = state;
         
         await signup(email, username, password)
-        
     };
     
 

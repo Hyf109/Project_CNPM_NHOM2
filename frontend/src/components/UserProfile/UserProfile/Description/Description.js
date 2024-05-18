@@ -11,11 +11,6 @@ function Description() {
                 <b>Username</b>
                 <i className="fa-solid fa-user-pen"></i>
             </span>
-            <div className="infomation">
-                <li>Expert Software Engineering for over 10 years.</li>
-                <li>Started working at Google company since 2017.</li>
-                <li>etc.</li>
-            </div>
         </div>
     )
 }
