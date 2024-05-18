@@ -67,7 +67,7 @@ const signUpPost = async (req, res) => {
         
         res.cookie('jwt', token, {httpOnly: true, maxAge: maxAge * 1000});
 
-        res.status(201).json({user: user._id, token: token}); 
+        res.status(201).json({user: user._id, username: user.username, token: token}); 
 
     } catch (err) {
         const errors = handleErrors(err);
@@ -89,7 +89,7 @@ const loginPost = async (req, res) => {
 
         res.cookie('jwt', token, {httpOnly: true, maxAge: maxAge * 1000});
 
-        res.status(200).json({user : user._id, username: user.username});
+        res.status(200).json({user : user._id, username: user.username, token: token});
     } catch (err) {
         const errors = handleErrors(err);
         res.status(400).json({errors});
