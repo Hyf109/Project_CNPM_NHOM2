@@ -13,6 +13,9 @@ const profileSchema = new Schema({
     age: {
         type: Number
     },
+    location: {
+        type: String
+    },
     contact_detail: {
         contacts: [
             {

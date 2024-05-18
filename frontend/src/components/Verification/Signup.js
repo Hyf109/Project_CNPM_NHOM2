@@ -48,8 +48,11 @@ function Signup() {
             if (response.ok) {
                 // User successfully signed up
                 const res = await response.json();
-                auth.login(res);
-                console.log('Authenticated');
+                auth.authenticate(res);
+
+                //Save token to local
+                localStorage.setItem('user', JSON.stringify(res))
+                
                 navigate('/search');
             } else {
                 console.error('Signup failed');
