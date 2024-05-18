@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import 'components/Verification/Verification.scss'
 
 import logoImg from 'components/assets/images/logo.png'
@@ -10,6 +10,7 @@ import { useAuth } from "hooks/useAuth";
 
 function Signup() {
     const auth = useAuth();
+    const navigate = useNavigate();
 
     const [state, setState] = useState({
         email:'',
@@ -47,8 +48,9 @@ function Signup() {
             if (response.ok) {
                 // User successfully signed up
                 const res = await response.json();
-                auth.login({ email, password });
+                auth.login(res);
                 console.log('Authenticated');
+                navigate('/search');
             } else {
                 console.error('Signup failed');
             }
