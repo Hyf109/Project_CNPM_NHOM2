@@ -23,14 +23,31 @@
         justify-content: center;
 
         & label {
-            float: inline-end;
             padding-top: 20px;
             font-size: 20px;
         }
 
         & b {
-            padding-left: 15px;
             font-size: 20px;
         }
     }
+}
+
+.contact-line {
+    margin-bottom: 20px;
+}
+
+.contact-line-name {
+    display: flex;
+}
+
+.edit-contact-line-button {
+    margin-left: auto;
+}
+
+.contact-links-title {
+    padding-bottom: 3px;
+    border-style: solid;
+    border-width: 0 0 2px;
+    margin-bottom: 10px;
 }

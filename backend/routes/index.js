@@ -8,5 +8,7 @@ router.use('/event', require('./event'));
 
 router.use('/', require('./authentication'));
 
+router.use('/user', require('./user'));
+
 module.exports = router;
  

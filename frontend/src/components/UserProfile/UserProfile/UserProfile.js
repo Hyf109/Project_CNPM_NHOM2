@@ -1,39 +1,40 @@
 import React from "react";
 import './UserProfile.scss'
 import'App.scss'
-import Appbar from "components/HomePage/Menu/Appbar";
 import Description from "./Description/Description";
 import UserContact from "./UserContact/UserContact";
 import UserInfo from "./UserInfo/UserInfo";
-import UserEvents from "./Events/UserEvents";
+import AboutMe from "./AboutMe/AboutMe";
+import EventList from "components/EventList/EventList";
+
 
 function UserProfile() {
     return (
-        <div>
-            <Appbar/>
-
-            <div class="profile">
-                <div class="left-profile">
+        <>
+            <div className="user-profile-content">
+                <div className="profile-container">
                     <Description/>
 
-                    <b><li>For More Infomation</li></b>
+                    <div className="detailed-information-container">
+                        <div className="left-info-column">
+                            <AboutMe/>
+                            <div className="profile-hosted-event-list-container">
+                                <h2>User's upcoming events</h2>
+                                <EventList/>
+                            </div>
+                        </div>
+                        <div className="right-info-column">
+                            <UserInfo/>
+                            <UserContact/>
+                        </div>
 
-                    <UserContact />
+                    </div>
                 </div>
 
-                <div class="right-profile">
-                    <UserInfo />
 
-                    <b><li class="ev">Events</li></b>
-
-                    <UserEvents />
-
-                    <b><li class="ev">Achievements</li></b>
-
-                    <UserEvents />
-                </div>
             </div>
-        </div>
+        </>
+
     )
 }
 

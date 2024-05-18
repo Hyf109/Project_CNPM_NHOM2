@@ -5,19 +5,12 @@ import catAvt from 'components/assets/images/cat.png'
 
 function Description() {
     return (
-        <div class="user-infomation">
-            <span class="avatar">
+        <div className="user-infomation">
+            <span className="avatar">
                 <img src={catAvt}></img>
                 <b>Username</b>
-                <i class="fa-solid fa-user-pen"></i>
-                <Link to="/introduction"><button class="to-intro">Intro</button></Link>
-
+                <i className="fa-solid fa-user-pen"></i>
             </span>
-            <div class="infomation">
-                <li>Expert Software Engineering for over 10 years.</li>
-                <li>Started working at Google company since 2017.</li>
-                <li>etc.</li>
-            </div>
         </div>
     )
 }

@@ -2,8 +2,8 @@ import React from "react";
 
 export const Terms = () => {
     return (
-        <div class="terms-box">
-            <div class="terms-text" >
+        <div className="terms-box">
+            <div className="terms-text" >
                 <h2><strong>Terms and Conditions</strong></h2>
 
                 <p>Welcome to Finder!</p>

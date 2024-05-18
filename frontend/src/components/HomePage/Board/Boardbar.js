@@ -3,37 +3,36 @@ import './Boardbar.scss'
 
 function Boardbar() {
     return (
-        <nav class="taskbar">
-            <div>
-                <span class="board--item">
-                    <span class="board--icon">
-                        <i class="fa-solid fa-calendar"></i>
-                        <input type="date" class="datebirth" value="2000-01-01" min="1900-01-01" max="2024-12-31"/>
+        <nav className="taskbar">
+            <div className="search-bar-container">
+                <span className="board--item">
+                    <span className="board--icon">
+                        <i className="fa-solid fa-clock"></i>
+                        <input type="datetime-local"/>
                     </span>
                 </span>
 
-                <span class="board--item">
-                    <span class="board--icon">
-                        <i class="fa-solid fa-clock"></i>
-                        <input type="time" class="datetime" value="00:00:00" min="00:00:00" max="23:59:59"/>
-                    </span>
-                </span>
-
-                <span class="board--item">
-                    <span class="board--icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <a href="home.html">Pick from Google Map!</a>
-                    </span>
-                </span>
-
-                <span class="board--item">
-                    <span class="board--icon">
-                        <i class="search-btn">
-                            <i class="fa-brands fa-searchengin"></i>
+                <span className="board--item">
+                    <span className="board--icon">
+                        <i className="search-btn">
+                            <i className="fa-solid fa-location-dot"></i>
                         </i>
-                        <input type="text" class="search" placeholder="Search events"/>
+                        <input type="text" className="search" placeholder="Search by location" />
                     </span>
                 </span>
+
+                <span className="board--item">
+                    <span className="board--icon">
+                        <i className="search-btn">
+                            <i className="fa-solid fa-magnifying-glass"></i>
+                        </i>
+                        <input type="text" className="search" placeholder="Search by name" />
+                    </span>
+                </span>
+                <div className="board--item">
+                    <button className="confirm-button">Confirm</button>
+                </div>
+                
             </div>
         </nav>
     )

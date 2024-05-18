@@ -10,7 +10,7 @@ const managerSchema = new Schema({
     events: [
         {
             event_id: {
-                type: String,
+                type: String
             },
             is_host: {
                 type: Boolean

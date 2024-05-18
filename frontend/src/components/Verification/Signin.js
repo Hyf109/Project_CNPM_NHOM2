@@ -1,47 +1,66 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import 'components/Verification/Verification.scss'
 import 'App.scss'
 import logoImg from 'components/assets/images/logo.png'
 import seclogoImg from 'components/assets/images/logo2.png'
+import { useState } from "react";
+import { useAuth } from "hooks/useAuth";
+import { useSignin } from "hooks/useSignin";
 
 function Signin() {
+    const {signin, error, isLoading} = useSignin();
+    
+
+    const [state, setState] = useState({
+        email:'',
+        password:'',
+    });
+
+    const handleOnChange = (e) => {
+        const {name, value} = e.target;
+
+        setState(prevState => ({
+            ...prevState, 
+            [name]:value
+        }))
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await signin(state.email, state.password);
+    }
+
     return (
         <div className="section">
-            <div class="wrapper">
-                <div class="logo-field">
-                    <div>
-                        <Link to="/"><img src={logoImg} class="main-logo"></img></Link>
-                    </div>
-                    <div>
-                        <Link to="/"><img src={seclogoImg} class="sec-logo"></img></Link>
-                    </div>
+            <div className="logo-field">
+                <div>
+                    <Link to="/"><img src={logoImg} className="main-logo"></img></Link>
                 </div>
-
-                <div class="vertical-line"></div>
-
-                <div class="form">
+                <div>
+                    <Link to="/"><img src={seclogoImg} className="sec-logo"></img></Link>
+                </div>
+            </div>
+            <div className="wrapper">
+                <div className="form">
                     <h1>SIGN IN</h1>
-                    <div class="field">
-                        <div class="input-box">
-                            <span class="fa-solid fa-user"></span>
-                            <input type="text" placeholder="Username" required ></input>
+                    <div className="field">
+                        <div className="input-box">
+                            <span className="fa-solid fa-envelope"></span>
+                            <input value={state.email} name="email" onChange={handleOnChange}  type="email" placeholder="example@abc.xyz" required ></input>
 
                         </div>
 
-                        <div class="input-box">
-                            <span class="fa-solid fa-lock"></span>
-                            <input type="password" placeholder="Password" required></input>
+                        <div className="input-box">
+                            <span className="fa-solid fa-lock"></span>
+                            <input value={state.password} name="password" onChange={handleOnChange} type="password" placeholder="Password" required></input>
                         </div>
                     </div>
 
-                    <a href="home.html">
-                        <Link to="/search"><button type="submit" class="btn">Login</button></Link>
-                    </a>
+                    <button disabled={isLoading} onClick={handleSubmit} type="submit" className="btn">Login</button>                    
 
-
-                    <div class="register-link">
+                    <div className="register-link">
                         <p>Don't have an account? <Link to="/signup">Register</Link></p>
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 .user-infomation {
     padding: 20px;
-    margin-bottom: 50px;
     background-color: #fff;
     border-radius: 10px;
+    margin-bottom: 20px;
 
     .avatar {
         display: flex;
@@ -43,5 +43,6 @@
 
     & img {
         width: 100px;
+        
     }
 }

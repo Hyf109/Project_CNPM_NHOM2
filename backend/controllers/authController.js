@@ -52,6 +52,7 @@ const signUpGet = (req, res) => {
 //Create account
 const signUpPost = async (req, res) => {
     try {
+        console.log(req.body);
         const user = await User.create(req.body);
         const token = createToken(user._id); //Place this in a cookie
         
@@ -62,13 +63,11 @@ const signUpPost = async (req, res) => {
 
         const userProfileManager = await profileSchema.create({
             user_id: user._id,
-            contact_detail: '',
-            description: ''
         });
         
         res.cookie('jwt', token, {httpOnly: true, maxAge: maxAge * 1000});
 
-        res.status(201).json({user: user._id, userEventManager, userProfileManager}); 
+        res.status(201).json({user: user._id, username: user.username, token: token}); 
 
     } catch (err) {
         const errors = handleErrors(err);
@@ -90,7 +89,7 @@ const loginPost = async (req, res) => {
 
         res.cookie('jwt', token, {httpOnly: true, maxAge: maxAge * 1000});
 
-        res.status(200).json({user : user._id});
+        res.status(200).json({user : user._id, username: user.username, token: token});
     } catch (err) {
         const errors = handleErrors(err);
         res.status(400).json({errors});
