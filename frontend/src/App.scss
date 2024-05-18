@@ -28,3 +28,19 @@ body {
         height: 0;
     }
 }
+
+.content {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin-top: 70px;
+    height: 100vh;
+    position: fixed;
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        margin-top: 200px;
+    }
+}

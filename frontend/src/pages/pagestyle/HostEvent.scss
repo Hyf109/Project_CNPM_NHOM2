@@ -1,0 +1,38 @@
+.host-page-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.event-list-container {
+    flex: 35;
+    padding: 20px 20px 0 20px;
+}
+
+.host-form-container {
+    height: 100%;
+    flex: 60;
+    padding: 20px 20px 0 20px;
+    min-width: 0px;
+}
+
+@media screen and (max-width: 750px) {
+    // .event-list-container {
+    //     display: none;
+    // }
+    .host-form-container {
+        flex: 1;
+        order: 1;
+    }
+
+    .event-list-container {
+        order: 2;
+        flex: 1;
+        height: 900px;
+    }
+    
+    .host-page-wrapper {
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+}

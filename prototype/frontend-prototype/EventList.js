@@ -1,4 +1,4 @@
-import useFetch from "../hooks/useFetch";
+import useFetch from "../../frontend/src/hooks/useFetch";
 import '../css/EventList.css';
 import moment from 'moment';
 

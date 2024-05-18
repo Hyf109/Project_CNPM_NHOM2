@@ -19,7 +19,7 @@ $hover-transform: scale(1, 2);
         left: 0;
         right: 0;
         top: 0;
-        background-image: url("https://tinder.com/static/build/744fe6d80266616aba687006b7d764ad.webp");
+        background-image: url("../../components/assets/images/background.jpg");
     }
 
     .get-start-items {
@@ -95,7 +95,7 @@ $hover-transform: scale(1, 2);
         ul {
             display: flex;
 
-            & li {
+            & a {
                 list-style-type: none;
                 font-size: 40px;
                 padding: 10px;

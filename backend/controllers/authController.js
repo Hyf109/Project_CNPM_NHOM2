@@ -52,6 +52,7 @@ const signUpGet = (req, res) => {
 //Create account
 const signUpPost = async (req, res) => {
     try {
+        console.log(req.body);
         const user = await User.create(req.body);
         const token = createToken(user._id); //Place this in a cookie
         

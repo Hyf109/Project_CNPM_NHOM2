@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Appbar from "components/HomePage/Menu/Appbar";
 import Horizontal from "components/HomePage/Horizontal/Horizontal";
 import { Link } from "react-router-dom";
 import { Element } from "react-scroll";
 import FadeInSection from "components/effects/fadeEffects";
 
 // scss components
-import './HomePage.scss'
+import './pagestyle/homePage.scss'
 
 // components
 import Footer from "components/HomePage/Footer/Footer";
@@ -58,7 +57,6 @@ function HomePage() {
                             </h2>
                         </FadeInSection>
                         <Feature />
-
                         <Horizontal />
 
                     </div>
@@ -73,18 +71,17 @@ function HomePage() {
                     </h1>
 
                     <ul>
-                        <li><i class="fa-brands fa-facebook"></i></li>
-                        <li><i class="fa-solid fa-envelope"></i></li>
-                        <li><i class="fa-brands fa-github"></i></li>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i className="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i className="fa-solid fa-envelope"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i className="fa-brands fa-github"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i className="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i className="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i className="fa-brands fa-instagram"></i></a>
                     </ul>
 
                 </Element>
                 <Donate />
             </Element>
-
-
-
-
             <Footer />
         </>
     )

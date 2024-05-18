@@ -1,20 +1,26 @@
-import EventList from '../components/EventList';
-import HostEventForm from '../components/HostEventForm';
-import '../css/HostEvent.css';
+import * as React from 'react'
+import EventListContainer from "components/EventList/EventList";
+import HostForm from 'components/HostEvent/HostForm';
+import './pagestyle/hostEvent.scss'
+import EventList from 'components/EventList/EventList';
 
-const HostEvent = () => {
-    return (  
-        <div className="host-event">
-            <aside className="left-column">
-                <EventList url="/finder/api/event"/>
-            </aside>
-            
-            <div className="main-content">
-                <HostEventForm/>
+function HostEvent() {
+    return (
+        <>
+            <div className="host-page-wrapper">
+                <div className="event-list-container">
+                    <EventList/>
+                </div>
+
+                <div className="host-form-container">
+                    <HostForm/>
+                </div>
             </div>
+            
 
-        </div>
-    );
+            
+        </>
+    )
 }
- 
-export default HostEvent;
+
+export default HostEvent

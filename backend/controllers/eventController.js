@@ -43,14 +43,14 @@ const createEvent = async(req, res) => {
 
         res.status(200).json({event, manager});
     } catch (error) {
-        res.status(400).json({error: error.message});
+        res.status(400).json({mssg: 'Cannot create event', error: error.message});
     }
 }
 
 //Get all events
 const getEvents = async(req, res) => {
     try {
-        const { title, startTime, endTime } = req.body;
+        const { title, startTime, endTime, status } = req.body; //status: upcoming, occuring, ended
         let query = {};
 
         if (title) {

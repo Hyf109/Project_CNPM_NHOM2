@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
+.profile-container {
+    display: flex;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}
 .profile {
     box-sizing: border-box;
     padding-top: 130px;
@@ -57,10 +64,6 @@
 .left-profile {
     margin-right: 30px;
     float: left;
-
-    & li {
-        padding-bottom: 10px;
-    }
 }
 
 .right-profile {
@@ -71,4 +74,18 @@
         font-size: 30px;
         padding-top: 30px;
     }
+}
+
+.user-title {
+    font-size: 24px;
+    font-weight: 700;
+    & li {
+        margin: 10px 0;
+    }
+}
+
+.user-profile-content {
+    overflow-y: auto;
+    height: 100%;
+    
 }
