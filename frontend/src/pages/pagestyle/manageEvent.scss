@@ -16,9 +16,9 @@
     background-color: rgb(219, 219, 219);
 }
 
-.manage-event-view-container {
+.manage-event-page-container {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     height: 100%;
 }   
 

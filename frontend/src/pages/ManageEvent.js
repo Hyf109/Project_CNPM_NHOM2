@@ -5,7 +5,7 @@ import EventList from 'components/EventList/EventList';
 const ManageEvent = () => {
     
     return (  
-        <>
+        <div className="manage-event-page-container">
             <div className="event-view-option-bar">
                 <button className="event-view-button">All events</button>
                 <button className="event-view-button">Upcoming events</button>
@@ -17,12 +17,11 @@ const ManageEvent = () => {
                 <div className="event-view">
                     <EventList className="manage-event-list"/>
                 </div>
-
-                <div className="calendar-view">
-
+                <div className="event-info-wrapper">
+                    <EventInfo />
                 </div>
             </div>
-        </>
+        </div>
     );
 }
  
