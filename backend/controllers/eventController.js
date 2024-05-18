@@ -43,7 +43,7 @@ const createEvent = async(req, res) => {
 
         res.status(200).json({event, manager});
     } catch (error) {
-        res.status(400).json({error: error.message});
+        res.status(400).json({mssg: 'Cannot create event', error: error.message});
     }
 }
 

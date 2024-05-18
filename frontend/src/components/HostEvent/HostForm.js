@@ -1,19 +1,18 @@
 import React from "react";
 import './HostForm.scss';
-import { Button } from "react-scroll";
 
 import { useState } from "react";
 
 function HostForm() {
-    const [title, setTitle] = useState('');
-    const [startTime, setStartTime] = useState('');
-    const [endTime, setEndTime] = useState('');
-    const [location, setLocation] = useState('');
-    const [description, setDescription] = useState('');
-    const [capacity, setCapacity] = useState('');
-    const [error, setError] = useState(null);
+    // const [title, setTitle] = useState('');
+    // const [startTime, setStartTime] = useState('');
+    // const [endTime, setEndTime] = useState('');
+    // const [location, setLocation] = useState('');
+    // const [description, setDescription] = useState('');
+    // const [capacity, setCapacity] = useState('');
+    // const [error, setError] = useState(null);
 
-    const [formState, setFormState] = useState({
+    const defaultFormState = {
         title: '',
         startTime: '',
         endTime: '',
@@ -21,19 +20,24 @@ function HostForm() {
         description: '',
         capacity: '',
         error: null
-    });
+    }
+    const [formState, setFormState] = useState(defaultFormState);
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleStateChange = (e) => {
         const {name, value} = e.target;
         setFormState(prevState => ({...prevState, [name]: value})); //Spread fields of previous to stay the same
     }
-
+    
     const handleSubmit = async (e) => {
+        console.log(formState);
         e.preventDefault();
+        
+        const event = formState;
+        event.host_id = 'testing user id';
 
-        const event = {title, startTime, endTime, location, description, capacity};
-
-        const response = await fetch('/finder/api/event', {
+        const response = await fetch('/finder/api/event/create', {
             method: 'POST',
             body: JSON.stringify(event),
             headers: {
@@ -44,19 +48,17 @@ function HostForm() {
         const json = await response.json();
 
         if (!response.ok) {
-            setError(json.error);
+            setFormState({error: json.error});
         }
         
         if (response.ok) {
-            setTitle('');
-            setCapacity('');
-            setEndTime('');
-            setStartTime('');
-            setLocation('');
-            setDescription('');
-            setError(null);
+            setFormState(defaultFormState);
             console.log('New event added', json );
         }
+
+        // console.log(error);
+
+
     }
 
     return (
@@ -99,11 +101,24 @@ function HostForm() {
                     </span>
                 </div>
 
-                <div className="host-form-component-container form-5">
-                    <button className="button submit-event-form-button">Create</button>   
+                <div className="host-form-component-container form-event-button">
+                    {isSubmitting ? (
+                        <>
+                        <button className="confirm confirm-submit-button" onClick={handleSubmit}>Confirm</button>
+                        <button className="cancel cancel-submit-button" onClick={(e) => {
+                            e.preventDefault();
+                            setIsSubmitting(false)
+                        }}>Cancel</button>
+                        </>
+                    ) : (
+                        <button className="button submit-event-form-button" onClick={(e) => {
+                            e.preventDefault();
+                            setIsSubmitting(true)
+                        }}>Create</button>
+                    )}
                 </div>
+                {/* {error && <div>{error}</div>} */}
             </form>   
-    )
-}
+            )}
 
 export default HostForm
