@@ -29,7 +29,6 @@ function EventList({use_case}) {
     }
 
     return(
-        <div className = "event-container">
             <div className = "event-list">
                 {data && data.event.map((event) => (
                         <div className="event-card" key={event.id}>
@@ -63,8 +62,6 @@ function EventList({use_case}) {
                         </div>
                     ))}
             </div>
-        </div>  
-
     )
 }
 

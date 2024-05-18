@@ -4,25 +4,37 @@ import'App.scss'
 import Description from "./Description/Description";
 import UserContact from "./UserContact/UserContact";
 import UserInfo from "./UserInfo/UserInfo";
+import AboutMe from "./AboutMe/AboutMe";
+import EventList from "components/EventList/EventList";
+
 
 function UserProfile() {
     return (
-        <div className="user-profile-content">
-            <div className="profile">
-                <div className="left-profile">
+        <>
+            <div className="user-profile-content">
+                <div className="profile-container">
                     <Description/>
-                    <b className="user-title"><li>About me</li></b>
 
-                    
+                    <div className="detailed-information-container">
+                        <div className="left-info-column">
+                            <AboutMe/>
+                            <div className="profile-hosted-event-list-container">
+                                <h2>User's upcoming events</h2>
+                                <EventList/>
+                            </div>
+                        </div>
+                        <div className="right-info-column">
+                            <UserInfo/>
+                            <UserContact/>
+                        </div>
+
+                    </div>
                 </div>
 
-                <div className="right-profile">
-                    <UserInfo />
-                    <b className="user-title"><li>For More Infomation</li></b>
-                    <UserContact />
-                </div>
+
             </div>
-        </div>
+        </>
+
     )
 }
 
