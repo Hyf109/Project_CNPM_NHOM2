@@ -33,7 +33,6 @@ export const useSignin = () => {
             localStorage.setItem('user', JSON.stringify(json));
             
             auth.dispatch({type: 'LOGIN', payload: json})
-            navigate('/search')
             setIsLoading(false);
         }
     }

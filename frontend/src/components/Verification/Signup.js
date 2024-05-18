@@ -10,6 +10,7 @@ import { useSignup } from "hooks/useSignup";
 
 
 function Signup() {
+    const navigate = useNavigate('/search');
     const {signup, isLoading, error} = useSignup();
 
     const [state, setState] = useState({
@@ -32,7 +33,11 @@ function Signup() {
         e.preventDefault();
         const { email, username, password } = state;
         
-        await signup(email, username, password)
+        await signup(email, username, password);
+        
+        if (!error) {
+            navigate('/search');
+        }
     };
     
 

@@ -10,8 +10,8 @@ const NavBar = () => {
         navigate(url);
     }
 
-    const auth = useAuth();
-    let username = auth.username;
+    const user = JSON.parse(localStorage.getItem('user'));
+    
 
     return (
         <div className="NavBar">
@@ -34,7 +34,7 @@ const NavBar = () => {
             </span>
             <span className="user text nav-bar-flex-item">
                 <button id="user-account-button" onClick={() => handleLinkClick('/profile')}>
-                    {username}
+                    {user.username}
                 </button>
             </span>
             

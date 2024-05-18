@@ -32,8 +32,7 @@ export const useSignup = () => {
             setError(error);
         } else {
             localStorage.setItem('user', JSON.stringify(json));
-            auth.dispatch({type: 'REGISTER', payload: json})
-            navigate('/search');
+            auth.dispatch({type: 'LOGIN', payload: json})
             setIsLoading(false);
         }
     }
