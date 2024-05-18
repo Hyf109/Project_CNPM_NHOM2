@@ -3,7 +3,7 @@
     flex-direction: column;
     background-color: #fff;
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px;;
 
     .fa-brands {
         background-color: transparent;
@@ -46,8 +46,13 @@
 }
 
 .contact-links-title {
+    display: flex;
     padding-bottom: 3px;
     border-style: solid;
     border-width: 0 0 2px;
     margin-bottom: 10px;
+}
+
+.contact-buttons {
+    margin-left: auto;
 }

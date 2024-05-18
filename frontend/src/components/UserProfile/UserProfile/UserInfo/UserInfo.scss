@@ -8,8 +8,13 @@
 }
 
 .user-info-title {
+    display: flex;
     padding-bottom: 3px;
     border-style: solid;
     border-width: 0 0 2px;
     margin-bottom: 10px;
+}
+
+.info-buttons {
+    margin-left: auto;
 }
