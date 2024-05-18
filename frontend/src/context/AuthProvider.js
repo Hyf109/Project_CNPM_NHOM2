@@ -5,22 +5,25 @@ export const AuthContext = createContext();
 
 const AuthProvider = ({children}) => {
     const [isAuth, setIsAuth] = useState(false);
+    const [user, setUser] = useState('');
+
     // const [token, setToken] = useState(localStorage.getItem("jwt"));
-    const navigate = useNavigate();
 
     //data.user is user id
     const authenticate = (data) => {
         if (data.user) {
+            setUser(data.user);
             setIsAuth(true);
         }
     }
 
     const logout = (data) => {
         setIsAuth(false);
+        setUser(null);
     }
 
     return (
-        <AuthContext.Provider value = {{isAuth, logout, authenticate}}>
+        <AuthContext.Provider value = {{user, isAuth, logout, authenticate}}>
             {children}
         </AuthContext.Provider>
     )
