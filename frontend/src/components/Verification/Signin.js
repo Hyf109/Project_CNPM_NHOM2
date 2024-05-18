@@ -7,10 +7,11 @@ import logoImg from 'components/assets/images/logo.png'
 import seclogoImg from 'components/assets/images/logo2.png'
 import { useState } from "react";
 import { useAuth } from "hooks/useAuth";
+import { useSignin } from "hooks/useSignin";
 
 function Signin() {
-    const auth = useAuth();
-    const navigate = useNavigate();
+    const {signin, error, isLoading} = useSignin();
+    
 
     const [state, setState] = useState({
         email:'',
@@ -26,27 +27,9 @@ function Signin() {
         }))
     }
 
-    const handleSubmit = async () => {
-        try {
-            const response = await fetch('/finder/api/login', {
-                method: "POST",
-                headers: {
-                    'Content-Type' : 'application/json'
-                },
-                body: JSON.stringify(state)
-            })
-
-            if (response.ok) {
-                const res = await response.json();
-                console.log(res);
-                auth.authenticate(res);
-                navigate('/search');
-                return;
-            }
-
-        } catch (error) {
-            console.log(error);
-        }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await signin(state.email, state.password);
     }
 
     return (
@@ -75,7 +58,7 @@ function Signin() {
                         </div>
                     </div>
 
-                    <button onClick={handleSubmit} type="submit" className="btn">Login</button>                    
+                    <button disabled={isLoading} onClick={handleSubmit} type="submit" className="btn">Login</button>                    
 
                     <div className="register-link">
                         <p>Don't have an account? <Link to="/signup">Register</Link></p>

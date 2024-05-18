@@ -6,11 +6,11 @@ import logoImg from 'components/assets/images/logo.png'
 import seclogoImg from 'components/assets/images/logo2.png'
 import { useState } from "react";
 import { useAuth } from "hooks/useAuth";
+import { useSignup } from "hooks/useSignup";
 
 
 function Signup() {
-    const auth = useAuth();
-    const navigate = useNavigate();
+    const {signup, isLoading, error} = useSignup();
 
     const [state, setState] = useState({
         email:'',
@@ -32,32 +32,8 @@ function Signup() {
         e.preventDefault();
         const { email, username, password } = state;
         
-        try {
-            const response = await fetch('finder/api/signup', {
-                method: 'POST',
-                body: JSON.stringify({
-                    email: email,
-                    username: username,
-                    password: password,
-                }),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-    
-            if (response.ok) {
-                // User successfully signed up
-                const res = await response.json();
-                auth.login(res);
-                console.log('Authenticated');
-                navigate('/search');
-            } else {
-                console.error('Signup failed');
-            }
-
-        } catch (err) {
-            console.log(err);
-        }
+        await signup(email, username, password)
+        
     };
     
 
@@ -103,7 +79,7 @@ function Signup() {
 
                     </div>
 
-                    <button onClick={handleSubmit} type="submit" className="btn">Register</button>
+                    <button disabled={isLoading} onClick={handleSubmit} type="submit" className="btn">Register</button>
 
                     <div className="login-link">
                         <p>Already have an account? <Link to="/signin">Login</Link></p>

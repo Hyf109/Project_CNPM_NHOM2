@@ -1,32 +1,40 @@
-import {useContext, createContext, useState} from 'react';
+import {useContext, createContext, useState, useReducer, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
 
+export const authReducer = (state, action) => {
+    switch (action.type) {
+        case 'LOGIN':
+            return {user: action.payload};
+        case 'REGISTER':
+            return {user: action.playload};
+        case 'LOGOUT':
+            return {user: null};
+        default: 
+            return state;
+    }
+}
 const AuthProvider = ({children}) => {
-    const [isAuth, setIsAuth] = useState(false);
-    const [user, setUser] = useState('');
-    const [username, setUsername] = useState('');
+    const [state, dispatch] = useReducer(authReducer, {
+        user: null
+    });
 
-    // const [token, setToken] = useState(localStorage.getItem("jwt"));
 
-    //data.user is user id
-    const authenticate = (data) => {
-        if (data.user) {
-            setUser(data.user);
-            setIsAuth(true);
-            setUsername(data.username);
+
+    useEffect(() => {
+        //Conver local storage cookie store in string to json
+        const user = JSON.parse(localStorage.getItem('user'));
+        
+        //If user is not null then dispatch login
+        if (user) {
+            dispatch({type:'LOGIN', payload: user});
         }
-    }
+    }, [])
 
-    const logout = (data) => {
-        setIsAuth(false);
-        setUser(null);
-        setUsername(null);
-    }
 
     return (
-        <AuthContext.Provider value = {{user, isAuth, username, logout, authenticate}}>
+        <AuthContext.Provider value = {{...state, dispatch}}>
             {children}
         </AuthContext.Provider>
     )

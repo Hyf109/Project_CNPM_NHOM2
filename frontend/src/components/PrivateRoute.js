@@ -5,9 +5,9 @@ import { useAuth } from "hooks/useAuth";
 //Wrap proctected pages using this components
 const PrivateRoute = () => {
 
-    const auth = useAuth();
+    const {user} = useAuth();
 
-    if (!auth.isAuth) {
+    if (!user) {
         return <Navigate to="/signin" />;
     }
 
