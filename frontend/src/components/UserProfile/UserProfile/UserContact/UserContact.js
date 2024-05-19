@@ -1,45 +1,65 @@
 import React from "react";
 import './UserContact.scss'
+import { useAuth } from "hooks/useAuth";
+import { useState } from "react";
+import useFetch from "hooks/useFetch";
 
 function UserContact() {
+    const [editable, setEditable] = useState(false);
+
+    const {data, isPending, error} = useFetch('/finder/api/user/');
+
+    if (isPending) {
+        <div>Is Loading...</div>
+    }
+    
+    // console.log(data); 
+
     return (
         <div className="user-link">
             <div className="contact-links-title">
                 <h2>Contact links</h2>
+                    <div className="contact-buttons">
+                        {
+                            !editable && <button onClick={(e) => {
+                                e.preventDefault();
+                                setEditable(true);
+                            }} className="contact-link-edit-button">Edit</button>
+                        }
+
+                        {
+                            editable && 
+                                <>
+                                    <button onClick={(e) => {
+                                        e.preventDefault();
+                                            setEditable(false);
+                                        }} className="contact-save-button">Save</button>
+                                        
+                                        <button onClick={(e) => {
+                                            e.preventDefault();
+                                            setEditable(false);
+                                    }} className="contact-cancel-button">Cancel</button>
+                                </>
+                        }
+                    </div>
+                    
             </div>
             
-            <div className="contact-line">
-                <div className="contact-line-name">
-                    <h3>Git hub</h3>
-                    <button className="edit-contact-line-button">edit</button>
-                </div>
-                <a href="https://www.github.com/Raphael9143">
-                    <label>Raphael9143</label>
-                </a>
+ 
+            <div className="contact-list">
+                {data && data.profile.contact_detail.contacts.map((contact) => (
+                    <div className="contact-line" key={contact._id}>
+                        <div className="contact-line-name">
+                            <h3>{contact.contact_method}</h3>
+                            {/* <button className="edit-contact-line-button">edit</button> */}
+                        </div>
+                        <a href={contact.detail}>{contact.detail}</a>
+                    </div>
+                ))}
             </div>
 
-            <div className="contact-line">
-                <div className="contact-line-name">
-                    <h3>Git hub</h3>
-                    <button className="edit-contact-line-button">edit</button>
-                </div>
-                <a href="https://www.github.com/Raphael9143">
-                    <label>Raphael9143</label>
-                </a>
-            </div>
-
+            {error && <div>{error}</div>}
             
-            <div className="contact-line">
-                <div className="contact-line-name">
-                    <h3>Git hub</h3>
-                    <button className="edit-contact-line-button">edit</button>
-                </div>
-                <a href="https://www.github.com/Raphael9143">
-                    <label>Raphael9143</label>
-                </a>
-            </div>
-
-
 
         </div>
     )

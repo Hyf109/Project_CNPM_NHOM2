@@ -17,7 +17,7 @@ const formatDate = (datetime) => {
 function EventList({use_case}) {
     const {data, isPending, error} = useFetch('/finder/api/event/get'); 
     
-    console.log(data);
+    // console.log(data);
     
     if (isPending) {
         return <div>Loading...</div>;

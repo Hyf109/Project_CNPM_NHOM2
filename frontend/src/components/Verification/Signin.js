@@ -10,7 +10,14 @@ import { useAuth } from "hooks/useAuth";
 import { useSignin } from "hooks/useSignin";
 
 function Signin() {
+    const navigate = useNavigate('/search');
     const {signin, error, isLoading} = useSignin();
+
+    const {user} = useAuth();
+
+    if (user) {
+        navigate('/search');
+    }
     
 
     const [state, setState] = useState({
@@ -30,6 +37,9 @@ function Signin() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await signin(state.email, state.password);
+        if (!error) {
+            navigate('/search');
+        }
     }
 
     return (

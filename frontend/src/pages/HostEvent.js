@@ -1,7 +1,7 @@
 import * as React from 'react'
 import EventListContainer from "components/EventList/EventList";
 import HostForm from 'components/HostEvent/HostForm';
-import './pagestyle/hostEvent.scss'
+import './pagestyle/HostEvent.scss'
 import EventList from 'components/EventList/EventList';
 
 function HostEvent() {
