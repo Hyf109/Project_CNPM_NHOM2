@@ -3,7 +3,7 @@ import './pagestyle/Search.scss'
 
 
 //components
-import Boardbar from 'components/HomePage/Board/Boardbar'
+import Boardbar from 'components/SearchBar/SearchBar'
 import EventList from 'components/EventList/EventList'
 import EventInfo from 'components/EventInfo/EventInfo'
 import { useAuth } from 'hooks/useAuth'
