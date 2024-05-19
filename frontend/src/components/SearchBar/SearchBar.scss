@@ -14,15 +14,17 @@
 }
 
 .taskbar {
-    height: 8%;
-    width: 80%;
+    height: 100px;
+    width: 90%;
     margin-top: 10px;
     margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     .search-bar-container {
         display: flex;
         height: 100%;
         width: 100%;
-        justify-content: space-between;
+        
         align-items: center;
 
     }
@@ -34,10 +36,9 @@
 
     .board--item {
         height: 100%;
-        width: 25%;
-        min-width: none;
+        
+        
         margin-left: 20px;
-        margin-right: 20px;
         .board--icon {
             display: flex;
             justify-content: center;
@@ -56,6 +57,9 @@
             background-color: whitesmoke
         }
 
+        .search {
+            min-width: none;
+        }
         .search:focus {
             background-color: aliceblue;
             border: solid;
@@ -102,8 +106,8 @@
 
         .confirm-button {
             margin-left: auto;
-            height: 50%;
-            width: 50%;
+            
+            padding: 5px;
             border-radius: 5px;
             font-size: 20px;
             font-weight: bold;

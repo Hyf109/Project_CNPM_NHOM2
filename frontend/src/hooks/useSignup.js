@@ -8,7 +8,7 @@ export const useSignup = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
 
-    const signup = async (email, password, username, confirm) => {
+    const signup = async (email, username, password) => {
         setIsLoading(true);
         setError(null);
 
@@ -22,7 +22,6 @@ export const useSignup = () => {
                 email: email,
                 password: password,
                 username: username,
-                confirm: confirm
             })
         });
 

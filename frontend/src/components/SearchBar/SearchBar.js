@@ -42,6 +42,7 @@ function Boardbar() {
                     </span>
                 </span>
                 <div className="board--item">
+                    <br></br>
                     <button className="confirm-button">Search</button>
                 </div>
                 

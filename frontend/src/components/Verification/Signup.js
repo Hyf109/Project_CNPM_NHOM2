@@ -33,7 +33,9 @@ function Signup() {
         setState(prevState => ({
             ...prevState, 
             [name]:value
-        }))
+        }));
+
+        console.log(state);
     }
 
     const handleSubmit = async (e) => {
