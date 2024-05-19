@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa49ad83-d0f1-4f27-a5c6-64ddbb2707a3" name="Changes" comment="add unit test">
-      <change afterPath="$PROJECT_DIR$/backend/Test/profileController.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Test/authController.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Test/authController.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Test/eventController.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Test/eventController.test.js" afterDir="false" />
-    </list>
+    <list default="true" id="aa49ad83-d0f1-4f27-a5c6-64ddbb2707a3" name="Changes" comment="add unit test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
