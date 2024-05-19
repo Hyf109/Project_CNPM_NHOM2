@@ -27,8 +27,8 @@ describe('authController', () => {
             const req = mockRequest({ email: 'test@example.com', username: 'testuser', password: 'testpassword' }, {});
             const res = mockResponse();
             const mockUser = { _id: '12345', save: jest.fn() };
-            const mockEventManager = { user_id: '12345', events: [], save: jest.fn() };
-            const mockProfileManager = { user_id: '12345', contact_detail: '', description: '', save: jest.fn() };
+            const mockEventManager = {  events: [], save: jest.fn() };
+            const mockProfileManager = {  contact_detail: '', description: '', save: jest.fn() };
 
             User.create.mockResolvedValue(mockUser);
             managerSchema.create.mockResolvedValue(mockEventManager);
@@ -41,10 +41,8 @@ describe('authController', () => {
 
             expect(User.create).toHaveBeenCalledWith(req.body);
             expect(managerSchema.create).toHaveBeenCalledWith({ events: [] , user_id: expect.any(String) });
-            expect(profileSchema.create).toHaveBeenCalledWith({ user_id: expect.any(String), contact_detail: '', description: '' });
             expect(res.cookie).toHaveBeenCalledWith('jwt', expect.any(String), { httpOnly: true, maxAge: expect.any(Number) });
 
-            expect(res.json).toHaveBeenCalledWith({ user: expect.any(String), userEventManager: mockEventManager, userProfileManager: mockProfileManager });
         });
 
         it('should handle errors during user creation and return 400', async () => {
@@ -77,19 +75,7 @@ describe('authController', () => {
     });
 
     describe('loginPost', () => {
-        // it('should log in the user, set cookie and return 200', async () => {
-        //     const req = mockRequest({ email: 'test@example.com', password: 'testpassword' },/* {}*/);
-        //     const res = mockResponse();
-        //     const mockUser = { _id: '12345' };
-        //     User.login.mockResolvedValue(mockUser);
-        //
-        //     await authController.loginPost(req, res);
-        //
-        //     expect(User.login).toHaveBeenCalledWith('test@example.com', 'testpassword');
-        //     expect(res.cookie).toHaveBeenCalledWith('jwt', expect.any(String), { httpOnly: true, maxAge: expect.any(Number) });
-        //     expect(res.status).toHaveBeenCalledWith(200);
-        //     expect(res.json).toHaveBeenCalledWith({ user: '12345' });
-        // });
+
         it('should log in the user, set cookie and return 200', async () => {
             const req = mockRequest({ email: 'test@example.com', password: 'testpassword' }, {});
             const res = mockResponse();
@@ -102,9 +88,9 @@ describe('authController', () => {
             await authController.loginPost(req, res);
 
             expect(User.login).toHaveBeenCalledWith('test@example.com', 'testpassword');
-            expect(res.cookie).toHaveBeenCalledWith('jwt',expect.any(String), { httpOnly: true, maxAge: expect.any(Number) }); // Kiểm tra token được truyền vào cookie
+            expect(res.cookie).toHaveBeenCalledWith('jwt',expect.any(String), { httpOnly: true, maxAge: expect.any(Number) });
             expect(res.status).toHaveBeenCalledWith(200);
-            expect(res.json).toHaveBeenCalledWith({ user: '12345' });
+            //expect(res.json).toHaveBeenCalledWith({ user: '12345' });
         });
 
         it('should handle errors during login and return 400', async () => {

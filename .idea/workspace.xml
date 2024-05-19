@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa49ad83-d0f1-4f27-a5c6-64ddbb2707a3" name="Changes" comment="add unit test">
+      <change afterPath="$PROJECT_DIR$/backend/Test/profileController.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/pagestyle/HomePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/pagestyle/homePage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/pagestyle/HostEvent.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/pagestyle/hostEvent.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Test/authController.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Test/authController.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Test/eventController.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Test/eventController.test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,21 +36,100 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "unitTest",
-    "last_opened_file_path": "C:/Github/Project_CNPM_NHOM2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;unitTest&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Github/Project_CNPM_NHOM2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;D:/Finder/Project_CNPM_NHOM2/backend/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="Jest.profileController">
+    <configuration name="eventController" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/backend" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/backend/Test/eventController.test.js" />
+      <test-names>
+        <test-name value="eventController" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="profileController" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/backend" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/backend/Test/profileController.test.js" />
+      <test-names>
+        <test-name value="profileController" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="profileController.getProfileByID.should call findOne ind profileSchema" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/backend" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/backend/Test/profileController.test.js" />
+      <test-names>
+        <test-name value="profileController" />
+        <test-name value="getProfileByID" />
+        <test-name value="should call findOne ind profileSchema" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="profileController.getProfileByID.should handle error and return 400" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/backend" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/backend/Test/profileController.test.js" />
+      <test-names>
+        <test-name value="profileController" />
+        <test-name value="getProfileByID" />
+        <test-name value="should handle error and return 400" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="profileController.updateProfile.should call findOneAndUpdate in profileSchema" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/backend" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/backend/Test/profileController.test.js" />
+      <test-names>
+        <test-name value="profileController" />
+        <test-name value="updateProfile" />
+        <test-name value="should call findOneAndUpdate in profileSchema" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.profileController" />
+        <item itemvalue="Jest.profileController.updateProfile.should call findOneAndUpdate in profileSchema" />
+        <item itemvalue="Jest.profileController.getProfileByID.should handle error and return 400" />
+        <item itemvalue="Jest.profileController.getProfileByID.should call findOne ind profileSchema" />
+        <item itemvalue="Jest.eventController" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -52,7 +139,18 @@
       <option name="presentableId" value="Default" />
       <updated>1712627489492</updated>
       <workItem from="1712627490184" duration="819000" />
+      <workItem from="1716085757107" duration="8697000" />
+      <workItem from="1716107190728" duration="3840000" />
     </task>
+    <task id="LOCAL-00001" summary="add unit test">
+      <option name="closed" value="true" />
+      <created>1716050600107</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716050600107</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
