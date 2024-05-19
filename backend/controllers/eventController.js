@@ -50,10 +50,14 @@ const createEvent = async(req, res) => {
 //Get all events
 const getEvents = async(req, res) => {
     try {
-        const { title, startTime, endTime, status } = req.body; //status: upcoming, occuring, ended
+        const { location, title, startTime, endTime, status } = req.body; //status: upcoming, occuring, ended
         let query = {};
 
         if (title) {
+            query.title = new RegExp(title, 'i');
+        }
+
+        if (location) {
             query.title = new RegExp(title, 'i');
         }
 
