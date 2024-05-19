@@ -40,6 +40,8 @@
 
 .text-box:focus {
     background-color: aliceblue;
+    border: solid;
+    border-width: 0 0 1px 0;
 }
 
 .form-event-description {

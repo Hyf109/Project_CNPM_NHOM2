@@ -8,7 +8,7 @@ export const useSignup = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
 
-    const signup = async (email, password, username) => {
+    const signup = async (email, username, password) => {
         setIsLoading(true);
         setError(null);
 
@@ -21,7 +21,7 @@ export const useSignup = () => {
             body: JSON.stringify({
                 email: email,
                 password: password,
-                username: username
+                username: username,
             })
         });
 
@@ -29,10 +29,14 @@ export const useSignup = () => {
 
         if (!response.ok) {
             setIsLoading(false);
-            setError(error);
-        } else {
+            setError(json.errors);
+            console.log(json.errors);
+        } 
+
+        if (response.ok) {
             localStorage.setItem('user', JSON.stringify(json));
-            auth.dispatch({type: 'LOGIN', payload: json})
+            auth.dispatch({type: 'LOGIN', payload: json});
+            navigate('/search');
             setIsLoading(false);
         }
     }
