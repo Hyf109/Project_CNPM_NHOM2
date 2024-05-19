@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Horizontal from "components/HomePage/Horizontal/Horizontal";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Element } from "react-scroll";
 import FadeInSection from "components/effects/fadeEffects";
 
@@ -13,10 +13,19 @@ import aboutUs from 'components/assets/images/about-us.png'
 import Feature from "components/HomePage/Feature/Feature";
 import LoginBar from "components/Verification/Menu/LoginBar";
 import Donate from "components/HomePage/Donate/Donate";
+import { useAuth } from "hooks/useAuth";
 
 
 
 function HomePage() {
+    const navigate = useNavigate();
+
+    const {user} = useAuth();
+
+    if (user) {
+        navigate('/search');
+    }
+    
     return (
         <>
             <LoginBar />

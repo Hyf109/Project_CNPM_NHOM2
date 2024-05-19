@@ -5,13 +5,15 @@ import logoImg from 'components/assets/images/logo.png'
 import { useAuth } from 'hooks/useAuth';
 
 const NavBar = () => {
+    const {user} = useAuth();
+
     const navigate = useNavigate();
-    const handleLinkClick = (url) => {
-        navigate(url);
+
+
+    if (!user) {
+        return <div>Loading...</div>
     }
 
-    const user = JSON.parse(localStorage.getItem('user'));
-    
 
     return (
         <div className="NavBar">
@@ -33,7 +35,7 @@ const NavBar = () => {
                 </ul>
             </span>
             <span className="user text nav-bar-flex-item">
-                <button id="user-account-button" onClick={() => handleLinkClick('/profile')}>
+                <button id="user-account-button" onClick={() => navigate('/profile')}>
                     {user.username}
                 </button>
             </span>

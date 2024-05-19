@@ -8,7 +8,12 @@ function UserContact() {
     const [editable, setEditable] = useState(false);
 
     const {data, isPending, error} = useFetch('/finder/api/user/');
-    console.log(data); 
+
+    if (isPending) {
+        <div>Is Loading...</div>
+    }
+    
+    // console.log(data); 
 
     return (
         <div className="user-link">

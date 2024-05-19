@@ -10,8 +10,15 @@ import { useSignup } from "hooks/useSignup";
 
 
 function Signup() {
-    const navigate = useNavigate('/search');
+    const navigate = useNavigate();
+    
     const {signup, isLoading, error} = useSignup();
+
+    const {user} = useAuth();
+
+    if (user) {
+        navigate('/search');
+    }
 
     const [state, setState] = useState({
         email:'',

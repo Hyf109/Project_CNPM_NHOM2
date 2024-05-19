@@ -1,6 +1,7 @@
 import {useContext, createContext, useState, useReducer, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 export const AuthContext = createContext();
 
 export const authReducer = (state, action) => {
@@ -13,10 +14,12 @@ export const authReducer = (state, action) => {
             return state;
     }
 }
+
 const AuthProvider = ({children}) => {
     const [state, dispatch] = useReducer(authReducer, {
         user: null
     });
+    
 
     useEffect(() => {
         //Conver local storage cookie store in string to json

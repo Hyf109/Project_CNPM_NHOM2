@@ -12,6 +12,12 @@ import { useSignin } from "hooks/useSignin";
 function Signin() {
     const navigate = useNavigate('/search');
     const {signin, error, isLoading} = useSignin();
+
+    const {user} = useAuth();
+
+    if (user) {
+        navigate('/search');
+    }
     
 
     const [state, setState] = useState({
