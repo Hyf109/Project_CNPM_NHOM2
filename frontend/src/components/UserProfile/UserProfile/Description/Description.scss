@@ -3,6 +3,7 @@
     background-color: #fff;
     border-radius: 10px;
     margin-bottom: 20px;
+    display: flex;
 
     .avatar {
         display: flex;
@@ -45,4 +46,10 @@
         width: 100px;
         
     }
+}
+
+.logout-button-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
 }
