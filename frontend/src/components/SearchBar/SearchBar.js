@@ -1,7 +1,24 @@
-import React from "react"
-import './SearchBar.scss'
+import React, { useState } from "react";
+import './SearchBar.scss';
 
-function Boardbar() {
+function Boardbar({ onSearch }) {
+    const [queryParams, setQueryParams] = useState({
+        startTime: '',
+        endTime: '',
+        location: '',
+        title: ''
+    });
+
+    const handleInputChange = (event) => {
+        setQueryParams({
+            ...queryParams,
+            [event.target.name]: event.target.value
+        });
+    };
+
+    const handleSubmit = () => {
+        onSearch(queryParams);
+    };
     return (
         <nav className="taskbar">
             <div className="search-bar-container">
@@ -10,7 +27,7 @@ function Boardbar() {
                     <h3 className="filter-name">Start time</h3>
                     <div className="board--icon">
                         <i className="fa-solid fa-clock"></i>
-                        <input className="event-time-filter" type="datetime-local"/>
+                        <input name="startTime" className="event-time-filter" type="datetime-local" onChange={handleInputChange}/>
                     </div>
                 </span>
 
@@ -18,7 +35,7 @@ function Boardbar() {
                     <h3 className="filter-name">End time</h3>
                     <span className="board--icon">
                         <i className="fa-solid fa-clock"></i>
-                        <input className="event-time-filter" type="datetime-local"/>
+                        <input name="endTime" className="event-time-filter" type="datetime-local" onChange={handleInputChange}/>
                     </span>
                 </span>
 
@@ -28,7 +45,7 @@ function Boardbar() {
                         <i className="search-btn">
                             <i className="fa-solid fa-location-dot"></i>
                         </i>
-                        <input type="text" className="search" placeholder="Search by location" />
+                        <input name="location" type="text" className="search" placeholder="Search by location" onChange={handleInputChange} />
                     </span>
                 </span>
 
@@ -38,12 +55,12 @@ function Boardbar() {
                         <i className="search-btn">
                             <i className="fa-solid fa-magnifying-glass"></i>
                         </i>
-                        <input type="text" className="search" placeholder="Search by name" />
+                        <input name="title" type="text" className="search" placeholder="Search by name" onChange={handleInputChange} />
                     </span>
                 </span>
                 <div className="board--item">
                     <br></br>
-                    <button className="confirm-button">Search</button>
+                    <button className="confirm-button" onClick={handleSubmit}>Search</button>
                 </div>
                 
             </div>
@@ -51,4 +68,4 @@ function Boardbar() {
     )
 }
 
-export default Boardbar
+export default Boardbar;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AboutMe.scss';
 import '../UserProfile.scss'
 
@@ -6,14 +6,38 @@ const AboutMe = () => {
     const [text, setText] = useState('');
     const [editable, setEditable] = useState(false);
 
+    const { profile, updateUserProfile, fetchUserProfile } = useProfile();
+    const { user, isLoading } = useAuth();
+
+    useEffect(() => {
+        if (user) {
+            fetchUserProfile(user.user);
+        }
+    }, [user]);
+
     const handleTextareaChange = (event) => {
         setText(event.target.value);
         event.target.style.height = 'auto';
         event.target.style.height = event.target.scrollHeight + 'px';
     };
 
+
+
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
+    if (!user) {
+        return <div>Please log in to see your profile.</div>;
+    }
+
+    if (!profile) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div className="about-me-container">
+            <div>{profile.description}</div>
             <div className="about-me-title">
                 <h2>About me</h2>
                 <div className="buttons-row">
@@ -24,8 +48,7 @@ const AboutMe = () => {
                         }} className="about-me-button">Edit</button>
                     }
 
-                    {
-                        editable && 
+                    {editable && (
                         <>
                             <button onClick={(e) => {
                                 e.preventDefault();
@@ -37,8 +60,7 @@ const AboutMe = () => {
                                 setEditable(false);
                             }} className="about-me-button">Cancel</button>
                         </>
-
-                    }
+                    )}
                 </div>
             </div>
             
