@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './AboutMe.scss';
+import '../UserProfile.scss'
 
 const AboutMe = () => {
     const [text, setText] = useState('');
@@ -15,12 +16,12 @@ const AboutMe = () => {
         <div className="about-me-container">
             <div className="about-me-title">
                 <h2>About me</h2>
-                <div className="about-me-buttons">
+                <div className="buttons-row">
                     {
                         !editable && <button onClick={(e) => {
                             e.preventDefault();
                             setEditable(true);
-                        }} className="about-me-edit-button">Edit</button>
+                        }} className="about-me-button">Edit</button>
                     }
 
                     {
@@ -29,12 +30,12 @@ const AboutMe = () => {
                             <button onClick={(e) => {
                                 e.preventDefault();
                                 setEditable(false);
-                            }} className="about-me-save-button">Save</button>
+                            }} className="about-me-button">Save</button>
 
                             <button onClick={(e) => {
                                 e.preventDefault();
                                 setEditable(false);
-                            }} className="about-me-cancel-button">Cancel</button>
+                            }} className="about-me-button">Cancel</button>
                         </>
 
                     }

@@ -8,9 +8,9 @@ const PrivateRoute = () => {
 
     const user = JSON.parse(localStorage.getItem('user'));
     
-    if (!user) {
-        return <Navigate to="/signin" />;
-    }
+    // if (!user) {
+    //     return <Navigate to="/signin" />;
+    // }
 
     return <Outlet/>
 }
