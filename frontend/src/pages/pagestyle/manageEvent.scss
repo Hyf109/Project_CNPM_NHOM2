@@ -23,6 +23,7 @@
 }   
 
 .manage-event-view-container {
+    height: 95%;
     display: flex;
 }
 
@@ -34,5 +35,6 @@
 
 .event-info-view {
     flex: 60;
+    height: 100%;
     padding: 20px;
 }

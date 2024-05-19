@@ -14,6 +14,7 @@ $pad: 5px;
     padding: 2*$gap;
     border-radius: $radius;
     min-width: none;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
     
     .host-form-component-container {
         display: flex;
@@ -91,6 +92,7 @@ $pad: 5px;
 .form-event-button {
     justify-content: center;
 }
+
 
 @media screen and (max-width: 750px) {
     // .event-list-container {
