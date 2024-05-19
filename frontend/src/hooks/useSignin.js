@@ -29,12 +29,15 @@ export const useSignin = () => {
 
         if (!response.ok) {
             setIsLoading(false);
-            setError(error);
-        } else {
+            setError(json.errors);
+        } 
+        
+        if (response.ok) {
             localStorage.setItem('user', JSON.stringify(json));
             
             auth.dispatch({type: 'LOGIN', payload: json})
             setIsLoading(false);
+            navigate('/search');
         }
     }
 

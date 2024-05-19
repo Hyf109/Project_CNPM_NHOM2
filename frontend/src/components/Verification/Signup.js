@@ -12,7 +12,7 @@ import { useSignup } from "hooks/useSignup";
 function Signup() {
     const navigate = useNavigate();
     
-    const {signup, isLoading, error} = useSignup();
+    let {signup, isLoading, error} = useSignup();
 
     const {user} = useAuth();
 
@@ -41,11 +41,10 @@ function Signup() {
         const { email, username, password } = state;
         
         await signup(email, username, password);
-        
-        if (!error) {
-            navigate('/search');
-        }
     };
+
+    // const {email, password, username} = error;
+    
     
 
     return (
@@ -68,22 +67,24 @@ function Signup() {
                             <span className="fa-solid fa-envelope"></span>
                             <input value={state.email} onChange={handleOnChange} name="email" type="email" placeholder="Email" required></input>
                         </div>
+                        {error && <div className="authentication-field-error">{error.email}</div>}
 
                         <div className="input-box">
                             <span className="fa-solid fa-user"></span>
                             <input value={state.username} onChange={handleOnChange} name="username" type="text" placeholder="Username" required ></input>
-
                         </div>
+                        {error && <div className="authentication-field-error">{error.username}</div>}
 
                         <div className="input-box">
                             <span className="fa-solid fa-lock"></span>
                             <input value={state.password} onChange={handleOnChange} name="password" type="password" placeholder="Password" required></input>
                         </div>
+                        {error && <div className="authentication-field-error">{error.password}</div>}
 
-                        <div className="input-box">
+                        {/* <div className="input-box">
                             <span className="fa-solid fa-check"></span>
                             <input value={state.confirm} onChange={handleOnChange} name="confirm" type="password" placeholder="Confirm password" required></input>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="confirm-terms">
                         {/* <label><input type="checkbox" className="terms-button" required>I do accept your </input><a href="terms.html">Terms and Conditions</a> of your site.</label> */}
@@ -97,7 +98,6 @@ function Signup() {
                     </div>
                 </div>
 
-                <div className="vertical-line"></div>
             </div>
         </div>
     )
