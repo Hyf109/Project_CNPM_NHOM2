@@ -5,7 +5,7 @@ import { Element } from "react-scroll";
 import FadeInSection from "components/effects/fadeEffects";
 
 // scss components
-import './pagestyle/homePage.scss'
+import './pagestyle/HomePage.scss'
 
 // components
 import Footer from "components/HomePage/Footer/Footer";

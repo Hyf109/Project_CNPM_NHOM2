@@ -1,5 +1,6 @@
 import React from "react";
 import './UserInfo.scss'
+import '../UserProfile.scss'
 import { useState } from "react";
 
 function UserInfo() {
@@ -9,12 +10,12 @@ function UserInfo() {
         <div className="user-info">
             <div className="user-info-title">
                 <h2>Information</h2>
-                <div className="info-buttons">
+                <div className="buttons-row">
                         {
                             !editable && <button onClick={(e) => {
                                 e.preventDefault();
                                 setEditable(true);
-                            }} className="info-edit-button">Edit</button>
+                            }} className="info-button">Edit</button>
                         }
 
                         {
@@ -23,12 +24,12 @@ function UserInfo() {
                                     <button onClick={(e) => {
                                         e.preventDefault();
                                             setEditable(false);
-                                        }} className="info-save-button">Save</button>
+                                        }} className="info-button">Save</button>
                                         
                                         <button onClick={(e) => {
                                             e.preventDefault();
                                             setEditable(false);
-                                    }} className="info-cancel-button">Cancel</button>
+                                    }} className="info-button">Cancel</button>
                                 </>
                         }
                     </div>

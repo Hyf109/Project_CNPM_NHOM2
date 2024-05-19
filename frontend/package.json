@@ -1,5 +1,8 @@
 {
-  "proxy": "http://localhost:4000",
+  "options": {
+    "allowedHosts": ["localhost", ".localhost"],
+    "proxy": "https://localhost:4000/"
+    },
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
@@ -11,7 +14,7 @@
     "cookie-parser": "^1.4.6",
     "date-fns": "^3.6.0",
     "moment": "^2.30.1",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",

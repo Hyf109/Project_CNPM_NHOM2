@@ -104,14 +104,14 @@ function HostForm() {
                 <div className="host-form-component-container form-event-button">
                     {isSubmitting ? (
                         <>
-                        <button className="confirm confirm-submit-button" onClick={handleSubmit}>Confirm</button>
-                        <button className="cancel cancel-submit-button" onClick={(e) => {
+                        <button className="host-form-button confirm-submit-button" onClick={handleSubmit}>Confirm</button>
+                        <button className="host-form-button cancel-submit-button" onClick={(e) => {
                             e.preventDefault();
                             setIsSubmitting(false)
                         }}>Cancel</button>
                         </>
                     ) : (
-                        <button className="button submit-event-form-button" onClick={(e) => {
+                        <button className="host-form-button submit-event-form-button" onClick={(e) => {
                             e.preventDefault();
                             setIsSubmitting(true)
                         }}>Create</button>

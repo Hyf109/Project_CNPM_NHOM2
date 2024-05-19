@@ -1,5 +1,6 @@
 import React from "react";
 import './UserContact.scss'
+import '../UserProfile.scss'
 import { useAuth } from "hooks/useAuth";
 import { useState } from "react";
 import useFetch from "hooks/useFetch";
@@ -19,12 +20,12 @@ function UserContact() {
         <div className="user-link">
             <div className="contact-links-title">
                 <h2>Contact links</h2>
-                    <div className="contact-buttons">
+                    <div className="buttons-row">
                         {
                             !editable && <button onClick={(e) => {
                                 e.preventDefault();
                                 setEditable(true);
-                            }} className="contact-link-edit-button">Edit</button>
+                            }} className="contact-button">Edit</button>
                         }
 
                         {
@@ -33,12 +34,12 @@ function UserContact() {
                                     <button onClick={(e) => {
                                         e.preventDefault();
                                             setEditable(false);
-                                        }} className="contact-save-button">Save</button>
+                                        }} className="contact-button">Save</button>
                                         
                                         <button onClick={(e) => {
                                             e.preventDefault();
                                             setEditable(false);
-                                    }} className="contact-cancel-button">Cancel</button>
+                                    }} className="contact-button">Cancel</button>
                                 </>
                         }
                     </div>

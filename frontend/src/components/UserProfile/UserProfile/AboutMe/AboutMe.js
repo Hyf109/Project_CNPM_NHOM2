@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './AboutMe.scss';
-import { useProfile } from 'context/ProfileContext';
-import { useAuth } from 'hooks/useAuth';
-import useFetch from 'hooks/useFetch';
+import '../UserProfile.scss'
 
 const AboutMe = () => {
     const [text, setText] = useState('');
@@ -41,25 +39,26 @@ const AboutMe = () => {
         <div className="about-me-container">
             <div>{profile.description}</div>
             <div className="about-me-title">
-                <h2>About me</h2>   
-                <div className="about-me-buttons">
-                    {!editable && <button onClick={() =>{ 
-                        setEditable(true);
-                        setText(profile.description);
-                    }} className="about-me-edit-button">Edit</button>}
+                <h2>About me</h2>
+                <div className="buttons-row">
+                    {
+                        !editable && <button onClick={(e) => {
+                            e.preventDefault();
+                            setEditable(true);
+                        }} className="about-me-button">Edit</button>
+                    }
 
                     {editable && (
                         <>
-                            <button onClick={() => {
-                                setEditable(false)
-                                updateUserProfile({description:text});
-                                console.log(profile);
-                            }} className="about-me-save-button">Save</button>
-                            <button onClick={() => {
+                            <button onClick={(e) => {
+                                e.preventDefault();
                                 setEditable(false);
-                                setText(profile.description);
-                                
-                            }} className="about-me-cancel-button">Cancel</button>
+                            }} className="about-me-button">Save</button>
+
+                            <button onClick={(e) => {
+                                e.preventDefault();
+                                setEditable(false);
+                            }} className="about-me-button">Cancel</button>
                         </>
                     )}
                 </div>
