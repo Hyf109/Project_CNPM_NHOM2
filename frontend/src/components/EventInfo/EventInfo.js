@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import './EventInfo.scss'
 
 import moment from "moment";
@@ -12,16 +12,51 @@ const formatDate = (datetime) => {
     return formattedDate;
 }
 
-function EventInfo({onClose}) {
+
+
+function EventInfo({ event, onClose }) {
 
     //Data code
+    const [joinError, setJoinError] = useState(null);
+    const [isJoining, setIsJoining] = useState(false);
+
+    const joinEvent = async (event_id) => {
+        try {
+            setIsJoining(true);
+            
+            const response = await fetch(`finder/api/event/join/${event_id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+    
+
+            const json = await response.json();
+
+            //Handle if join success
+            if (response.ok) {
+                console.log(json);
+            }
+
+            if (!response.ok) {
+                setJoinError(json.mssg);
+            }
+
+            setIsJoining(false);
+        } catch (error) {
+            console.log(error);
+            setIsJoining(false);
+        }
+    }
+
 
     return (
         <div className="event-info-container">
             <div className="event-info-window">
                 <div className="event-info">
                     <h1 className="event-info-title">
-                        Name of event
+                        {event.title}
                     </h1>
                     <div className="event-time-info">
                         <span>
@@ -29,24 +64,24 @@ function EventInfo({onClose}) {
                             <div>End time: </div>
                         </span>
                         <span>
-                            <div> 21/5/2024 - 4:56 pm</div>
-                            <div> 21/5/2024 - 4:56 pm</div>
+                            <div> {() => formatDate(event.startTime)}</div>
+                            <div> {() => formatDate(event.endTime)}</div>
                         </span>
                     </div>
                     <span className="event-location-info">
-                        Location: 
+                        Location: {event.location}
                     </span>
                     <span className="event-description-info">
                         <h3>About this event:</h3>
                             <div className="event-description-info">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            {event.description}
                             </div>
                     </span>
                 </div>
 
                 <div className="event-extra-info">
                     <div className="event-member-list">
-                        <MemberList event_id={'664ade5fb59acbd708a19ec4'}></MemberList>
+                        <MemberList event_id={event._id}></MemberList>
                     </div>
                 </div>
             </div>
@@ -54,7 +89,8 @@ function EventInfo({onClose}) {
             <div className="event-button-row">
                 {/* Call the onClose function when the Close button is clicked */}
                 <button onClick={onClose}>Close</button>
-                <button className="info-join-event-button">Join</button>
+                {joinError && <div>{joinError}</div>}
+                <button disabled={isJoining} onClick={() => joinEvent(event._id)} className="info-join-event-button">Join</button>
             </div>
         </div>
     )

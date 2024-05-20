@@ -4,10 +4,14 @@ import './MemberList.scss';
 const MemberList = ({event_id}) => {
 
     const {data, isPending, error} = useFetch(`finder/api/event/get/${event_id}`);
+    
+    if (isPending) {
+        return <div>Loading...</div>
+    }
 
     return (
         <div>
-            {data && (
+            {data && ( 
                 <>
                     <div className="member-list">
                         <div className="member-list-host">

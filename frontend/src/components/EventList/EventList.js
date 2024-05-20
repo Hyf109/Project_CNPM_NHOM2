@@ -23,10 +23,10 @@ function EventList({ queryParams, onEventSelect }) {
         return <div><h1>Oops! Something went wrong!</h1></div>;
     }
 
-    const handleButtonClick = (id) => {
-        console.log(id);
-        onEventSelect();
-    }
+    const handleButtonClick = (event) => {
+        console.log(event);
+        onEventSelect(event);  // Pass the id to the onEventSelect function
+      }
 
     return (
         <div className="event-list">
@@ -42,7 +42,7 @@ function EventList({ queryParams, onEventSelect }) {
                         {event.endTime && <p>To: {formatDate(event.endTime)}</p>}
 
                         <div className="event-card-buttons">
-                            <button onClick={() => handleButtonClick(event._id)}>View info</button>
+                            <button onClick={() => handleButtonClick(event)}>View info</button>
                         </div>
                     </div>
                 </div>

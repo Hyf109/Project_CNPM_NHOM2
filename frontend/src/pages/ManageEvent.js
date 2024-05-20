@@ -78,9 +78,9 @@ const ManageEvent = () => {
                     {!eventListState && <h2>All events</h2>}
                     <EventList queryParams={eventListState} className="manage-event-list"/>
                 </div>
-                <div className="event-info-view">
+                {/* <div className="event-info-view">
                     <EventInfo />
-                </div>
+                </div> */}
             </div>
         </div>
     );

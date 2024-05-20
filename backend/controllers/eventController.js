@@ -208,7 +208,7 @@ const joinEvent = async(req, res) => {
     
             res.status(200).json({mssg: 'User joined event'});
         } else {
-            res.status(200).json({mssg: 'You already joined the event'});
+            res.status(400).json({mssg: 'You already joined the event'});
         }
     } catch (error) {
         res.status(400).json({error: error.message});
