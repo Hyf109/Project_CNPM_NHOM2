@@ -50,8 +50,18 @@ const createEvent = async(req, res) => {
 //Get all events
 const getEvents = async(req, res) => {
     try {
-        const { location, title, startTime, endTime, status } = req.body; //status: upcoming, occuring, ended
+        const { location, title, startTime, endTime, status, host_id } = req.body; //status: upcoming, occuring, ended
         let query = {};
+
+        if (host_id) {
+            query.host_id = host_id;
+            if (status) {
+                query.status = status;
+            }    
+        } else if (status) {
+            query.status = status;
+        }
+
 
         if (title) {
             query.title = new RegExp(title, 'i');
@@ -61,9 +71,6 @@ const getEvents = async(req, res) => {
             query.location = new RegExp(location, 'i');
         }
         
-        if (status) {
-            query.status = status;
-        }
 
         if (startTime && endTime) {
             query.startTime = { $gte: new Date(startTime) };
