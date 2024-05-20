@@ -37,9 +37,6 @@ function Signin() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await signin(state.email, state.password);
-        if (!error) {
-            navigate('/search');
-        }
     }
 
     return (
@@ -59,7 +56,6 @@ function Signin() {
                         <div className="input-box">
                             <span className="fa-solid fa-envelope"></span>
                             <input value={state.email} name="email" onChange={handleOnChange}  type="email" placeholder="example@abc.xyz" required ></input>
-
                         </div>
 
                         <div className="input-box">
@@ -67,6 +63,7 @@ function Signin() {
                             <input value={state.password} name="password" onChange={handleOnChange} type="password" placeholder="Password" required></input>
                         </div>
                     </div>
+                    {error && <div className="authentication-field-error">{error.credential}</div>}
 
                     <button disabled={isLoading} onClick={handleSubmit} type="submit" className="btn">Login</button>                    
 
