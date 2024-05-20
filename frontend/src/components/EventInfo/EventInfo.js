@@ -3,6 +3,7 @@ import './EventInfo.scss'
 
 import moment from "moment";
 import MemberList from "components/MemberList/MemberList";
+import { useAuth } from "context/AuthProvider";
 
 const formatDate = (datetime) => {
     if (!datetime) return null;
@@ -12,13 +13,77 @@ const formatDate = (datetime) => {
     return formattedDate;
 }
 
-
-
 function EventInfo({ event, onClose }) {
 
     //Data code
     const [joinError, setJoinError] = useState(null);
     const [isJoining, setIsJoining] = useState(false);
+
+    const {user} = useAuth();
+
+    if (!user) {
+        return <div>Loading...</div>
+    }
+
+    const cancelEvent = async (event_id) => {
+        try {
+            setIsJoining(true);
+            
+            const response = await fetch(`finder/api/event/delete/${event_id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+    
+
+            const json = await response.json();
+
+            //Handle if cancel success
+            if (response.ok) {
+                console.log(json);
+            }
+
+            if (!response.ok) {
+                setJoinError(json.mssg);
+            }
+
+            setIsJoining(false);
+        } catch (error) {
+            console.log(error);
+            setIsJoining(false);
+        }
+    }
+
+    const leaveEvent = async (event_id) => {
+        try {
+            setIsJoining(true);
+            
+            const response = await fetch(`finder/api/event/leave/${event_id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+    
+
+            const json = await response.json();
+
+            //Handle if leave success
+            if (response.ok) {
+                console.log(json);
+            }
+
+            if (!response.ok) {
+                setJoinError(json.mssg);
+            }
+
+            setIsJoining(false);
+        } catch (error) {
+            console.log(error);
+            setIsJoining(false);
+        }
+    }
 
     const joinEvent = async (event_id) => {
         try {
@@ -50,6 +115,8 @@ function EventInfo({ event, onClose }) {
         }
     }
 
+    const isUserJoined = event.member_list.some(member => member.member_id === user.user);
+    const isUserHost = event.host_id === user.user;
 
     return (
         <div className="event-info-container">
@@ -87,10 +154,20 @@ function EventInfo({ event, onClose }) {
             </div>
 
             <div className="event-button-row">
-                {/* Call the onClose function when the Close button is clicked */}
                 <button onClick={onClose}>Close</button>
                 {joinError && <div>{joinError}</div>}
-                <button disabled={isJoining} onClick={() => joinEvent(event._id)} className="info-join-event-button">Join</button>
+                
+                {
+                    event.status === 'upcoming' && !isUserJoined && <button disabled={isJoining} onClick={() => joinEvent(event._id)} className="info-join-event-button">Join</button>
+                }
+                
+                {
+                    event.status === 'upcoming' && isUserJoined && isUserHost && <button disabled={isJoining} onClick={() => cancelEvent(event._id)} className="info-cancel-event-button">Cancel</button>
+                }
+
+                {
+                    event.status === 'upcoming' && isUserJoined && !isUserHost && <button disabled={isJoining} onClick={() => leaveEvent(event._id)} className="info-leave-event-button">Leave</button>
+                }
             </div>
         </div>
     )

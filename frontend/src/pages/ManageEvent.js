@@ -1,47 +1,51 @@
 import '../pages/pagestyle/manageEvent.scss'
 import EventList from 'components/EventList/EventList';
 import EventInfo from 'components/EventInfo/EventInfo';
-import { useState } from 'react';
-import { useAuth } from 'context/AuthProvider';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import useFetch from 'hooks/useFetch';
 
 const ManageEvent = () => {
-    const { user } = useAuth();
-    const [eventListState, setEventListState] = useState(user ? { host_id: user.user } : null);
+    const [eventListState, setEventListState] = useState(null);
     const [selectedButton, setSelectedButton] = useState('All events');
+    const [selectedEvent, setSelectedEvent] = useState(null);
+    const [showEventInfo, setShowEventInfo] = useState(false);
 
-    // Update eventListState once user is loaded
+    const {data: manager, isPending, error} = useFetch('finder/api/event/manager');
+
+    // Update eventListState once manager data is loaded
     useEffect(() => {
-        if (user) {
-            setEventListState({ host_id: user.user });
+        if (manager && manager.events) {
+            setEventListState({ joined_event_id_list: manager.events.map(event => event.event_id) });
         }
-    }, [user]);
-
-
-    if (!user) {
-        return <div>Loading...</div>
-    }
+    }, [manager]);
 
     const handleButtonClick = (buttonName) => {
         setSelectedButton(buttonName);
         // Update eventListState based on the buttonName
+        setShowEventInfo(false);
+        
         switch (buttonName) {
             case 'All events':
-                setEventListState({host_id: user.user});  // Set to default
+                setEventListState({ joined_event_id_list: manager.events.map(event => event.event_id) });  // Set to default
+                
                 break;
             case 'Upcoming events':
-                setEventListState({host_id: user.user, status: 'upcoming' });
+                setEventListState({ joined_event_id_list: manager.events.map(event => event.event_id), status: 'upcoming' });
                 break;
             case 'Past events':
-                setEventListState({host_id: user.user, status: 'ended' });
+                setEventListState({ joined_event_id_list: manager.events.map(event => event.event_id), status: 'ended' });
                 break;
             case 'Ongoing events':
-                setEventListState({host_id: user.user, status: 'occuring' });
+                setEventListState({ joined_event_id_list: manager.events.map(event => event.event_id), status: 'occuring' });
                 break;
             default:
                 break;
         }
     };
+
+    if (!manager) {
+        return <div>Loading...</div>
+    }
 
     return (  
         <div className="manage-event-page-container">
@@ -76,11 +80,15 @@ const ManageEvent = () => {
                 <div className="event-view">
                     {eventListState && <h2>Your {eventListState.status} events</h2>}
                     {!eventListState && <h2>All events</h2>}
-                    <EventList queryParams={eventListState} className="manage-event-list"/>
+                    <EventList queryParams={eventListState} onEventSelect={(event) => {setShowEventInfo(true); setSelectedEvent(event);}} className="manage-event-list"/>
                 </div>
-                {/* <div className="event-info-view">
-                    <EventInfo />
-                </div> */}
+                {
+                    showEventInfo &&
+                    <div className="event-info-view">
+                        <EventInfo event={selectedEvent} onClose={() => {setShowEventInfo(false); setSelectedEvent(null)}} />
+                    </div>
+                }
+
             </div>
         </div>
     );

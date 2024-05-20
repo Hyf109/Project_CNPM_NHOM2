@@ -46,13 +46,12 @@ function UserContact() {
                     
             </div>
             
- 
             <div className="contact-list">
-                {data && data.profile.contact_detail.contacts.map((contact) => (
+                {/* Check if data and data.profile exist before trying to map over data.profile.contact_detail.contacts */}
+                {data && data.profile && data.profile.contact_detail.contacts.map((contact) => (
                     <div className="contact-line" key={contact._id}>
                         <div className="contact-line-name">
                             <h3>{contact.contact_method}</h3>
-                            {/* <button className="edit-contact-line-button">edit</button> */}
                         </div>
                         <a href={contact.detail}>{contact.detail}</a>
                     </div>

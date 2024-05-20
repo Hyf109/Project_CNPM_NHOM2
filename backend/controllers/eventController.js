@@ -65,7 +65,7 @@ const createEvent = async(req, res) => {
 //Get all events
 const getEvents = async(req, res) => {
     try {
-        const { location, title, startTime, endTime, status, host_id, event_id_list} = req.body; //status: upcoming, occuring, ended
+        const { location, title, startTime, endTime, status, host_id, event_id_list, joined_event_id_list} = req.body; //status: upcoming, occuring, ended
         let query = {};
         
 
@@ -89,6 +89,14 @@ const getEvents = async(req, res) => {
         
         if (event_id_list) {
             query._id = { $nin: event_id_list };
+        }
+
+        if (joined_event_id_list) {
+            if (status) {
+                query.$and = [{_id: { $in: joined_event_id_list }}, {status: status}];
+            } else {
+                query._id = { $in: joined_event_id_list };
+            }
         }
 
         if (startTime && endTime) {
