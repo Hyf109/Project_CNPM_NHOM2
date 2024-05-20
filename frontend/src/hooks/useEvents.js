@@ -32,7 +32,7 @@ const useEvents = (queryParams) => {
         fetchEvents();
     }, [queryParams]);
 
-    console.log(queryParams);
+    // console.log(queryParams);
     // console.log(data);
 
     return { data, isPending, error };

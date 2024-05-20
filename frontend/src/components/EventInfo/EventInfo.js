@@ -17,6 +17,10 @@ function EventInfo() {
 
     return (
         <div className="event-info-container">
+            <div className="event-button-row">
+                <button>Close</button>
+            </div>
+
             <div className="event-info-window">
                 <div className="event-info">
                     <h1 className="event-info-title">

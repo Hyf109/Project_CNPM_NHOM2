@@ -5,6 +5,20 @@ const {getUserCurrentTime} = require('../middleware/userTime');
 
 const mongoose = require('mongoose');
 
+//
+const getEventManager = async (req, res) => {
+    try {
+        const manager = await managerSchema.findOne({user_id: res.locals.user._id});
+
+        res.status(200).json(manager);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+    
+
+
+}
+
 
 //Create event
 const createEvent = async(req, res) => {
@@ -50,8 +64,9 @@ const createEvent = async(req, res) => {
 //Get all events
 const getEvents = async(req, res) => {
     try {
-        const { location, title, startTime, endTime, status, host_id } = req.body; //status: upcoming, occuring, ended
+        const { location, title, startTime, endTime, status, host_id, event_id_list} = req.body; //status: upcoming, occuring, ended
         let query = {};
+        
 
         if (host_id) {
             query.host_id = host_id;
@@ -71,6 +86,9 @@ const getEvents = async(req, res) => {
             query.location = new RegExp(location, 'i');
         }
         
+        if (event_id_list) {
+            query._id = { $nin: event_id_list };
+        }
 
         if (startTime && endTime) {
             query.startTime = { $gte: new Date(startTime) };
@@ -227,7 +245,8 @@ module.exports = {
     getEvents,
     updateEvent,
     joinEvent,
-    leaveEvent
+    leaveEvent,
+    getEventManager
 }
 
 

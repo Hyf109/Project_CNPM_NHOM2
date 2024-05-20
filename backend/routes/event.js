@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {requireAuth, checkUser} = require('../middleware/authMiddleware');
 
-const { getEventByID, getEvents, createEvent, deleteEvent, updateEvent, joinEvent, leaveEvent } = require('../controllers/eventController');
+const { getEventByID, getEvents, createEvent, deleteEvent, updateEvent, joinEvent, leaveEvent, getEventManager } = require('../controllers/eventController');
 
 router.get('/get/:id', requireAuth, getEventByID);
 
@@ -17,5 +17,7 @@ router.patch('/update/:id', requireAuth, updateEvent);
 router.post('/join/:id', requireAuth, joinEvent);
 
 router.post('/leave/:id', requireAuth, leaveEvent)
+
+router.get('/manager', requireAuth, getEventManager);
 
 module.exports = router;

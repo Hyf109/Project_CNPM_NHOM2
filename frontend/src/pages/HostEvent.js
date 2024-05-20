@@ -14,7 +14,7 @@ function HostEvent() {
     // Update eventListState once user is loaded
     useEffect(() => {
         if (user) {
-            setEventListState({ host_id: user.user });
+            setEventListState({ host_id: user.user, status: 'upcoming'});
         }
     }, [user]);
 
@@ -28,7 +28,7 @@ function HostEvent() {
             <div className="host-page-wrapper">
                 <div className="event-list-container">
                     <h2>Your upcoming events</h2>
-                    <EventList queryParams={{host_id: user.user, status: 'occuring' }}/>
+                    <EventList queryParams={eventListState}/>
                 </div>
 
                 <div className="host-form-container">
