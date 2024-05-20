@@ -58,7 +58,11 @@ const getEvents = async(req, res) => {
         }
 
         if (location) {
-            query.title = new RegExp(title, 'i');
+            query.location = new RegExp(location, 'i');
+        }
+        
+        if (status) {
+            query.status = status;
         }
 
         if (startTime && endTime) {

@@ -19,6 +19,7 @@ const useEvents = (queryParams) => {
                     throw new Error('Could not fetch the data');
                 }
                 const result = await response.json();
+                
                 setData(result.event);
                 setIsPending(false);
                 setError(null);
@@ -31,7 +32,8 @@ const useEvents = (queryParams) => {
         fetchEvents();
     }, [queryParams]);
 
-    console.log(data);
+    console.log(queryParams);
+    // console.log(data);
 
     return { data, isPending, error };
 };

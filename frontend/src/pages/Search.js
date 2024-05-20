@@ -12,7 +12,8 @@ export const Search = () => {
     startTime: '',
     endTime: '',
     location: '',
-    title: ''
+    title: '',
+    status: 'upcoming'
   });
 
   const handleSearch = (newParams) => {
