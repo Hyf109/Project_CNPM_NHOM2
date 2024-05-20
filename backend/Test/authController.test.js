@@ -61,7 +61,7 @@ describe('authController', () => {
         });
 
         it('should handle duplicate email error and return 400', async () => {
-            const req = mockRequest({ email: 'test@example.com', username: 'testuser', password: 'testpassword' }, {});
+            const req = mockRequest({ username: 'testuser', password: 'testpassword' }, {});
             const res = mockResponse();
             const error = { code: 11000, keyValue: { email: 'test@example.com' } };
             User.create.mockRejectedValue(error);
