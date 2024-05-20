@@ -9,6 +9,7 @@ import { useAuth } from 'hooks/useAuth';
 import useFetch from 'hooks/useFetch';
 
 export const Search = () => {
+  const [showEventInfo, setShowEventInfo] = useState(false);
   const [queryParams, setQueryParams] = useState({
     startTime: '',
     endTime: '',
@@ -42,11 +43,14 @@ export const Search = () => {
       <Boardbar onSearch={handleSearch} />
       <div className="search-result-wrapper">
         <div className="event-list-container-wrapper">
-          <EventList queryParams={queryParams} />
+          <EventList queryParams={queryParams} onEventSelect={() => setShowEventInfo(true)} />
         </div>
-        <div className="event-info-view">
-          <EventInfo />
-        </div>
+        {showEventInfo && 
+          <div className="search-event-info-view">
+            <EventInfo onClose={() => setShowEventInfo(false)} />
+          </div>
+        }
+
       </div>
     </div>
   );

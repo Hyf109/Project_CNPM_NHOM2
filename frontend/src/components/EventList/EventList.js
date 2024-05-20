@@ -11,7 +11,7 @@ const formatDate = (datetime) => {
     return formattedDate;
 }
 
-function EventList({ queryParams }) {
+function EventList({ queryParams, onEventSelect }) {
     const { data: events, isPending, error } = useEvents(queryParams);
 
     if (isPending) {
@@ -23,11 +23,15 @@ function EventList({ queryParams }) {
         return <div><h1>Oops! Something went wrong!</h1></div>;
     }
 
+    const handleButtonClick = (id) => {
+        console.log(id);
+        onEventSelect();
+    }
 
     return (
         <div className="event-list">
             {events && events.map((event) => (
-                <div className="event-card" key={event.id}>
+                <div className="event-card" key={event._id}>
                     <div className="event-card-info">
                         <div className="event-card-title">
                             <h2>{event.title}</h2>
@@ -38,20 +42,7 @@ function EventList({ queryParams }) {
                         {event.endTime && <p>To: {formatDate(event.endTime)}</p>}
 
                         <div className="event-card-buttons">
-                            {/* {use_case === 'join' && (
-                                <div className="join-buttons">
-                                    <button>Join Now</button>
-                                    <button>View More</button>
-                                </div>
-                            )}
-
-                            {use_case === 'upcoming-ongoing' && (
-                                // Check if the current user is the host, and if yes, add a cancel event button.
-                                <div className="join-buttons">
-                                    <button>Leave</button>
-                                    <button>View More</button>
-                                </div>
-                            )} */}
+                            <button onClick={() => handleButtonClick(event._id)}>View info</button>
                         </div>
                     </div>
                 </div>

@@ -32,16 +32,16 @@ $weight: 600;
 
     .event-extra-info {
         flex: 2;
-        background-color: pink;
     }
 
     .event-button-row {
         display: flex;
         width: 100%;
+        height: fit-content;
 
         .info-join-event-button {
             margin-left: auto;
-            font-size: $font-size-button;
+            font-size: 20px;
             padding: 5px $gap;
             border: 1px solid black;
             border-radius: $gap;

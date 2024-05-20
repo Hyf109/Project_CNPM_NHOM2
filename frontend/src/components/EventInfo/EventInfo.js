@@ -2,6 +2,7 @@ import React from "react"
 import './EventInfo.scss'
 
 import moment from "moment";
+import MemberList from "components/MemberList/MemberList";
 
 const formatDate = (datetime) => {
     if (!datetime) return null;
@@ -11,16 +12,12 @@ const formatDate = (datetime) => {
     return formattedDate;
 }
 
-function EventInfo() {
+function EventInfo({onClose}) {
 
     //Data code
 
     return (
         <div className="event-info-container">
-            <div className="event-button-row">
-                <button>Close</button>
-            </div>
-
             <div className="event-info-window">
                 <div className="event-info">
                     <h1 className="event-info-title">
@@ -49,12 +46,14 @@ function EventInfo() {
 
                 <div className="event-extra-info">
                     <div className="event-member-list">
-                        {/* Event list */}
+                        <MemberList event_id={'664ade5fb59acbd708a19ec4'}></MemberList>
                     </div>
                 </div>
             </div>
 
             <div className="event-button-row">
+                {/* Call the onClose function when the Close button is clicked */}
+                <button onClick={onClose}>Close</button>
                 <button className="info-join-event-button">Join</button>
             </div>
         </div>

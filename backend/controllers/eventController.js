@@ -14,9 +14,6 @@ const getEventManager = async (req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
-    
-
-
 }
 
 
@@ -24,7 +21,10 @@ const getEventManager = async (req, res) => {
 const createEvent = async(req, res) => {
     try {
         let user_id = res.locals.user._id.toString();
+        let username = res.locals.user.username.toString();
         req.body.host_id = user_id;
+        req.body.host_name = username;
+
         
         const now = getUserCurrentTime();
         console.log(now);
@@ -49,7 +49,8 @@ const createEvent = async(req, res) => {
         });
 
         event.member_list.push({
-            member_id: user_id
+            member_id: user_id,
+            username: username
         })
 
         manager.save();
@@ -175,6 +176,7 @@ const deleteEvent = async(req, res) => {
 const joinEvent = async(req, res) => {
     const event_id = req.params.id;
     const member_id = res.locals.user._id;
+    const username  = res.locals.user.username;
     
     try {
         //Add member_id to event's member list
@@ -197,7 +199,8 @@ const joinEvent = async(req, res) => {
             });
     
             event.member_list.push({
-                member_id: member_id
+                member_id: member_id,
+                username: username
             });
     
             await manager.save();
