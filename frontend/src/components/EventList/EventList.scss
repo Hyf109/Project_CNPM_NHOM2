@@ -45,5 +45,9 @@
 
     .event-card-buttons {
         float: right;
+        .event-button {
+            border-radius: 5px;
+            border-color: gray;
+        }
     }
 }
