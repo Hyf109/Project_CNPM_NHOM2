@@ -105,6 +105,7 @@ const getEvents = async(req, res) => {
         }
 
         const event = await eventSchema.find(query);
+        console.log("Query result", query);
         res.status(200).json({event});
     } catch (error) {
         res.status(404).json({error: error.message});

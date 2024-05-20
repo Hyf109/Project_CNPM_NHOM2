@@ -19,6 +19,7 @@ function Boardbar({ onSearch }) {
     const handleSubmit = () => {
         onSearch(queryParams);
     };
+    
     return (
         <nav className="taskbar">
             <div className="search-bar-container">

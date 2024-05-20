@@ -22,7 +22,8 @@ export const Search = () => {
 
   const {data: manager, isPending, error} = useFetch('finder/api/event/manager');
 
-  // Update event_id_list once manager data is loaded
+
+  //List of already joined events
   useEffect(() => {
     if (manager && manager.events) {
       setQueryParams(prevState => ({
@@ -32,12 +33,15 @@ export const Search = () => {
     }
   }, [manager]);
 
-  const handleSearch = (newParams) => {
-    setQueryParams(prevState => ({
-      ...prevState,
-      newParams
-    }));
-  };
+
+const handleSearch = (newParams) => {
+    setQueryParams(newParams);
+};
+
+
+  if (isPending) {
+    return <div>Loading....</div>
+  }
 
   return (
     <div className="search-page-wrapper">
