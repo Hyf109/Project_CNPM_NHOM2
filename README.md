@@ -24,5 +24,5 @@
 
 ## [Assignment 3]()
 1. [Project Management Document](https://docs.google.com/document/d/1o74BwNfEwSDQ_tca08TFZA0QwsOAG-BkZcT25wxMlro/edit?usp=sharing](https://docs.google.com/document/d/1MFVxZ1XPRFucquQwWsXMY_lSY7N4EVN1S4TKZpV80nU/edit?usp=sharing))
-2. [Final Design Document]([https://docs.google.com/document/d/11K78qJfyIP1EjALTECO8hhm-jHKpL-2uAPbh1EhE9L0/edit?usp=sharing](https://docs.google.com/document/d/11K78qJfyIP1EjALTECO8hhm-jHKpL-2uAPbh1EhE9L0/edit?usp=sharing))
+2. [Final Design Document](https://docs.google.com/document/d/11K78qJfyIP1EjALTECO8hhm-jHKpL-2uAPbh1EhE9L0/edit?usp=sharing](https://docs.google.com/document/d/11K78qJfyIP1EjALTECO8hhm-jHKpL-2uAPbh1EhE9L0/edit?usp=sharing))
 
