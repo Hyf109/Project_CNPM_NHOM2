@@ -35,16 +35,16 @@ $weight: 600;
 
     .event-button-row {
         display: flex;
+        align-items: baseline;
         width: 100%;
         height: fit-content;
 
         .info-join-event-button {
             margin-left: auto;
             font-size: 20px;
-            padding: 5px $gap;
+            width: 10%;
             border: 1px solid black;
             border-radius: $gap;
-            margin-top: $gap;
             cursor: pointer;
             font-weight: $weight;
 
@@ -60,6 +60,15 @@ $weight: 600;
 
     .event-description-info {
         text-align: justify;
+    }
+    .close-button {
+        border-radius: 10px;
+        border: 1px solid black;
+        width: 10%;
+        height: 100%;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: $weight;
     }
 }
 

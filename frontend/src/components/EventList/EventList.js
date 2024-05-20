@@ -42,7 +42,7 @@ function EventList({ queryParams, onEventSelect }) {
                         {event.endTime && <p>To: {formatDate(event.endTime)}</p>}
 
                         <div className="event-card-buttons">
-                            <button onClick={() => handleButtonClick(event)}>View info</button>
+                            <button className="event-button" onClick={() => handleButtonClick(event)}>View info</button>
                         </div>
                     </div>
                 </div>

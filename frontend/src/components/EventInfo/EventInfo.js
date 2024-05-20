@@ -155,7 +155,7 @@ function EventInfo({ event, onClose }) {
             </div>
 
             <div className="event-button-row">
-                <button onClick={onClose}>Close</button>
+                <button className="close-button" onClick={onClose}>Close</button>
                 {joinError && <div>{joinError}</div>}
                 
                 {
