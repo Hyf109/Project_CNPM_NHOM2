@@ -23,6 +23,6 @@
 3. [CSR and SSR](https://toidicodedao.com/2018/09/11/su-khac-biet-giua-server-side-rendering-va-client-side-rendering/)
 
 ## [Assignment 3]()
-1. [Project Management Document]([https://docs.google.com/document/d/1o74BwNfEwSDQ_tca08TFZA0QwsOAG-BkZcT25wxMlro/edit?usp=sharing](https://docs.google.com/document/d/1MFVxZ1XPRFucquQwWsXMY_lSY7N4EVN1S4TKZpV80nU/edit?usp=sharing))
+1. [Project Management Document](https://docs.google.com/document/d/1o74BwNfEwSDQ_tca08TFZA0QwsOAG-BkZcT25wxMlro/edit?usp=sharing](https://docs.google.com/document/d/1MFVxZ1XPRFucquQwWsXMY_lSY7N4EVN1S4TKZpV80nU/edit?usp=sharing))
 2. [Final Design Document](https://docs.google.com/document/d/1mMOkoksZBsCoUrji-A7EFEpMtfuJzXgC/edit?usp=sharing&ouid=117610764545905290752&rtpof=true&sd=true)
 
