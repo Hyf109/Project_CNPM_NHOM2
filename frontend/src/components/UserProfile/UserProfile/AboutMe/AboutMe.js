@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './AboutMe.scss';
 import '../UserProfile.scss'
 
+import { useProfile } from 'context/ProfileContext';
+import { useAuth } from 'context/AuthProvider';
+
 const AboutMe = () => {
     const [text, setText] = useState('');
     const [editable, setEditable] = useState(false);
