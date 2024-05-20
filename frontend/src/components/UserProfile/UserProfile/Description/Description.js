@@ -11,7 +11,7 @@ function Description({ viewUserId }) {
     const {logout} = useLogout();
     const navigate = useNavigate();
 
-    const {data, isPending, error} = useFetch(`/finder/api/user/${viewUserId || user.user}`);
+    const {data, isPending, error} = useFetch(`/finder/api/user/${viewUserId}`);
 
     // Check if the logged-in user is viewing their own profile
     const isOwnProfile = user.user === viewUserId;

@@ -35,7 +35,7 @@ function EventList({ queryParams, onEventSelect }) {
                     <div className="event-card-info">
                         <div className="event-card-title">
                             <h2>{event.title}</h2>
-                            <h3 id="event-capacity">{event.capacity}</h3>
+                            <h3 id="event-capacity">{event.member_list.length}/{event.capacity}</h3>
                         </div>
                         <p>Location: {event.location}</p>
                         {event.startTime && <p>From: {formatDate(event.startTime)}</p>}

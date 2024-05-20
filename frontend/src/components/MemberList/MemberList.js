@@ -1,7 +1,9 @@
 import useFetch from "hooks/useFetch";
 import './MemberList.scss';
+import { useNavigate } from "react-router-dom";
 
 const MemberList = ({event_id}) => {
+    const navigate = useNavigate();
 
     const {data, isPending, error} = useFetch(`finder/api/event/get/${event_id}`);
     
@@ -20,7 +22,7 @@ const MemberList = ({event_id}) => {
                         {data.event[0].member_list.map((member) => {
                             if (member.member_id !== data.event[0].host_id) {
                                 return (
-                                    <div className="member-list-card" key={member._id}>
+                                    <div onClick={() => navigate(`/profile/${member._id}`)} className="member-list-card" key={member._id}>
                                         {member.username}
                                     </div>
                                 );

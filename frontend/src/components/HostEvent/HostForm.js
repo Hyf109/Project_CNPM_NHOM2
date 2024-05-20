@@ -60,6 +60,9 @@ function HostForm() {
             console.log('New event added', json );
         }
 
+        window.location.reload();
+        
+
         setIsLoading(false);
 
         // console.log(error);

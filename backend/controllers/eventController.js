@@ -190,7 +190,7 @@ const joinEvent = async(req, res) => {
         //Add member_id to event's member list
         const event = await eventSchema.findById(event_id);
 
-        if (event.member_list.length > event.capacity && event.capacity > 0) {
+        if (event.member_list.length >= event.capacity && event.capacity > 0) {
             return res.status(400).json({mssg: 'Event is full'});
         }
 

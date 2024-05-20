@@ -158,15 +158,15 @@ function EventInfo({ event, onClose }) {
                 {joinError && <div>{joinError}</div>}
                 
                 {
-                    event.status === 'upcoming' && !isUserJoined && <button disabled={isJoining} onClick={() => joinEvent(event._id)} className="info-join-event-button">Join</button>
+                    event.status === 'upcoming' && !isUserJoined && <button disabled={isJoining} onClick={() => {joinEvent(event._id); window.location.reload();}} className="info-join-event-button">Join</button>
                 }
                 
                 {
-                    event.status === 'upcoming' && isUserJoined && isUserHost && <button disabled={isJoining} onClick={() => cancelEvent(event._id)} className="info-cancel-event-button">Cancel</button>
+                    event.status === 'upcoming' && isUserJoined && isUserHost && <button disabled={isJoining} onClick={() => {cancelEvent(event._id); window.location.reload()}} className="info-cancel-event-button">Cancel</button>
                 }
 
                 {
-                    event.status === 'upcoming' && isUserJoined && !isUserHost && <button disabled={isJoining} onClick={() => leaveEvent(event._id)} className="info-leave-event-button">Leave</button>
+                    event.status === 'upcoming' && isUserJoined && !isUserHost && <button disabled={isJoining} onClick={() => {leaveEvent(event._id); window.location.reload();}} className="info-leave-event-button">Leave</button>
                 }
             </div>
         </div>

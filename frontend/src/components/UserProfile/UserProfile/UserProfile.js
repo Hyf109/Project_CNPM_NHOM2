@@ -22,6 +22,7 @@ function UserProfile() {
         }
     }, [user]);
 
+    
     if (!user) {
         return <div>Loading...</div>
     }

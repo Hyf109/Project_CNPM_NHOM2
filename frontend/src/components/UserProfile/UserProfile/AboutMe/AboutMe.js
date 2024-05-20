@@ -8,13 +8,13 @@ import useUpdateProfile from 'hooks/useUpdateProfile';
 
 const AboutMe = ({ viewUserId }) => {
     const [text, setText] = useState('');
-    const [initialText, setInitialText] = useState(''); // New state for initial text
+    const [initialText, setInitialText] = useState('');
     const [editable, setEditable] = useState(false);
     const { user, isLoading } = useAuth();
     const {data, isPending, error} = useFetch(`/finder/api/user/${viewUserId || user.user}`);
     const {updateProfile} = useUpdateProfile();
     const isOwnProfile = user.user === viewUserId;
-    const textAreaRef = useRef(null); // Create a ref for the textarea
+    const textAreaRef = useRef(null);
 
     const handleTextareaChange = (e) => {
         setText(e.target.value);
@@ -26,9 +26,16 @@ const AboutMe = ({ viewUserId }) => {
         if (data && data.profile) {
             setText(data.profile.description);
             setInitialText(data.profile.description);
-            // Adjust the height of the textarea to fit the content
         }
     }, [data]);
+
+    useEffect(() => {
+        if (editable && textAreaRef.current) {
+            textAreaRef.current.style.height = 'auto';
+            textAreaRef.current.style.height = textAreaRef.current.scrollHeight + 'px';
+        }
+    }, [editable]);
+    
 
     if (!user) {
         return <div>Loading...</div>;
@@ -47,7 +54,7 @@ const AboutMe = ({ viewUserId }) => {
                         isOwnProfile && !editable && <button onClick={(e) => {
                             e.preventDefault();
                             setEditable(true);
-                            setInitialText(text); // Save the initial text when entering edit mode
+                            setInitialText(text);
                         }} className="about-me-button">Edit</button>
                     }
 
@@ -61,7 +68,7 @@ const AboutMe = ({ viewUserId }) => {
 
                             <button onClick={(e) => {
                                 e.preventDefault();
-                                setText(initialText); // Reset text to initial text when canceling edit
+                                setText(initialText);
                                 setEditable(false);
                             }} className="about-me-button">Cancel</button>
                         </>
@@ -69,13 +76,17 @@ const AboutMe = ({ viewUserId }) => {
                 </div>
             </div>
             
-            <textarea
-                ref={textAreaRef} // Attach the ref to the textarea
-                className={`about-me-text-area ${editable ? 'editable' : 'non-editable'}`}
-                value={text}
-                onChange={handleTextareaChange}
-                readOnly={!editable}
-            ></textarea>
+            {editable ? (
+                <textarea
+                    ref={textAreaRef}
+                    className={`about-me-text-area ${editable ? 'editable' : 'non-editable'}`}
+                    value={text}
+                    onChange={handleTextareaChange}
+                    readOnly={!editable}
+                ></textarea>
+            ) : (
+                <p className="about-me-text-area non-editable">{text}</p>
+            )}
         </div>
     );
 };
