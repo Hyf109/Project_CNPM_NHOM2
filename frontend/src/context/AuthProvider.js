@@ -1,47 +1,45 @@
-import {useContext, createContext, useState, useReducer, useEffect} from 'react';
+import { useContext, createContext, useReducer, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 
 export const AuthContext = createContext();
 
 export const authReducer = (state, action) => {
     switch (action.type) {
         case 'LOGIN':
-            return {user: action.payload};
+            return { ...state, user: action.payload, isLoading: false };
         case 'LOGOUT':
-            return {user: null};
-        default: 
+            return { ...state, user: null, isLoading: false };
+        default:
             return state;
     }
 }
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
     const [state, dispatch] = useReducer(authReducer, {
-        user: null
+        user: null,
+        isLoading: true
     });
-    
 
     useEffect(() => {
-        //Conver local storage cookie store in string to json
         const user = JSON.parse(localStorage.getItem('user'));
-        
-        //If user is not null then dispatch login
         if (user) {
-            dispatch({type:'LOGIN', payload: user});
-            console.log("Done setting state");
+            dispatch({ type: 'LOGIN', payload: user });
+        } else {
+            dispatch({ type: 'LOGOUT' });
         }
     }, []);
 
-
     console.log('Current state', state);
 
-
     return (
-        <AuthContext.Provider value = {{...state, dispatch}}>
+        <AuthContext.Provider value={{ ...state, dispatch }}>
             {children}
         </AuthContext.Provider>
-    )
+    );
 }
 
 export default AuthProvider;
 
+export const useAuth = () => {
+    return useContext(AuthContext);
+}

@@ -1,18 +1,42 @@
+$gap: 10px;
+$font-size-button: 24px;
+$background: #fff;
+$radius: 10px;
+$weight: 600;
+$pad: 5px;
+
+
 .host-event-form {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: $background;
+    padding: 2*$gap;
+    border-radius: $radius;
     min-width: none;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
     
     .host-form-component-container {
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 2*$gap;
         min-width: none;
         width: 100%;
+
+        .host-form-button {
+            padding: $pad;
+            font-size: $font-size-button;
+            margin: 0 $gap;
+            border-radius: $radius;
+            font-weight: $weight;
+            cursor: pointer;
+
+            &:hover {
+                background-color:$background;
+            }
+
+            
+        }
     }   
 
     .host-form-component-container span {
@@ -27,14 +51,15 @@
 }
 
 .text-box {
-    border: none;
+    border: 1px solid black;
     appearance: none;
     outline: none;
-    padding: 12px;
+    padding: $gap;
     background-color: whitesmoke;
-    margin-bottom: 10px;
-    margin-right: 10px;
+    margin-bottom: 0 0 $gap;
     min-width: none;
+    border-radius: $radius;
+
     
 } 
 
@@ -67,6 +92,7 @@
 .form-event-button {
     justify-content: center;
 }
+
 
 @media screen and (max-width: 750px) {
     // .event-list-container {

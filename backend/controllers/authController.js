@@ -63,6 +63,7 @@ const signUpPost = async (req, res) => {
 
         const userProfileManager = await profileSchema.create({
             user_id: user._id,
+            username: user.username
         });
         
         res.cookie('jwt', token, {httpOnly: true, maxAge: maxAge * 1000});

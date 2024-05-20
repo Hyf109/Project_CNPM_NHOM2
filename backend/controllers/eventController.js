@@ -5,12 +5,26 @@ const {getUserCurrentTime} = require('../middleware/userTime');
 
 const mongoose = require('mongoose');
 
+//
+const getEventManager = async (req, res) => {
+    try {
+        const manager = await managerSchema.findOne({user_id: res.locals.user._id});
+
+        res.status(200).json(manager);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+}
+
 
 //Create event
 const createEvent = async(req, res) => {
     try {
         let user_id = res.locals.user._id.toString();
+        let username = res.locals.user.username.toString();
         req.body.host_id = user_id;
+        req.body.host_name = username;
+
         
         const now = getUserCurrentTime();
         console.log(now);
@@ -35,7 +49,8 @@ const createEvent = async(req, res) => {
         });
 
         event.member_list.push({
-            member_id: user_id
+            member_id: user_id,
+            username: username
         })
 
         manager.save();
@@ -50,11 +65,38 @@ const createEvent = async(req, res) => {
 //Get all events
 const getEvents = async(req, res) => {
     try {
-        const { title, startTime, endTime, status } = req.body; //status: upcoming, occuring, ended
+        const { location, title, startTime, endTime, status, host_id, event_id_list, joined_event_id_list} = req.body; //status: upcoming, occuring, ended
         let query = {};
+        
+
+        if (host_id) {
+            query.host_id = host_id;
+            if (status) {
+                query.status = status;
+            }    
+        } else if (status) {
+            query.status = status;
+        }
+
 
         if (title) {
             query.title = new RegExp(title, 'i');
+        }
+
+        if (location) {
+            query.location = new RegExp(location, 'i');
+        }
+        
+        if (event_id_list) {
+            query._id = { $nin: event_id_list };
+        }
+
+        if (joined_event_id_list) {
+            if (status) {
+                query.$and = [{_id: { $in: joined_event_id_list }}, {status: status}];
+            } else {
+                query._id = { $in: joined_event_id_list };
+            }
         }
 
         if (startTime && endTime) {
@@ -142,6 +184,7 @@ const deleteEvent = async(req, res) => {
 const joinEvent = async(req, res) => {
     const event_id = req.params.id;
     const member_id = res.locals.user._id;
+    const username  = res.locals.user.username;
     
     try {
         //Add member_id to event's member list
@@ -164,7 +207,8 @@ const joinEvent = async(req, res) => {
             });
     
             event.member_list.push({
-                member_id: member_id
+                member_id: member_id,
+                username: username
             });
     
             await manager.save();
@@ -172,7 +216,7 @@ const joinEvent = async(req, res) => {
     
             res.status(200).json({mssg: 'User joined event'});
         } else {
-            res.status(200).json({mssg: 'You already joined the event'});
+            res.status(400).json({mssg: 'You already joined the event'});
         }
     } catch (error) {
         res.status(400).json({error: error.message});
@@ -212,7 +256,8 @@ module.exports = {
     getEvents,
     updateEvent,
     joinEvent,
-    leaveEvent
+    leaveEvent,
+    getEventManager
 }
 
 

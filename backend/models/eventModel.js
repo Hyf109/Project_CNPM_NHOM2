@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
+    host_name: {
+        type: String, 
+        required: true
+    },
     host_id: {
         type: String,
         required: true
@@ -34,7 +38,8 @@ const eventSchema = new Schema({
     },
     member_list: [
         {
-            member_id: String
+            member_id: String,
+            username: String
         }
     ]
 });

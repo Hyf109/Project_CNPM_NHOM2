@@ -25,6 +25,8 @@ function HostForm() {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const handleStateChange = (e) => {
         const {name, value} = e.target;
         setFormState(prevState => ({...prevState, [name]: value})); //Spread fields of previous to stay the same
@@ -32,11 +34,13 @@ function HostForm() {
     
     const handleSubmit = async (e) => {
         console.log(formState);
-        e.preventDefault();
+        // e.preventDefault();
         
         const event = formState;
         event.host_id = 'testing user id';
 
+        setIsLoading(true);
+        
         const response = await fetch('/finder/api/event/create', {
             method: 'POST',
             body: JSON.stringify(event),
@@ -55,6 +59,8 @@ function HostForm() {
             setFormState(defaultFormState);
             console.log('New event added', json );
         }
+
+        setIsLoading(false);
 
         // console.log(error);
 
@@ -104,14 +110,14 @@ function HostForm() {
                 <div className="host-form-component-container form-event-button">
                     {isSubmitting ? (
                         <>
-                        <button className="confirm confirm-submit-button" onClick={handleSubmit}>Confirm</button>
-                        <button className="cancel cancel-submit-button" onClick={(e) => {
+                        <button disabled={isLoading} className="host-form-button confirm-submit-button" onClick={handleSubmit}>Confirm</button>
+                        <button className="host-form-button cancel-submit-button" onClick={(e) => {
                             e.preventDefault();
                             setIsSubmitting(false)
                         }}>Cancel</button>
                         </>
                     ) : (
-                        <button className="button submit-event-form-button" onClick={(e) => {
+                        <button className="host-form-button submit-event-form-button" onClick={(e) => {
                             e.preventDefault();
                             setIsSubmitting(true)
                         }}>Create</button>

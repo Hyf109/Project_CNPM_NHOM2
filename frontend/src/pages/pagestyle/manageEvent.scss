@@ -12,7 +12,8 @@
     background-color: aliceblue;
 }
 
-.event-view-button:hover {
+.event-view-button:hover,
+.event-view-button.selected {
     background-color: rgb(219, 219, 219);
 }
 
@@ -23,16 +24,22 @@
 }   
 
 .manage-event-view-container {
+    height: 95%;
     display: flex;
 }
 
 .event-view {
-
     flex: 30;
     padding: 20px 20px 0 20px;
 }
 
 .event-info-view {
     flex: 60;
+    height: 100%;
     padding: 20px;
+}
+
+.event-info-view {
+    padding-top: 50px;
+    padding-bottom: 80px;
 }

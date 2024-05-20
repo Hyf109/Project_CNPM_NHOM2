@@ -31,32 +31,37 @@ const updateProfile = async (req, res) => {
 
         let updateOperation;
         let arrayFilters;
-        switch (req.body.contact_detail.op) {
-            case 'add':
-                updateOperation = 
-                {$push: 
-                    {
-                        "contact_detail.contacts": req.body.contact_detail.contact
-                    }
-                };
-                break;
-            case 'remove':
-                updateOperation = 
-                {$pull: 
-                    {"contact_detail.contacts": 
-                        {_id: req.body.contact_detail.contact._id}
-                    }
-                };
-                break;
-            case 'update':
-                updateOperation = 
-                {$set: 
-                    {
-                        "contact_detail.contacts.$[elem]": req.body.contact_detail.contact
-                    }
-                };
-                arrayFilters = [{"elem._id": req.body.contact_detail.contact._id}];
-                break;
+
+        if (req.body.contact_detail != null) {
+            switch (req.body.contact_detail.op) {
+                case 'add':
+                    updateOperation = 
+                    {$push: 
+                        {
+                            "contact_detail.contacts": req.body.contact_detail.contact
+                        }
+                    };
+                    break;
+                case 'remove':
+                    updateOperation = 
+                    {$pull: 
+                        {"contact_detail.contacts": 
+                            {_id: req.body.contact_detail.contact._id}
+                        }
+                    };
+                    break;
+                case 'update':
+                    updateOperation = 
+                    {$set: 
+                        {
+                            "contact_detail.contacts.$[elem]": req.body.contact_detail.contact
+                        }
+                    };
+                    arrayFilters = [{"elem._id": req.body.contact_detail.contact._id}];
+                    break;
+                default:
+                    break;
+            }
         }
 
         const profile = await profileSchema.findOneAndUpdate({user_id: user_id}, 
