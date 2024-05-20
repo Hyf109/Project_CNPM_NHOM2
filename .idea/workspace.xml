@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa49ad83-d0f1-4f27-a5c6-64ddbb2707a3" name="Changes" comment="sync with master">
+    <list default="true" id="aa49ad83-d0f1-4f27-a5c6-64ddbb2707a3" name="Changes" comment="fix authController.test.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Test/authController.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Test/authController.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Test/eventController.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Test/eventController.test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Jest.eventController">
     <configuration name="authController.signUpPost.should handle duplicate email error and return 400" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
@@ -63,6 +63,46 @@
         <test-name value="authController" />
         <test-name value="signUpPost" />
         <test-name value="should handle duplicate email error and return 400" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="eventController" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/backend" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/backend/Test/eventController.test.js" />
+      <test-names>
+        <test-name value="eventController" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="eventController.createEvent.should call create anf findOne in schema" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/backend" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/backend/Test/eventController.test.js" />
+      <test-names>
+        <test-name value="eventController" />
+        <test-name value="createEvent" />
+        <test-name value="should call create anf findOne in schema" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="eventController.createEvent.should handle errors during event creation and return 400" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/backend" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/backend/Test/eventController.test.js" />
+      <test-names>
+        <test-name value="eventController" />
+        <test-name value="createEvent" />
+        <test-name value="should handle errors during event creation and return 400" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -78,55 +118,13 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="profileController.getProfileByID.should call findOne ind profileSchema" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/backend" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/backend/Test/profileController.test.js" />
-      <test-names>
-        <test-name value="profileController" />
-        <test-name value="getProfileByID" />
-        <test-name value="should call findOne ind profileSchema" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="profileController.getProfileByID.should handle error and return 400" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/backend" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/backend/Test/profileController.test.js" />
-      <test-names>
-        <test-name value="profileController" />
-        <test-name value="getProfileByID" />
-        <test-name value="should handle error and return 400" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="profileController.updateProfile.should call findOneAndUpdate in profileSchema" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/backend/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/backend" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/backend/Test/profileController.test.js" />
-      <test-names>
-        <test-name value="profileController" />
-        <test-name value="updateProfile" />
-        <test-name value="should call findOneAndUpdate in profileSchema" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.authController.signUpPost.should handle duplicate email error and return 400" />
+        <item itemvalue="Jest.eventController" />
+        <item itemvalue="Jest.eventController.createEvent.should call create anf findOne in schema" />
         <item itemvalue="Jest.profileController" />
-        <item itemvalue="Jest.profileController.updateProfile.should call findOneAndUpdate in profileSchema" />
-        <item itemvalue="Jest.profileController.getProfileByID.should handle error and return 400" />
-        <item itemvalue="Jest.profileController.getProfileByID.should call findOne ind profileSchema" />
+        <item itemvalue="Jest.eventController.createEvent.should handle errors during event creation and return 400" />
+        <item itemvalue="Jest.authController.signUpPost.should handle duplicate email error and return 400" />
       </list>
     </recent_temporary>
   </component>
@@ -142,7 +140,7 @@
       <workItem from="1716085757107" duration="8697000" />
       <workItem from="1716107190728" duration="3840000" />
       <workItem from="1716197587589" duration="621000" />
-      <workItem from="1716210353605" duration="10329000" />
+      <workItem from="1716210353605" duration="11756000" />
     </task>
     <task id="LOCAL-00001" summary="add unit test">
       <option name="closed" value="true" />
@@ -160,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716129733809</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix authController.test.js">
+      <option name="closed" value="true" />
+      <created>1716224154637</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716224154637</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +175,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add unit test" />
     <MESSAGE value="sync with master" />
-    <option name="LAST_COMMIT_MESSAGE" value="sync with master" />
+    <MESSAGE value="fix authController.test.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix authController.test.js" />
   </component>
 </project>
