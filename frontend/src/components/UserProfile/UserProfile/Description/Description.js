@@ -13,10 +13,8 @@ function Description({ viewUserId }) {
 
     const {data, isPending, error} = useFetch(`/finder/api/user/${viewUserId}`);
 
-    // Check if the logged-in user is viewing their own profile
     const isOwnProfile = user.user === viewUserId;
 
-    // Ensure user is not null before accessing properties
     if (!user) {
         return <div>Loading...</div>;
     }

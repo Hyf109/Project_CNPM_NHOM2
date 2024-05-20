@@ -4,14 +4,6 @@ import './HostForm.scss';
 import { useState } from "react";
 
 function HostForm() {
-    // const [title, setTitle] = useState('');
-    // const [startTime, setStartTime] = useState('');
-    // const [endTime, setEndTime] = useState('');
-    // const [location, setLocation] = useState('');
-    // const [description, setDescription] = useState('');
-    // const [capacity, setCapacity] = useState('');
-    // const [error, setError] = useState(null);
-
     const defaultFormState = {
         title: '',
         startTime: '',
@@ -58,9 +50,10 @@ function HostForm() {
         if (response.ok) {
             setFormState(defaultFormState);
             console.log('New event added', json );
+            window.location.reload();
         }
 
-        window.location.reload();
+
         
 
         setIsLoading(false);
@@ -99,7 +92,7 @@ function HostForm() {
 
                     <span>
                         <h3>Member limit</h3>
-                        <input name="capacity" value={formState.capacity} onChange={handleStateChange} type="text" className="text-box form-event-capacity" placeholder="0"/>
+                        <input name="capacity" value={formState.capacity} onChange={handleStateChange} type="number" min="1" className="text-box form-event-capacity" placeholder="0"/>
                     </span>
                 </div> 
 
@@ -126,7 +119,7 @@ function HostForm() {
                         }}>Create</button>
                     )}
                 </div>
-                {/* {error && <div>{error}</div>} */}
+                {formState.error && <div>{formState.error}</div>}
             </form>   
             )}
 

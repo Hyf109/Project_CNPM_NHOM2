@@ -127,19 +127,20 @@ function EventInfo({ event, onClose }) {
                     </h1>
                     <div className="event-time-info">
                         <span>
-                            <div>Start time: </div>
-                            <div>End time: </div>
+                            <div>Start time:&nbsp; &nbsp;</div>
+                            <div>End time: &nbsp; &nbsp; </div>
                         </span>
                         <span>
-                            <div> {() => formatDate(event.startTime)}</div>
-                            <div> {() => formatDate(event.endTime)}</div>
+                            <div> {formatDate(event.startTime)}</div>
+                            <div> {formatDate(event.endTime)}</div>
                         </span>
                     </div>
                     <span className="event-location-info">
                         Location: {event.location}
                     </span>
                     <span className="event-description-info">
-                        <h3>About this event:</h3>
+                        
+                        <h3><br></br>About this event:</h3>
                             <div className="event-description-info">
                             {event.description}
                             </div>

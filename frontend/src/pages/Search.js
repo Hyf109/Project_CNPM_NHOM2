@@ -41,7 +41,10 @@ export const Search = () => {
 
   return (
     <div className="search-page-wrapper">
-      <Boardbar onSearch={handleSearch} />
+      <div className="search-bar-container">
+        <Boardbar onSearch={handleSearch} />
+      </div>
+      
       <div className="search-result-wrapper">
         <div className="event-list-container-wrapper">
           {/* Update the setShowEventInfo function to also set the selected event id */}

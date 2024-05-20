@@ -45,7 +45,7 @@ function UserProfile() {
                             </div> */}
                         </div>
                         <div className="right-info-column">
-                            <UserInfo viewUserId={viewUserId} isEditable={isOwnProfile} />
+                            {/* <UserInfo viewUserId={viewUserId} isEditable={isOwnProfile} /> */}
                             <UserContact viewUserId={viewUserId} isEditable={isOwnProfile} />
                         </div>
 
