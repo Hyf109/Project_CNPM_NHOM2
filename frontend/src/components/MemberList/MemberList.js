@@ -20,9 +20,10 @@ const MemberList = ({event_id}) => {
                             <h2>Event's Host: {" " + data.event[0].host_name}</h2>
                         </div>
                         {data.event[0].member_list.map((member) => {
+                            console.log(member);
                             // if (member.member_id !== data.event[0].host_id) {
                                 return (
-                                    <div onClick={() => navigate(`/profile/${member._id}`)} className="member-list-card" key={member._id}>
+                                    <div onClick={() => navigate(`/profile/${member.member_id}`)} className="member-list-card" key={member._id}>
                                         {member.username}
                                     </div>
                                 );

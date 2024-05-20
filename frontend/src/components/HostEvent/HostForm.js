@@ -25,11 +25,11 @@ function HostForm() {
     }
     
     const handleSubmit = async (e) => {
-        console.log(formState);
         // e.preventDefault();
         
+        setFormState({error: null});
+
         const event = formState;
-        event.host_id = 'testing user id';
 
         setIsLoading(true);
         
@@ -52,9 +52,6 @@ function HostForm() {
             console.log('New event added', json );
             window.location.reload();
         }
-
-
-        
 
         setIsLoading(false);
 
