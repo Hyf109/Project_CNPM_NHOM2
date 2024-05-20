@@ -1,65 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './AboutMe.scss';
 import '../UserProfile.scss'
 
-import { useProfile } from 'context/ProfileContext';
 import { useAuth } from 'context/AuthProvider';
+import useFetch from 'hooks/useFetch';
+import useUpdateProfile from 'hooks/useUpdateProfile';
 
-const AboutMe = () => {
+const AboutMe = ({ viewUserId }) => {
     const [text, setText] = useState('');
+    const [initialText, setInitialText] = useState(''); // New state for initial text
     const [editable, setEditable] = useState(false);
-
-    const { profile, updateUserProfile, fetchUserProfile } = useProfile();
     const { user, isLoading } = useAuth();
+    const {data, isPending, error} = useFetch(`/finder/api/user/${viewUserId || user.user}`);
+    const {updateProfile} = useUpdateProfile();
+    const isOwnProfile = user.user === viewUserId;
+    const textAreaRef = useRef(null); // Create a ref for the textarea
 
-    useEffect(() => {
-        if (user) {
-            fetchUserProfile(user.user);
-        }
-    }, [user]);
-
-    const handleTextareaChange = (event) => {
-        setText(event.target.value);
-        event.target.style.height = 'auto';
-        event.target.style.height = event.target.scrollHeight + 'px';
+    const handleTextareaChange = (e) => {
+        setText(e.target.value);
+        e.target.style.height = 'auto';
+        e.target.style.height = e.target.scrollHeight + 'px';
     };
 
-
-
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
+    useEffect(() => {
+        if (data && data.profile) {
+            setText(data.profile.description);
+            setInitialText(data.profile.description);
+            // Adjust the height of the textarea to fit the content
+        }
+    }, [data]);
 
     if (!user) {
-        return <div>Please log in to see your profile.</div>;
+        return <div>Loading...</div>;
     }
 
-    if (!profile) {
-        return <div>Loading...</div>;
+    if (isPending) {
+        return <div>Loading...</div>
     }
 
     return (
         <div className="about-me-container">
-            <div>{profile.description}</div>
             <div className="about-me-title">
                 <h2>About me</h2>
                 <div className="buttons-row">
                     {
-                        !editable && <button onClick={(e) => {
+                        isOwnProfile && !editable && <button onClick={(e) => {
                             e.preventDefault();
                             setEditable(true);
+                            setInitialText(text); // Save the initial text when entering edit mode
                         }} className="about-me-button">Edit</button>
                     }
 
-                    {editable && (
+                    {isOwnProfile && editable && (
                         <>
                             <button onClick={(e) => {
                                 e.preventDefault();
                                 setEditable(false);
+                                updateProfile({description: text});
                             }} className="about-me-button">Save</button>
 
                             <button onClick={(e) => {
                                 e.preventDefault();
+                                setText(initialText); // Reset text to initial text when canceling edit
                                 setEditable(false);
                             }} className="about-me-button">Cancel</button>
                         </>
@@ -68,6 +70,7 @@ const AboutMe = () => {
             </div>
             
             <textarea
+                ref={textAreaRef} // Attach the ref to the textarea
                 className={`about-me-text-area ${editable ? 'editable' : 'non-editable'}`}
                 value={text}
                 onChange={handleTextareaChange}

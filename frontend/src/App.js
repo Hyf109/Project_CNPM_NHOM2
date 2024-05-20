@@ -1,3 +1,4 @@
+import React from "react";
 import Search from './pages/Search'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Terms } from 'components/Verification/Terms/Terms'
@@ -36,7 +37,7 @@ const App = () => {
 
                     <Route element={<PrivateRoute/>}>
                         <Route path="search" element={standardLayout(Search)} />
-                        <Route path='profile' element={standardLayout(UserProfile)} />
+                        <Route path='profile/:userId' element={standardLayout(UserProfile)} />
                         <Route path='host-event' element={standardLayout(HostEvent)} />
                         <Route path='manage' element={standardLayout(ManageEvent)} />
                     </Route>

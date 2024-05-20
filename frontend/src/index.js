@@ -4,17 +4,14 @@ import reportWebVitals from './reportWebVitals'
 import App from 'App'
 import AuthProvider from 'context/AuthProvider'
 import { BrowserRouter } from 'react-router-dom'
-import ProfileContextProvider from 'context/ProfileContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <ProfileContextProvider>
         <BrowserRouter>
           <App/>
         </BrowserRouter>
-      </ProfileContextProvider>
     </AuthProvider>
   </React.StrictMode>
 );

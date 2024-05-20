@@ -2,9 +2,15 @@ import React from "react";
 import './UserInfo.scss'
 import '../UserProfile.scss'
 import { useState } from "react";
+import { useAuth } from "context/AuthProvider";
 
-function UserInfo() {
+function UserInfo({ viewUserId }) {
     const [editable, setEditable] = useState(false);
+
+    const { user } = useAuth();
+
+    // Check if the logged-in user is viewing their own profile
+    const isOwnProfile = user.user === viewUserId;
 
     return (
         <div className="user-info">
@@ -12,14 +18,14 @@ function UserInfo() {
                 <h2>Information</h2>
                 <div className="buttons-row">
                         {
-                            !editable && <button onClick={(e) => {
+                            isOwnProfile && !editable && <button onClick={(e) => {
                                 e.preventDefault();
                                 setEditable(true);
                             }} className="info-button">Edit</button>
                         }
 
                         {
-                            editable && 
+                            isOwnProfile && editable && 
                                 <>
                                     <button onClick={(e) => {
                                         e.preventDefault();
@@ -39,6 +45,3 @@ function UserInfo() {
 }
 
 export default UserInfo
-
-
-

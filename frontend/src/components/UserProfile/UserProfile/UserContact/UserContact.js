@@ -5,16 +5,18 @@ import { useAuth } from "hooks/useAuth";
 import { useState } from "react";
 import useFetch from "hooks/useFetch";
 
-function UserContact() {
+function UserContact({ viewUserId }) {
     const [editable, setEditable] = useState(false);
 
-    const {data, isPending, error} = useFetch('/finder/api/user/');
+    const { user } = useAuth();
+    const {data, isPending, error} = useFetch(`/finder/api/user/${viewUserId || user.user}`);
 
     if (isPending) {
-        <div>Is Loading...</div>
+        return <div>Loading...</div>
     }
-    
-    // console.log(data); 
+
+    // Check if the logged-in user is viewing their own profile
+    const isOwnProfile = user.user === viewUserId;
 
     return (
         <div className="user-link">
@@ -22,14 +24,14 @@ function UserContact() {
                 <h2>Contact links</h2>
                     <div className="buttons-row">
                         {
-                            !editable && <button onClick={(e) => {
+                            isOwnProfile && !editable && <button onClick={(e) => {
                                 e.preventDefault();
                                 setEditable(true);
                             }} className="contact-button">Edit</button>
                         }
 
                         {
-                            editable && 
+                            isOwnProfile && editable && 
                                 <>
                                     <button onClick={(e) => {
                                         e.preventDefault();

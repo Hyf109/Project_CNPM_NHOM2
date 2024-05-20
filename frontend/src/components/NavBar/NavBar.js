@@ -35,7 +35,7 @@ const NavBar = () => {
                 </ul>
             </span>
             <span className="user text nav-bar-flex-item">
-                <button id="user-account-button" onClick={() => navigate('/profile')}>
+                <button id="user-account-button" onClick={() => navigate(`/profile/${user.user}`)}>
                     {user.username}
                 </button>
             </span>
