@@ -105,17 +105,17 @@ function UserContact({ viewUserId }) {
                     <div className="contact-line" key={index}>
                         <div className="contact-line-name">
                             {editable ? (
-                                <input value={contact.contact_method} onChange={(e) => handleContactChange(index, 'contact_method', e.target.value)} />
+                                <input value={contact.contact_method} onChange={(e) => handleContactChange(index, 'contact_method', e.target.value)} placeholder="Contact Method"/>
                             ) : (
                                 <h3>{contact.contact_method}</h3>
                             )}
                         </div>
                         {editable ? (
-                            <input value={contact.detail} onChange={(e) => handleContactChange(index, 'detail', e.target.value)} />
+                            <input value={contact.detail} onChange={(e) => handleContactChange(index, 'detail', e.target.value)} placeholder="Link"/>
                         ) : (
-                            <a href={contact.detail}>{contact.detail}</a>
+                            <a>{contact.detail}</a>
                         )}
-                        {editable && <button onClick={() => handleDeleteContact(index)}>Delete</button>}
+                        {editable && <button onClick={() => handleDeleteContact(index)} className="edit-button">Delete</button>}
                     </div>
                 ))}
             </div>

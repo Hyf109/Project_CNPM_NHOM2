@@ -63,3 +63,19 @@ $button-hover: aliceblue;
 
     }
 }
+
+.edit-button {
+    padding: $button-gap;
+    border-radius: $button-gap;
+    margin: 0 $button-gap;
+    width: $button-width;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $button-hover;
+    }
+
+    &:active {
+        background-color: $button-active;
+    }
+}
